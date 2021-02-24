@@ -1,0 +1,52 @@
+{
+  "name": "app_wav",
+  "version": "1.0.0",
+  "description": "Wav Studio",
+  "main": "server.js",
+  "scripts": {
+    "start": "SET NODE_ENV=production & nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeycrisp/wavstudio.git"
+  },
+  "keywords": [
+    "WAV",
+    "Studio"
+  ],
+  "author": "Crisp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergeycrisp/wavstudio/issues"
+  },
+  "homepage": "https://github.com/sergeycrisp/wavstudio#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.0.0",
+    "express-rate-limit": "^5.2.3",
+    "helmet": "^4.2.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.16",
+    "slugify": "^1.4.5",
+    "validator": "^13.1.17",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.4",
+    "nodemon": "^2.0.5",
+    "prettier": "^2.1.2"
+  }
+}
