@@ -4,10 +4,10 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 
 const articlesRouter = require('./routes/articlesRouter');
-const ordersRouter = require('./routes/ordersRouter');
-const usersRouter = require('./routes/usersRouter');
-const musicsRouter = require('./routes/musicsRouter');
-const servicesRouter = require('./routes/servicesRouter');
+// const ordersRouter = require('./routes/ordersRouter');
+// const usersRouter = require('./routes/usersRouter');
+// const musicsRouter = require('./routes/musicsRouter');
+// const servicesRouter = require('./routes/servicesRouter');
 
 //creating server
 const app = express();
@@ -34,10 +34,10 @@ app.use((req, res, next) => {
 
 //ROUTES
 app.use('/api/v1/articles', articlesRouter);
-app.use('/api/v1/users', usersRouter);
-app.use('/api/v1/orders', ordersRouter);
-app.use('/api/v1/musics', musicsRouter);
-app.use('/api/v1/services', servicesRouter);
+// app.use('/api/v1/users', usersRouter);
+// app.use('/api/v1/orders', ordersRouter);
+// app.use('/api/v1/musics', musicsRouter);
+// app.use('/api/v1/services', servicesRouter);
 
 //Export server
 module.exports = app;
