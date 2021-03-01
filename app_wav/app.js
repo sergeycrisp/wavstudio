@@ -3,6 +3,10 @@ const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
+const AppError = require('./utils/appError');
+
+const globalErrorHandler = require('./controllers/errorController');
+
 const articlesRouter = require('./routes/articlesRouter');
 // const ordersRouter = require('./routes/ordersRouter');
 // const usersRouter = require('./routes/usersRouter');
@@ -38,6 +42,12 @@ app.use('/api/v1/articles', articlesRouter);
 // app.use('/api/v1/orders', ordersRouter);
 // app.use('/api/v1/musics', musicsRouter);
 // app.use('/api/v1/services', servicesRouter);
+
+app.all('*', (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
+
+app.use(globalErrorHandler);
 
 //Export server
 module.exports = app;

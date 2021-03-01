@@ -8,6 +8,27 @@ const articleSchema = new mongoose.Schema({
     minLength: [8, 'An article header must be longer, than 8 symbols'],
     maxLength: [100, 'An article header must be shorter, than 8 symbols'],
   },
+  created: {
+    type: Date,
+    default: Date.now,
+  },
+  author: {
+    required: [true, 'A article must have an author'],
+
+    type: [
+      {
+        type: String,
+        default: 'admin',
+      },
+    ],
+  },
+  slug: String,
+  text: String,
+  tags: [String],
+  likes: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const Article = mongoose.model('Article', articleSchema);

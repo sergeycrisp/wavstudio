@@ -1,4 +1,5 @@
 const Article = require('../models/articleModel');
+const catchAsync = require('../utils/catchAsync');
 
 exports.getAllInstance = async (req, res) => {
   const articles = await Article.find();
@@ -9,15 +10,13 @@ exports.getAllInstance = async (req, res) => {
   });
 };
 
-exports.createInstance = async (req, res) => {
-  const newArticle = await Article.create({
-    name: 'Silence',
-    header: 'our first article',
-  });
+exports.createInstance = catchAsync(async (req, res, next) => {
+  const doc = await Article.create(req.body);
 
-  // SEND RESPONSE
-  res.status(200).json({
-    status: 'created',
-    data: newArticle,
+  res.status(201).json({
+    status: 'success',
+    data: {
+      data: doc,
+    },
   });
-};
+});
