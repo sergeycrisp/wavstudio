@@ -10,7 +10,7 @@ function routerInstance(Model, route = 'default') {
   );
 
   if (route !== 'services') {
-    router.route('/:id/like').patch(factory.likeOne(Model));
+    router.route('/:id/like').post(factory.likeOne(Model));
   }
 
   router
