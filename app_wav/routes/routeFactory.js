@@ -1,34 +1,32 @@
 const express = require('express');
-// const authController = require('../controllers/authController');
+const factory = require('../controllers/handlerFactory');
 
-function routerInstance(
-  instanceController
-  //  route = 'default'
-) {
+function routerInstance(Model, route = 'default') {
   const router = new express.Router({ mergeParams: true });
-  router.route('/').get(instanceController.getAllInstance).post(
+  router.route('/').get(factory.getAll(Model)).post(
     //     authController.protect,
     //     authController.restrictTo('admin'),
-    instanceController.createInstance
+    factory.createOne(Model)
   );
 
-  // if (route !== 'services') {}
-  //   router.route('/:id/like').patch(instanceController.likeInstance);
-  // }
+  if (route !== 'services') {
+    router.route('/:id/like').patch(factory.likeOne(Model));
+  }
 
-  // router
-  //   .route('/:id')
-  //   .get(instanceController.getInstance)
-  //   .patch(
-  //     authController.protect,
-  //     authController.restrictTo('admin'),
-  //     instanceController.updateInstance
-  //   )
-  //   .delete(
-  //     authController.protect,
-  //     authController.restrictTo('admin'),
-  //     instanceController.deleteInstance
-  //   );
+  router
+    .route('/:id')
+    .get(factory.getOne(Model))
+    .patch(
+      //     authController.protect,
+      //     authController.restrictTo('admin'),
+      factory.updateOne(Model)
+    )
+    .delete(
+      //     authController.protect,
+      //     authController.restrictTo('admin'),
+      factory.deleteOne(Model)
+    );
+
   return router;
 }
 

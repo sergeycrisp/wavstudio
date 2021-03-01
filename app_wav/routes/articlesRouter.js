@@ -1,5 +1,5 @@
 const routeGenerator = require('./routeFactory');
-const articlesController = require('../controllers/articlesController');
+const Article = require('../models/articleModel');
 
-const router = routeGenerator(articlesController);
+const router = routeGenerator(Article);
 module.exports = router;
