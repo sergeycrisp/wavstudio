@@ -9,7 +9,7 @@ const globalErrorHandler = require('./controllers/errorController');
 
 const articlesRouter = require('./routes/articlesRouter');
 // const ordersRouter = require('./routes/ordersRouter');
-// const usersRouter = require('./routes/usersRouter');
+const usersRouter = require('./routes/usersRouter');
 const musicsRouter = require('./routes/musicsRouter');
 const servicesRouter = require('./routes/servicesRouter');
 
@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 
 //ROUTES
 app.use('/api/v1/articles', articlesRouter);
-// app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/users', usersRouter);
 // app.use('/api/v1/orders', ordersRouter);
 app.use('/api/v1/music', musicsRouter);
 app.use('/api/v1/services', servicesRouter);
