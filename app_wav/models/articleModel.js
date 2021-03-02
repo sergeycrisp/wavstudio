@@ -6,7 +6,10 @@ const articleSchema = new mongoose.Schema({
     required: [true, 'An article must have header'],
     trim: true,
     minLength: [8, 'An article header must be longer, than 8 symbols'],
-    maxLength: [100, 'An article header must be shorter, than 8 symbols'],
+    maxLength: [
+      100,
+      'An article header must be shorter, than 100 symbols',
+    ],
   },
   created: {
     type: Date,

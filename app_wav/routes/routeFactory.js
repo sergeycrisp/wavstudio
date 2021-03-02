@@ -1,7 +1,7 @@
 const express = require('express');
 const factory = require('../controllers/handlerFactory');
 
-function routerInstance(Model, route = 'default') {
+function routerInstance(Model, serviceFlag = 'no') {
   const router = new express.Router({ mergeParams: true });
   router.route('/').get(factory.getAll(Model)).post(
     //     authController.protect,
@@ -9,7 +9,7 @@ function routerInstance(Model, route = 'default') {
     factory.createOne(Model)
   );
 
-  if (route !== 'services') {
+  if (serviceFlag !== 'service') {
     router.route('/:id/like').post(factory.likeOne(Model));
   }
 
