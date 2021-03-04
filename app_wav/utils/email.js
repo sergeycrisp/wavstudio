@@ -2,32 +2,31 @@ const nodemailer = require('nodemailer');
 const pug = require('pug');
 const htmlToText = require('html-to-text');
 
-module.exports = class Email {
+class Email {
   constructor(user, url) {
     this.to = user.email;
     this.firstName = user.name.split(' ')[0];
     this.url = url;
-    this.from = `Jonas Schmedtmann <${process.env.EMAIL_FROM}>`;
+    this.from = `wavbeatstudio@gmail.com`;
   }
 
   newTransport() {
     if (process.env.NODE_ENV === 'production') {
-      // Sendgrid
       return nodemailer.createTransport({
-        service: 'SendGrid',
+        service: 'gmail',
         auth: {
-          user: process.env.SENDGRID_USERNAME,
-          pass: process.env.SENDGRID_PASSWORD,
+          user: process.env.GMAIL_USERNAME,
+          pass: process.env.GMAIL_PASSWORD,
         },
       });
     }
 
     return nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
+      host: 'smtp.mailtrap.io',
+      port: 2525,
       auth: {
-        user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD,
+        user: process.env.USER_MAIL,
+        pass: process.env.USER_PASS,
       },
     });
   }
@@ -58,7 +57,7 @@ module.exports = class Email {
   }
 
   async sendWelcome() {
-    await this.send('welcome', 'Welcome to the Natours Family!');
+    await this.send('welcome', 'Welcome to the WAV Studio!');
   }
 
   async sendPasswordReset() {
@@ -67,4 +66,7 @@ module.exports = class Email {
       'Your password reset token (valid for only 10 minutes)'
     );
   }
-};
+}
+
+const a = new Email();
+a.sendWelcome();
