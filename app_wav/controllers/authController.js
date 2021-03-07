@@ -6,7 +6,7 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const Email = require('../utils/email');
 
-const signToken = (id) => {
+const signToken = id => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
@@ -17,10 +17,12 @@ const createSendToken = (user, statusCode, req, res) => {
 
   res.cookie('jwt', token, {
     expires: new Date(
-      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      Date.now() +
+        process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
-    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
+    secure:
+      req.secure || req.headers['x-forwarded-proto'] === 'https',
   });
 
   // Remove password from output
@@ -56,12 +58,17 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // 1) Check if email and password exist
   if (!email || !password) {
-    return next(new AppError('Please provide email and password!', 400));
+    return next(
+      new AppError('Please provide email and password!', 400)
+    );
   }
   // 2) Check if user exists && password is correct
   const user = await User.findOne({ email }).select('+password');
 
-  if (!user || !(await user.correctPassword(password, user.password))) {
+  if (
+    !user ||
+    !(await user.correctPassword(password, user.password))
+  ) {
     return next(new AppError('Incorrect email or password', 401));
   }
 
@@ -182,7 +189,9 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   // 1) Get user based on POSTed email
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
-    return next(new AppError('There is no user with email address.', 404));
+    return next(
+      new AppError('There is no user with email address.', 404)
+    );
   }
 
   // 2) Generate the random reset token
@@ -247,7 +256,10 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
   // 2) Check if POSTed current password is correct
   if (
-    !(await user.correctPassword(req.body.passwordCurrent, user.password))
+    !(await user.correctPassword(
+      req.body.passwordCurrent,
+      user.password
+    ))
   ) {
     return next(new AppError('Your current password is wrong.', 401));
   }

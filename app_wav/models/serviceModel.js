@@ -6,7 +6,10 @@ const serviceSchema = new mongoose.Schema({
     required: [true, 'A service must have header'],
     trim: true,
     minLength: [8, 'A service header must be longer, than 8 symbols'],
-    maxLength: [100, 'A service header must be shorter, than 100 symbols'],
+    maxLength: [
+      100,
+      'A service header must be shorter, than 100 symbols',
+    ],
   },
   serviceText: {
     type: String,
@@ -27,7 +30,7 @@ const serviceSchema = new mongoose.Schema({
     type: Number,
     min: 10,
     max: 3000,
-    required: function () {
+    required: function() {
       return this.license !== 'free';
     },
   },

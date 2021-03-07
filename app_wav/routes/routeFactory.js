@@ -3,11 +3,14 @@ const factory = require('../controllers/handlerFactory');
 
 function routerInstance(Model, serviceFlag = 'no') {
   const router = new express.Router({ mergeParams: true });
-  router.route('/').get(factory.getAll(Model)).post(
-    //     authController.protect,
-    //     authController.restrictTo('admin'),
-    factory.createOne(Model)
-  );
+  router
+    .route('/')
+    .get(factory.getAll(Model))
+    .post(
+      //     authController.protect,
+      //     authController.restrictTo('admin'),
+      factory.createOne(Model)
+    );
 
   if (serviceFlag !== 'service') {
     router.route('/:id/like').post(factory.likeOne(Model));

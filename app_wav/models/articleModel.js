@@ -5,7 +5,10 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: [true, 'An article must have header'],
     trim: true,
-    minLength: [8, 'An article header must be longer, than 8 symbols'],
+    minLength: [
+      8,
+      'An article header must be longer, than 8 symbols',
+    ],
     maxLength: [
       100,
       'An article header must be shorter, than 100 symbols',
@@ -18,15 +21,15 @@ const articleSchema = new mongoose.Schema({
   author: {
     required: [true, 'A article must have an author'],
 
-    type: [
-      {
-        type: String,
-        default: 'admin',
-      },
-    ],
+    type: String,
+    default: 'admin',
   },
+
   slug: String,
-  text: String,
+  text: {
+    type: String,
+    required: [true, 'An article should have text'],
+  },
   tags: [String],
   likes: {
     type: Number,

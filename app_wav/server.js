@@ -24,7 +24,7 @@ mongoose
 
     console.log('DB connection succesfull');
   })
-  .catch((err) => console.log('ERROR', err));
+  .catch(err => console.log('ERROR', err));
 
 //Run server
 const port = process.env.PORT || 8080;
@@ -33,7 +33,7 @@ const server = app.listen(port, () => {
 });
 
 //Handling exceptions
-process.on('unhandledRejection', (err) => {
+process.on('unhandledRejection', err => {
   console.log(err.name, err.message);
   console.log('Unhandled rejection!!! Shutting down');
   server.close(() => {
@@ -41,7 +41,7 @@ process.on('unhandledRejection', (err) => {
   });
 });
 
-process.on('uncaughtException', (err) => {
+process.on('uncaughtException', err => {
   console.log(err.name, err.message);
   console.log('Uncaught exception!!! Shutting down');
 });

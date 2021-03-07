@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const pug = require('pug');
 const htmlToText = require('html-to-text');
 
-class Email {
+module.exports = class Email {
   constructor(user, url) {
     this.to = user.email;
     this.firstName = user.name.split(' ')[0];
@@ -34,15 +34,16 @@ class Email {
   // Send the actual email
   async send(template, subject) {
     // 1) Render HTML based on a pug template
-    const html = pug.renderFile(
-      `${__dirname}/../views/email/${template}.pug`,
-      {
-        firstName: this.firstName,
-        url: this.url,
-        subject,
-      }
-    );
-
+    console.log(__dirname);
+    // const html = pug.renderFile(
+    //   `${__dirname}/views/email/${template}.pug`,
+    //   {
+    //     firstName: this.firstName,
+    //     url: this.url,
+    //     subject,
+    //   }
+    // );
+    const html = 'KU';
     // 2) Define email options
     const mailOptions = {
       from: this.from,
@@ -66,7 +67,4 @@ class Email {
       'Your password reset token (valid for only 10 minutes)'
     );
   }
-}
-
-const a = new Email();
-a.sendWelcome();
+};
