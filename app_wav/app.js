@@ -21,12 +21,16 @@ const articlesRouter = require('./routes/articlesRouter');
 const usersRouter = require('./routes/usersRouter');
 const musicsRouter = require('./routes/musicsRouter');
 const servicesRouter = require('./routes/servicesRouter');
+// const viewRouter = require('./routes/viewRouter');
 
 //creating server
 const app = express();
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
+
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 1) GLOBAL MIDDLEWARES
 // Implement CORS
@@ -40,11 +44,11 @@ app.use(cors());
 app.options('*', cors());
 // app.options('/api/v1/tours/:id', cors());
 
-// Serving static files
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Set security HTTP headers
 app.use(helmet());
+
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
@@ -55,7 +59,8 @@ if (process.env.NODE_ENV === 'development') {
 const limiter = rateLimit({
   max: 100,
   windowMs: 60 * 60 * 1000,
-  message: 'Too many requests from this IP, please try again in an hour!',
+  message:
+    'Too many requests from this IP, please try again in an hour!',
 });
 app.use('/api', limiter);
 
@@ -101,14 +106,21 @@ app.use((req, res, next) => {
 });
 
 //ROUTES
+
+// app.use('/', viewRouter);
+
 app.use('/api/v1/articles', articlesRouter);
-app.use('/api/v1/users', usersRouter);
-// app.use('/api/v1/orders', ordersRouter);
 app.use('/api/v1/music', musicsRouter);
 app.use('/api/v1/services', servicesRouter);
 
+app.use('/api/v1/users', usersRouter);
+// app.use('/api/v1/orders', ordersRouter);
+app.use('/api/v1/services', servicesRouter);
+
 app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+  next(
+    new AppError(`Can't find ${req.originalUrl} on this server!`, 404)
+  );
 });
 
 app.use(globalErrorHandler);
