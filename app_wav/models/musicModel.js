@@ -23,12 +23,19 @@ const musicSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  hidden: Boolean,
+  visible: Boolean,
 });
 
 // DOCUMENT MIDDLEWARE: runs before .save() and .create()
 musicSchema.pre('save', function(next) {
   this.slug = slugify(this.name, { lower: true });
+  next();
+});
+
+musicSchema.pre(/^find/, function(next) {
+  this.find({ visible: { $ne: true } });
+
+  this.start = Date.now();
   next();
 });
 
