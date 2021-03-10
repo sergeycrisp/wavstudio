@@ -40,6 +40,8 @@ musicSchema.pre(/^find/, function(next) {
 });
 
 musicSchema.post(/^find/, function(docs, next) {
+  //Logs
+  // eslint-disable-next-line no-console
   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
   next();
 });

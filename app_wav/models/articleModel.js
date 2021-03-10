@@ -16,6 +16,7 @@ const articleSchema = new mongoose.Schema(
         'An article header must be shorter, than 100 symbols',
       ],
     },
+    name: String,
     created: {
       type: Date,
       default: Date.now,
@@ -38,6 +39,8 @@ const articleSchema = new mongoose.Schema(
       default: 0,
     },
     visible: Boolean,
+    coverImg: String,
+    images: [String],
   },
   {
     toJSON: { virtuals: true },
@@ -60,6 +63,8 @@ articleSchema.pre(/^find/, function(next) {
 });
 
 articleSchema.post(/^find/, function(docs, next) {
+  //Logs
+  // eslint-disable-next-line no-console
   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
   next();
 });
