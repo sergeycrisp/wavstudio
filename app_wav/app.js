@@ -20,7 +20,7 @@ const articlesRouter = require('./routes/articlesRouter');
 // // const ordersRouter = require('./routes/ordersRouter');
 const usersRouter = require('./routes/usersRouter');
 const musicsRouter = require('./routes/musicsRouter');
-// const servicesRouter = require('./routes/servicesRouter');
+const servicesRouter = require('./routes/servicesRouter');
 // const viewRouter = require('./routes/viewRouter');
 
 //creating server
@@ -111,7 +111,7 @@ app.use((req, res, next) => {
 
 app.use('/api/v1/articles', articlesRouter);
 app.use('/api/v1/musics', musicsRouter);
-// app.use('/api/v1/services', servicesRouter);
+app.use('/api/v1/services', servicesRouter);
 
 app.use('/api/v1/users', usersRouter);
 // app.use('/api/v1/orders', ordersRouter);

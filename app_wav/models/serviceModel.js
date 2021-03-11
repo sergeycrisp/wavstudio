@@ -32,17 +32,18 @@ const serviceSchema = new mongoose.Schema(
     },
     license: {
       type: String,
-      required: 'true',
+      required: true,
+      enum: ['free', 'sale', 'sale-nExc', 'our prod'],
     },
     priceUSD: {
       type: Number,
       required: function() {
-        return this.license !== 'free';
+        return this.license !== 'free' || this.license !== 'our prod';
       },
     },
     slug: String,
-    imageLink: String,
-    visible: Boolean,
+    imageLink: { type: String, required: true },
+    visible: { type: Boolean, default: true },
   },
   {
     toJSON: { virtuals: true },
@@ -52,7 +53,7 @@ const serviceSchema = new mongoose.Schema(
 
 // DOCUMENT MIDDLEWARE: runs before .save() and .create()
 serviceSchema.pre('save', function(next) {
-  this.slug = slugify(this.name, { lower: true });
+  this.slug = slugify(this.license, { lower: true });
   next();
 });
 
