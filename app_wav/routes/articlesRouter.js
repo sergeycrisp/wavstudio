@@ -22,6 +22,8 @@ router
     articleController.createArticle
   );
 
+router.route('/:id/like').patch(articleController.likeArticle);
+
 router
   .route('/:id')
   .get(articleController.getArticle)

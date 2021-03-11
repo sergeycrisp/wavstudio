@@ -19,6 +19,7 @@ router
     musicController.createMusic
   );
 
+router.route('/:id/like').patch(musicController.likeMusic);
 router
   .route('/:id')
   .get(musicController.getMusic)
