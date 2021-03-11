@@ -19,7 +19,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const articlesRouter = require('./routes/articlesRouter');
 // // const ordersRouter = require('./routes/ordersRouter');
 const usersRouter = require('./routes/usersRouter');
-// const musicsRouter = require('./routes/musicsRouter');
+const musicsRouter = require('./routes/musicsRouter');
 // const servicesRouter = require('./routes/servicesRouter');
 // const viewRouter = require('./routes/viewRouter');
 
@@ -110,7 +110,7 @@ app.use((req, res, next) => {
 // app.use('/', viewRouter);
 
 app.use('/api/v1/articles', articlesRouter);
-// app.use('/api/v1/music', musicsRouter);
+app.use('/api/v1/musics', musicsRouter);
 // app.use('/api/v1/services', servicesRouter);
 
 app.use('/api/v1/users', usersRouter);

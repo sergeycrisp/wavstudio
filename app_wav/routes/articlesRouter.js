@@ -28,13 +28,15 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin'),
+
+    //TODO ADD IMAGE FEATURE
     articleController.uploadArticleImages,
     articleController.resizeArticleImages,
     articleController.updateArticle
   )
   .delete(
     authController.protect,
-    authController.restrictTo('admin', 'lead-guide'),
+    authController.restrictTo('admin'),
     articleController.deleteArticle
   );
 
