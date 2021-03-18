@@ -15,9 +15,17 @@ router.use(authController.protect);
 router.patch('/updateMyPassword', authController.updatePassword);
 router.get('/me', userController.getMe, userController.getUser);
 router.patch('/updateMe', userController.updateMe);
-router.patch('/updateMyOrder/:orderId', userController.updateMyOrder);
+router.patch(
+  '/updateMyOrder/:orderId',
+  userController.restrictToOwner,
+  userController.updateMyOrder
+);
 
-router.patch('/cancelMyOrder/:orderId', userController.cancelMyOrder);
+router.patch(
+  '/cancelMyOrder/:orderId',
+  userController.restrictToOwner,
+  userController.cancelMyOrder
+);
 router.delete('/deleteMe', userController.deleteMe);
 
 router.use(authController.restrictTo('admin'));

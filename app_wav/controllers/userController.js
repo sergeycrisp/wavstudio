@@ -106,3 +106,20 @@ exports.cancelMyOrder = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+exports.restrictToOwner = catchAsync(async (req, res, next) => {
+  try {
+    const order = await Order.findById(req.params.orderId);
+
+    const userId = req.user._id;
+    const orderCustomerId = order.customer._id;
+
+    if (JSON.stringify(orderCustomerId) === JSON.stringify(userId)) {
+      next();
+    } else {
+      next(new AppError('Oh, this is not your order', 403));
+    }
+  } catch (e) {
+    next(new AppError('Something went wrong', 500));
+  }
+});
