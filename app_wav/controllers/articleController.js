@@ -32,35 +32,17 @@ exports.uploadArticleImages = upload.fields([
 // upload.array('images', 5) req.files
 
 exports.resizeArticleImages = catchAsync(async (req, res, next) => {
-  if (!req.files.imageCover || !req.files.images) return next();
-
+  console.log(req.files.imageCover);
+  if (!req.files.imageCover) return next();
   // 1) Cover image
   req.body.imageCover = `articles-${
     req.params.id
-  }-${Date.now()}-cover.jpeg`;
+  }-${Date.now()}-cover.jpg`;
   await sharp(req.files.imageCover[0].buffer)
     .resize(2000, 1333)
-    .toFormat('jpeg')
+    .toFormat('jpg')
     .jpeg({ quality: 90 })
     .toFile(`public/img/articles/${req.body.imageCover}`);
-
-  // 2) Images
-  req.body.images = [];
-
-  await Promise.all(
-    req.files.images.map(async (file, i) => {
-      const filename = `article-${req.params.id}-${Date.now()}-${i +
-        1}.jpeg`;
-
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/articles/${filename}`);
-
-      req.body.images.push(filename);
-    })
-  );
 
   next();
 });
