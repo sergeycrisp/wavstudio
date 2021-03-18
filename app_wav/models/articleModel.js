@@ -16,6 +16,7 @@ const articleSchema = new mongoose.Schema(
         'An article header must be shorter, than 100 symbols',
       ],
     },
+    author: String,
     name: {
       type: String,
       unique: true,
@@ -37,11 +38,6 @@ const articleSchema = new mongoose.Schema(
       default: 0,
     },
     visible: { type: Boolean, default: true },
-    author: {
-      type: mongoose.Schema.ObjectId,
-      ref: 'User',
-      default: '6044eb36a4af4d2c1c40639a',
-    },
   },
   {
     toJSON: { virtuals: true },
@@ -68,15 +64,6 @@ articleSchema.post(/^find/, function(docs, next) {
   //Logs
   // eslint-disable-next-line no-console
   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
-  next();
-});
-
-articleSchema.pre(/^find/, function(next) {
-  this.populate({
-    path: 'author',
-    select: '-__v -passwordChangedAt',
-  });
-
   next();
 });
 

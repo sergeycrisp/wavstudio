@@ -7,17 +7,13 @@ const musicSchema = new mongoose.Schema(
       default: Date.now,
     },
     link: { type: String, required: true },
-    author: {
-      type: mongoose.Schema.ObjectId,
-      ref: 'User',
-      default: '6044eb36a4af4d2c1c40639a',
-    },
     tags: [String],
     license: {
       type: String,
       enum: ['free', 'sale', 'sale-nExc', 'our prod'],
       default: 'sale',
     },
+    author: String,
     likes: {
       type: Number,
       default: 0,
@@ -43,15 +39,6 @@ musicSchema.post(/^find/, function(docs, next) {
   //Logs
   // eslint-disable-next-line no-console
   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
-  next();
-});
-
-musicSchema.pre(/^find/, function(next) {
-  this.populate({
-    path: 'author',
-    select: '-__v -passwordChangedAt',
-  });
-
   next();
 });
 
