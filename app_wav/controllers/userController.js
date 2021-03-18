@@ -2,6 +2,7 @@ const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const factory = require('./handlerFactory');
+const Order = require('../models/orderModel');
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
@@ -80,23 +81,28 @@ exports.getAllUsers = factory.getAll(User);
 exports.updateUser = factory.updateOne(User);
 exports.deleteUser = factory.deleteOne(User);
 
-exports.updateMyOrders = catchAsync(async (req, res, next) => {
-  const filteredBody = filterObj(req.body, 'order');
+exports.updateMyOrder = catchAsync(async (req, res, next) => {
+  const filteredBody = filterObj(req.body, 'status', 'text');
   console.log(filteredBody);
   // // 3) Update user document
-  // const updatedUser = await User.findByIdAndUpdate(
-  //   req.user.id,
-  //   filteredBody,
-  //   {
-  //     new: true,
-  //     runValidators: true,
-  //   }
-  // );
+  await Order.findByIdAndUpdate(req.params.orderId, filteredBody);
 
   res.status(200).json({
     status: 'success',
-    // data: {
-    //   user: updatedUser,
-    // },
+    data: {
+      text: 'order updated',
+    },
+  });
+});
+
+exports.cancelMyOrder = catchAsync(async (req, res, next) => {
+  await Order.findByIdAndUpdate(req.params.orderId, {
+    status: 'canceled',
+  });
+  res.status(200).json({
+    status: 'success',
+    data: {
+      text: 'order canceled',
+    },
   });
 });

@@ -24,6 +24,7 @@ const orderSchema = new mongoose.Schema({
       'ready',
       'in work',
     ],
+    default: "wait for manager's approve",
   },
   price: {
     type: Number,
