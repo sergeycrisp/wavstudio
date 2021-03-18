@@ -27,9 +27,9 @@ const articleSchema = new mongoose.Schema(
     },
 
     slug: String,
-    text: {
+    sourceLink: {
       type: String,
-      required: [true, 'An article should have text'],
+      required: [true, 'An article should have sourceLink'],
     },
     tags: [String],
     likes: {
@@ -37,8 +37,6 @@ const articleSchema = new mongoose.Schema(
       default: 0,
     },
     visible: { type: Boolean, default: true },
-    coverImg: String,
-    images: [String],
     author: {
       type: mongoose.Schema.ObjectId,
       ref: 'User',

@@ -24,6 +24,12 @@ const userSchema = new mongoose.Schema({
     enum: ['user', 'admin', 'anon'],
     default: 'user',
   },
+  orders: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Order',
+    },
+  ],
   password: {
     type: String,
     required: [true, 'Please provide a password'],

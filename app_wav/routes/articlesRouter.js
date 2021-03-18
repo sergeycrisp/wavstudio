@@ -5,6 +5,7 @@ const authController = require('../controllers/authController');
 const router = express.Router();
 
 // router.param('id', tourController.checkID);
+//TODO ADD TAG SEARCH
 
 router
   .route('/top-5-liked')

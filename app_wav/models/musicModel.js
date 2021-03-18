@@ -23,6 +23,7 @@ const musicSchema = new mongoose.Schema(
       default: 0,
     },
     visible: { type: Boolean, default: true },
+    linkPurchase: String,
   },
   {
     toJSON: { virtuals: true },

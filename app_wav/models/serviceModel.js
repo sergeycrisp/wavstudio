@@ -59,7 +59,7 @@ serviceSchema.pre('save', function(next) {
 
 // QUERY MIDDLEWARE
 serviceSchema.pre(/^find/, function(next) {
-  this.find({ visible: { $ne: true } });
+  this.find({ visible: { $ne: false } });
 
   this.start = Date.now();
   next();

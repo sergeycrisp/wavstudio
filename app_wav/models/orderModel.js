@@ -3,24 +3,13 @@ const mongoose = require('mongoose');
 const orderSchema = new mongoose.Schema({
   service: {
     required: true,
-    type: String,
-    enum: [
-      'leasing-mp3',
-      'leasing-track out',
-      'leasing-wav',
-      'exclusive rights',
-      'custom write',
-      'design',
-      // 'mastering',
-    ],
+    type: mongoose.Schema.ObjectId,
+    ref: 'Service',
   },
-  anonOrder: { type: Boolean, required: true },
   customer: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: function() {
-      return this.anonOrder === false;
-    },
+    required: true,
   },
   createdAt: {
     type: Date,
@@ -43,6 +32,9 @@ orderSchema.pre(/^find/, function(next) {
   this.populate({
     path: 'customer',
     select: '-__v -passwordChangedAt',
+  }).populate({
+    path: 'service',
+    select: '-__v -created -slug -visible',
   });
   next();
 });
