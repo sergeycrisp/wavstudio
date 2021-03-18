@@ -4,15 +4,20 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-// router.param('id', tourController.checkID);
-//TODO ADD TAG SEARCH
-
 router
   .route('/top-5-liked')
   .get(
     articleController.aliasTopArticles,
     articleController.getAllArticles
   );
+
+//Find by tag
+router
+  .route('/tag/:tag')
+  .get(articleController.aliasTag, articleController.getAllArticles);
+
+//404 user can't see tag without tag property!
+router.route('/tag').get(articleController.aliasTag);
 
 router
   .route('/')
@@ -31,10 +36,8 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin'),
-
-    //TODO ADD IMAGE FEATURE
-    articleController.uploadArticleImages,
-    articleController.resizeArticleImages,
+    // articleController.uploadArticleImages,
+    // articleController.resizeArticleImages,
     articleController.updateArticle
   )
   .delete(

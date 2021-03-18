@@ -4,11 +4,17 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-// router.param('id', tourController.checkID);
-//TODO ADD TAG SEARCH
 router
   .route('/top-5-liked')
   .get(musicController.aliasTopMusics, musicController.getAllMusics);
+
+//Find by tag
+router
+  .route('/tag/:tag')
+  .get(musicController.aliasTag, musicController.getAllMusics);
+
+//404 user can't see tag without tag property!
+router.route('/tag').get(musicController.aliasTag);
 
 router
   .route('/')
