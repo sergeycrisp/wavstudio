@@ -15,16 +15,27 @@ const orderSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  paid: {
-    type: Boolean,
-    default: true,
-    required: true,
+  status: {
+    type: String,
+    enum: [
+      'canceled',
+      "wait for manager's approve",
+
+      'ready',
+      'in work',
+    ],
   },
   price: {
     type: Number,
-    required: function() {
-      return this.paid === true;
-    },
+    required: true,
+  },
+  text: {
+    type: String,
+    required: [true, 'Order should have text'],
+  },
+  contacts: {
+    type: String,
+    required: [true, 'Order should have contacts'],
   },
 });
 

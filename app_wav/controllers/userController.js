@@ -27,6 +27,15 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     );
   }
 
+  if (req.body.orders) {
+    return next(
+      new AppError(
+        'This route is not for order updates. Please use /updateMyOrders.',
+        400
+      )
+    );
+  }
+
   // 2) Filtered out unwanted fields names that are not allowed to be updated
   const filteredBody = filterObj(req.body, 'name', 'email');
 
@@ -70,3 +79,24 @@ exports.getAllUsers = factory.getAll(User);
 // Do NOT update passwords with this!
 exports.updateUser = factory.updateOne(User);
 exports.deleteUser = factory.deleteOne(User);
+
+exports.updateMyOrders = catchAsync(async (req, res, next) => {
+  const filteredBody = filterObj(req.body, 'order');
+  console.log(filteredBody);
+  // // 3) Update user document
+  // const updatedUser = await User.findByIdAndUpdate(
+  //   req.user.id,
+  //   filteredBody,
+  //   {
+  //     new: true,
+  //     runValidators: true,
+  //   }
+  // );
+
+  res.status(200).json({
+    status: 'success',
+    // data: {
+    //   user: updatedUser,
+    // },
+  });
+});

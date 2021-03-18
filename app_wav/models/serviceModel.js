@@ -41,6 +41,7 @@ const serviceSchema = new mongoose.Schema(
         return this.license !== 'free' || this.license !== 'our prod';
       },
     },
+    mayOrder: Boolean,
     slug: String,
     imageLink: { type: String, required: true },
     visible: { type: Boolean, default: true },

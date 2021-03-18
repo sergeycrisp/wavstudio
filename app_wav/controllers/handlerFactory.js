@@ -1,6 +1,7 @@
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
+const User = require('../models/userModel');
 
 exports.deleteOne = Model =>
   catchAsync(async (req, res, next) => {
@@ -62,8 +63,15 @@ exports.updateOne = Model =>
 
 exports.createOne = Model =>
   catchAsync(async (req, res, next) => {
-    const doc = await Model.create(req.body);
+    //Only for order params
+    req.body.customer = req.user._id;
+    req.body.service = req.params.id;
 
+    const doc = await Model.create(req.body);
+    if (req.body.service)
+      await User.findByIdAndUpdate(req.body.customer, {
+        $push: { orders: doc._id },
+      });
     res.status(201).json({
       status: 'success',
       data: {

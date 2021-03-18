@@ -6,16 +6,14 @@ const router = express.Router();
 
 router.use(authController.protect);
 
-router.route('/').post(orderController.createOrder);
+router.route('/service/:id').post(orderController.createOrder);
 
 router.use(authController.restrictTo('admin'));
-
-router.route('/').get(orderController.getAllBOrders);
-
 router
   .route('/:id')
   .get(orderController.getOrder)
   .patch(orderController.updateOrder)
   .delete(orderController.deleteOrder);
+router.route('/').get(orderController.getAllOrders);
 
 module.exports = router;

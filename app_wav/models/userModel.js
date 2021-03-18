@@ -118,6 +118,14 @@ userSchema.methods.createPasswordResetToken = function() {
   return resetToken;
 };
 
+userSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'orders',
+    select: '-__v -customer',
+  });
+  next();
+});
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
