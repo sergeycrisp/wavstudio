@@ -56,57 +56,363 @@
       </div>
     </header>
     <main>
-      <div
-        class="uk-position-relative uk-visible-toggle uk-light"
-        tabindex="-1"
-        uk-slider="center: true"
+      <section
+        class="uk-position-relative uk-visible-toggle uk-light uk-slideshow"
+        uk-slideshow="min-height: 300; max-height: 600;"
       >
-        <ul class="uk-slider-items uk-grid">
-          <li class="uk-width-3-4">
-            <div class="uk-panel">
-              <img src="dest/images/girl1.jpg" alt="" />
-              <div class="uk-position-center uk-panel"><h1>1</h1></div>
-            </div>
+        <ul class="uk-slideshow-items" style="height: 600px">
+          <li
+            style="background-color: rgb(11, 10, 18)"
+            class="uk-active uk-transition-active"
+          >
+            <a href="#"
+              ><figure class="uk-container uk-height-1-1">
+                <img
+                  src=""
+                  alt=""
+                  width="1200"
+                  height="600"
+                  uk-cover=""
+                  class="uk-cover"
+                  style="width: 1200px; height: 600px"
+                /></figure
+            ></a>
           </li>
-          <li class="uk-width-3-4">
-            <div class="uk-panel">
-              <img src="dest/images/girl2.jpg" alt="" />
-              <div class="uk-position-center uk-panel"><h1>2</h1></div>
-            </div>
+          <li style="background-color: rgb(206, 7, 30)" class="">
+            <a href="#"
+              ><figure class="uk-container uk-height-1-1">
+                <img
+                  src=""
+                  alt=""
+                  width="1200"
+                  height="600"
+                  uk-cover=""
+                  class="uk-cover"
+                  style="width: 1200px; height: 600px"
+                /></figure
+            ></a>
           </li>
-          <li class="uk-width-3-4">
-            <div class="uk-panel">
-              <img src="dest/images/girl3.jpg" alt="" />
-              <div class="uk-position-center uk-panel"><h1>3</h1></div>
-            </div>
-          </li>
-          <li class="uk-width-3-4">
-            <div class="uk-panel">
-              <img src="dest/images/girl4.jpg" alt="" />
-              <div class="uk-position-center uk-panel"><h1>4</h1></div>
-            </div>
-          </li>
-          <li class="uk-width-3-4">
-            <div class="uk-panel">
-              <img src="dest/images/girl5.jpg" alt="" />
-              <div class="uk-position-center uk-panel"><h1>5</h1></div>
-            </div>
+          <li style="background-color: rgb(31, 32, 36)" class="">
+            <a href="#"
+              ><figure class="uk-container uk-height-1-1">
+                <img
+                  src=""
+                  alt=""
+                  width="1200"
+                  height="600"
+                  uk-cover=""
+                  class="uk-cover"
+                  style="width: 1200px; height: 600px"
+                /></figure
+            ></a>
           </li>
         </ul>
-
         <a
-          class="uk-position-center-left uk-position-small uk-hidden-hover uk-slidenav-large"
+          class="uk-position-center-left uk-position-small uk-hidden-hover uk-slidenav-previous uk-icon uk-slidenav"
           href="#"
-          uk-slidenav-previous
-          uk-slider-item="previous"
-        ></a>
-        <a
-          class="uk-position-center-right uk-position-small uk-hidden-hover uk-slidenav-large"
+          uk-slideshow-item="previous"
+          uk-slidenav-previous=""
+          ><svg
+            width="14"
+            height="24"
+            viewBox="0 0 14 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              fill="none"
+              stroke="#000"
+              stroke-width="1.4"
+              points="12.775,1 1.225,12 12.775,23 "
+            ></polyline></svg></a
+        ><a
+          class="uk-position-center-right uk-position-small uk-hidden-hover uk-slidenav-next uk-icon uk-slidenav"
           href="#"
-          uk-slidenav-next
-          uk-slider-item="next"
+          uk-slideshow-item="next"
+          uk-slidenav-next=""
+          ><svg
+            width="14"
+            height="24"
+            viewBox="0 0 14 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              fill="none"
+              stroke="#000"
+              stroke-width="1.4"
+              points="1.225,23 12.775,12 1.225,1 "
+            ></polyline></svg
         ></a>
-      </div>
+        <div class="uk-position-bottom-center uk-position-small">
+          <ul class="uk-slideshow-nav uk-dotnav">
+            <li uk-slideshow-item="0" class="uk-active"><a href="#"></a></li>
+            <li uk-slideshow-item="1" class=""><a href="#"></a></li>
+            <li uk-slideshow-item="2" class=""><a href="#"></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="uk-section uk-section-default uk-section-small">
+        <div class="uk-container">
+          <div
+            class="uk-grid-large uk-grid-match .uk-grid-column-medium .uk-grid-row-medium uk-child-width-1-3@m"
+            uk-grid
+          >
+            <div>
+              <iframe
+                class="uk-card uk-display-block uk-box-shadow-hover-large"
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              ></iframe>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #cccccc;
+                  line-break: anywhere;
+                  word-break: normal;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                  font-weight: 100;
+                "
+              >
+                <a
+                  href="https://soundcloud.com/mari-tha-creator"
+                  title="Ay0itsMari"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >Ay0itsMari</a
+                >
+                ·
+                <a
+                  href="https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke"
+                  title="My room - Mari x Zeke"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >My room - Mari x Zeke</a
+                >
+              </div>
+            </div>
+            <div>
+              <iframe
+                class="uk-card uk-display-block uk-box-shadow-hover-large"
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              ></iframe>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #cccccc;
+                  line-break: anywhere;
+                  word-break: normal;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                  font-weight: 100;
+                "
+              >
+                <a
+                  href="https://soundcloud.com/mari-tha-creator"
+                  title="Ay0itsMari"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >Ay0itsMari</a
+                >
+                ·
+                <a
+                  href="https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke"
+                  title="My room - Mari x Zeke"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >My room - Mari x Zeke</a
+                >
+              </div>
+            </div>
+            <div>
+              <iframe
+                class="uk-card uk-display-block uk-box-shadow-hover-large"
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              ></iframe>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #cccccc;
+                  line-break: anywhere;
+                  word-break: normal;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                  font-weight: 100;
+                "
+              >
+                <a
+                  href="https://soundcloud.com/mari-tha-creator"
+                  title="Ay0itsMari"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >Ay0itsMari</a
+                >
+                ·
+                <a
+                  href="https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke"
+                  title="My room - Mari x Zeke"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >My room - Mari x Zeke</a
+                >
+              </div>
+            </div>
+            <div>
+              <iframe
+                class="uk-card uk-display-block uk-box-shadow-hover-large"
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              ></iframe>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #cccccc;
+                  line-break: anywhere;
+                  word-break: normal;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                  font-weight: 100;
+                "
+              >
+                <a
+                  href="https://soundcloud.com/mari-tha-creator"
+                  title="Ay0itsMari"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >Ay0itsMari</a
+                >
+                ·
+                <a
+                  href="https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke"
+                  title="My room - Mari x Zeke"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >My room - Mari x Zeke</a
+                >
+              </div>
+            </div>
+            <div>
+              <iframe
+                class="uk-card uk-display-block uk-box-shadow-hover-large"
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              ></iframe>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #cccccc;
+                  line-break: anywhere;
+                  word-break: normal;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                  font-weight: 100;
+                "
+              >
+                <a
+                  href="https://soundcloud.com/mari-tha-creator"
+                  title="Ay0itsMari"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >Ay0itsMari</a
+                >
+                ·
+                <a
+                  href="https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke"
+                  title="My room - Mari x Zeke"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >My room - Mari x Zeke</a
+                >
+              </div>
+            </div>
+            <div>
+              <iframe
+                class="uk-card uk-display-block uk-box-shadow-hover-large"
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              ></iframe>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #cccccc;
+                  line-break: anywhere;
+                  word-break: normal;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                    Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+                  font-weight: 100;
+                "
+              >
+                <a
+                  href="https://soundcloud.com/mari-tha-creator"
+                  title="Ay0itsMari"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >Ay0itsMari</a
+                >
+                ·
+                <a
+                  href="https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke"
+                  title="My room - Mari x Zeke"
+                  target="_blank"
+                  style="color: #cccccc; text-decoration: none"
+                  >My room - Mari x Zeke</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="uk-margin uk-text-center">
+            <a
+              class="uk-link-muted uk-text-uppercase tm-link-to-all"
+              href="music.html"
+              ><span>Listen all music</span
+              ><span uk-icon="icon: chevron-right; ratio: .75;"></span
+            ></a>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <section
