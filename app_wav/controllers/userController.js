@@ -111,6 +111,7 @@ exports.restrictToOwner = catchAsync(async (req, res, next) => {
   try {
     const order = await Order.findById(req.params.orderId);
 
+    console.log(req.user);
     const userId = req.user._id;
     const orderCustomerId = order.customer._id;
 
