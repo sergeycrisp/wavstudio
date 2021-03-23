@@ -27,7 +27,12 @@
               uk-navbar-toggle-icon
             ></button
             ><a class="uk-navbar-item uk-logo" href="index.html"
-              ><img src="images/logo.svg" width="90" height="32" alt="Logo"
+              ><img
+                src="dest\images\logo.png"
+                width="90"
+                height="32"
+                alt="Logo"
+                style="filter: opacity(70%)"
             /></a>
             <nav class="uk-visible@m">
               <ul class="uk-navbar-nav">
@@ -50,9 +55,58 @@
         </div>
       </div>
     </header>
-    </div>
     <main>
-      
+      <div
+        class="uk-position-relative uk-visible-toggle uk-light"
+        tabindex="-1"
+        uk-slider="center: true"
+      >
+        <ul class="uk-slider-items uk-grid">
+          <li class="uk-width-3-4">
+            <div class="uk-panel">
+              <img src="dest/images/girl1.jpg" alt="" />
+              <div class="uk-position-center uk-panel"><h1>1</h1></div>
+            </div>
+          </li>
+          <li class="uk-width-3-4">
+            <div class="uk-panel">
+              <img src="dest/images/girl2.jpg" alt="" />
+              <div class="uk-position-center uk-panel"><h1>2</h1></div>
+            </div>
+          </li>
+          <li class="uk-width-3-4">
+            <div class="uk-panel">
+              <img src="dest/images/girl3.jpg" alt="" />
+              <div class="uk-position-center uk-panel"><h1>3</h1></div>
+            </div>
+          </li>
+          <li class="uk-width-3-4">
+            <div class="uk-panel">
+              <img src="dest/images/girl4.jpg" alt="" />
+              <div class="uk-position-center uk-panel"><h1>4</h1></div>
+            </div>
+          </li>
+          <li class="uk-width-3-4">
+            <div class="uk-panel">
+              <img src="dest/images/girl5.jpg" alt="" />
+              <div class="uk-position-center uk-panel"><h1>5</h1></div>
+            </div>
+          </li>
+        </ul>
+
+        <a
+          class="uk-position-center-left uk-position-small uk-hidden-hover uk-slidenav-large"
+          href="#"
+          uk-slidenav-previous
+          uk-slider-item="previous"
+        ></a>
+        <a
+          class="uk-position-center-right uk-position-small uk-hidden-hover uk-slidenav-large"
+          href="#"
+          uk-slidenav-next
+          uk-slider-item="next"
+        ></a>
+      </div>
     </main>
     <footer>
       <section
@@ -81,8 +135,8 @@
               <nav class="uk-grid-small uk-child-width-1-2" uk-grid>
                 <div>
                   <ul class="uk-nav uk-nav-default">
-                    <li><a href="catalog.html">Music</a></li>
-                    <li><a href="brands.html">Services</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
                   </ul>
                 </div>
@@ -122,5 +176,32 @@
         </div>
       </section>
     </footer>
+    <div id="nav-offcanvas" uk-offcanvas="overlay: true">
+      <aside class="uk-offcanvas-bar uk-padding-remove">
+        <div class="uk-card uk-card-default uk-card-small tm-shadow-remove">
+          <nav class="uk-card-small uk-card-body">
+            <ul
+              class="uk-nav-default uk-nav-parent-icon uk-list-divider"
+              uk-nav
+            >
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="music.html">Music</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+          </nav>
+
+          <nav class="uk-card-body">
+            <ul class="uk-iconnav uk-flex-center">
+              <li><a href="#" title="Facebook" uk-icon="facebook"></a></li>
+              <li><a href="#" title="Twitter" uk-icon="twitter"></a></li>
+              <li><a href="#" title="YouTube" uk-icon="youtube"></a></li>
+              <li><a href="#" title="Instagram" uk-icon="instagram"></a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    </div>
   </body>
 </html>
