@@ -12,15 +12,16 @@
     <link rel="stylesheet" href="./dest/styles/style.css" />
     <script src="./dest/scripts/uikit.js"></script>
     <script src="./dest/scripts/uikit-icons.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
+    <header style="position: fixed; width: 100%; z-index: 999;">
       
       <div
         class="uk-navbar-container tm-navbar-container"
-        uk-sticky="cls-active: tm-navbar-container-fixed"
-       
-      >
+        uk-sticky="cls-active: tm-navbar-container-fixed;"
+       >
         <div class="uk-container" uk-navbar>
           <div class="uk-navbar-left">
             <button
@@ -34,7 +35,7 @@
                 width="90"
                 height="32"
                 alt="Logo"
-                style="filter: opacity(70%)"
+                style="filter: opacity(75%)"
             /></a>
             <nav class="uk-visible@m">
               <ul class="uk-navbar-nav">
@@ -50,18 +51,22 @@
             <a
               class="uk-navbar-item uk-link-muted tm-navbar-button"
               href="account.html"
-              uk-icon="user"
-              style="transform: scale(1.5)"
+              uk-icon="icon: user; ratio:2"
             ></a>
           </div>
         </div>
       </div>
     </header>
     <main>
-      <section style="text-align: center;">
-          <img src="girl2.jpg" alt="" style="width: 100%; max-height: fit-content; position: relative;">
-        
-      </section>
+     <div class="uk-section-default">
+    <div class="uk-section uk-light uk-background-cover uk-section-xlarge " style="background: url(dest/images/hero.jpg) center center no-repeat; text-align: center; background-size: cover;">
+        <div class="uk-container">
+
+            <h1 style="font-size:5em; font-weight: 700; font-family: 'Fjalla One', sans-serif; letter-spacing: 0.2em;">WAV STUDIO</h1>
+
+        </div>
+    </div>
+</div>
       <section class="uk-section uk-section-default uk-section-small">
         <div class="uk-container">
           <div
