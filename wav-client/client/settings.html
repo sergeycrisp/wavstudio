@@ -133,82 +133,76 @@
                 class="uk-card uk-card-default uk-card-small tm-ignore-container"
               >
                 <header class="uk-card-header">
-                  <h1 class="uk-h2">Orders</h1>
+                  <h1 class="uk-h2">Settings</h1>
                 </header>
-                <section class="uk-card-body">
-                  <h3>
-                    <a class="uk-link-heading" href="#"
-                      >#36637649
-                      <span class="uk-text-muted uk-text-small"
-                        >from June 17, 2018</span
-                      ></a
-                    >
-                  </h3>
-                  <table
-                    class="uk-table uk-table-small uk-table-justify uk-table-responsive uk-table-divider uk-margin-small-top uk-margin-remove-bottom"
-                  >
-                    <tbody>
-                      <tr>
-                        <th class="uk-width-medium">Service</th>
-                        <td>Exclusive</td>
-                      </tr>
-                      <tr>
-                        <th class="uk-width-medium">Contacts</th>
-                        <td>inst - @grisha</td>
-                      </tr>
-                      <tr>
-                        <th class="uk-width-medium">Text</th>
-                        <td>Please source</td>
-                      </tr>
-                      <tr>
-                        <th class="uk-width-medium">Total</th>
-                        <td>$4896.00</td>
-                      </tr>
-                      <tr>
-                        <th class="uk-width-medium">Status</th>
-                        <td><span class="uk-label">Processing</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </section>
-                <section class="uk-card-body">
-                  <h3>
-                    <a class="uk-link-heading" href="#"
-                      >#36637649
-                      <span class="uk-text-muted uk-text-small"
-                        >from June 17, 2018</span
-                      ></a
-                    >
-                  </h3>
-                  <table
-                    class="uk-table uk-table-small uk-table-justify uk-table-responsive uk-table-divider uk-margin-small-top uk-margin-remove-bottom"
-                  >
-                    <tbody>
-                      <tr>
-                        <th class="uk-width-medium">Service</th>
-                        <td>Exclusive</td>
-                      </tr>
-                      <tr>
-                        <th class="uk-width-medium">Contacts</th>
-                        <td>inst - @grisha</td>
-                      </tr>
-                      <tr>
-                        <th class="uk-width-medium">Text</th>
-                        <td>Please source</td>
-                      </tr>
-                      <tr>
-                        <th class="uk-width-medium">Total</th>
-                        <td>$4896.00</td>
-                      </tr>
-                      <tr>
-                        <th class="uk-width-medium">Status</th>
-                        <td>
-                          <span class="uk-label uk-label-danger">Canceled</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </section>
+                <div class="uk-card-body">
+                  <form class="uk-form-stacked">
+                    <div class="uk-grid-medium uk-child-width-1-1" uk-grid>
+                      <fieldset class="uk-fieldset">
+                        <legend class="uk-h4">Email</legend>
+                        <div class="uk-grid-small uk-child-width-1-1" uk-grid>
+                          <div>
+                            <label
+                              ><div class="uk-form-label">Current Email</div>
+                              <input
+                                class="uk-input uk-form-width-large"
+                                type="email"
+                                value="example@example.com"
+                                disabled
+                            /></label>
+                          </div>
+                          <div style="padding-top: 12px">
+                            <label
+                              ><div class="uk-form-label">New Email</div>
+                              <input
+                                class="uk-input uk-form-width-large"
+                                type="email"
+                            /></label>
+                          </div>
+                          <div style="padding: 20px">
+                            <button class="uk-button uk-button-primary">
+                              update email
+                            </button>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <fieldset class="uk-fieldset">
+                        <legend class="uk-h4">Password</legend>
+                        <div class="uk-grid-small uk-child-width-1-1" uk-grid>
+                          <div>
+                            <label
+                              ><div class="uk-form-label">Current Password</div>
+                              <input
+                                class="uk-input uk-form-width-large"
+                                type="password"
+                            /></label>
+                          </div>
+                          <div style="padding-top: 12px">
+                            <label
+                              ><div class="uk-form-label">New Password</div>
+                              <input
+                                class="uk-input uk-form-width-large"
+                                type="password"
+                            /></label>
+                          </div>
+                          <div style="padding-top: 12px">
+                            <label
+                              ><div class="uk-form-label">Confirm Password</div>
+                              <input
+                                class="uk-input uk-form-width-large"
+                                type="password"
+                            /></label>
+                          </div>
+                          <div style="padding: 20px">
+                            <button class="uk-button uk-button-primary">
+                              update password
+                            </button>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
