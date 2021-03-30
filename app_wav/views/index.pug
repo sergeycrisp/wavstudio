@@ -1,0 +1,626 @@
+doctype html(lang='en')
+head
+    meta(charset='UTF-8')
+    |     
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |     
+    title Home
+    |     
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:400,500')
+    |     
+    link(rel='stylesheet', href='./dest/styles/style.css')
+    |     
+    script(src='./dest/scripts/uikit.js')
+    |     
+    script(src='./dest/scripts/uikit-icons.js')
+    |     
+    link(rel='preconnect', href='https://fonts.gstatic.com')
+    |     
+    link(href='https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap', rel='stylesheet')
+    |   
+body
+    header(style='position: fixed; width: 100%; z-index: 999')
+      .uk-navbar-container.tm-navbar-container(uk-sticky='cls-active: tm-navbar-container-fixed;')
+        .uk-container(uk-navbar='')
+          .uk-navbar-left
+            button.uk-navbar-toggle(class='uk-hidden@m', uk-toggle='target: #nav-offcanvas', uk-navbar-toggle-icon='')
+            a.uk-navbar-item.uk-logo(href='index.html')
+              img(src='dest/images/logo.png', width='90', height='32', alt='Logo', style='filter: opacity(75%)')
+            |             
+            nav(class='uk-visible@m')
+              ul.uk-navbar-nav
+                li
+                  a(href='blog.html') Blog
+                |                 
+                li
+                  a(href='music.html') Music
+                |                 
+                li
+                  a(href='services.html') Services
+                |                 
+                li
+                  a(href='about.html') About
+                |                 
+                li
+                  a(href='contacts.html') Contacts
+          |           
+          .uk-navbar-right
+            a.uk-navbar-item.uk-link-muted.tm-navbar-button(href='account.html', uk-icon='icon: user; ratio:2')
+    |     
+    main
+      .uk-section-default
+        .uk-section.uk-light.uk-background-cover.uk-section-xlarge(style='\
+        background: url(dest/images/hero.jpg) center center no-repeat;\
+        text-align: center;\
+        background-size: cover;\
+        ')
+          .uk-container
+            h1(style="\
+            font-size: 5em;\
+            font-weight: 700;\
+            font-family: 'Fjalla One', sans-serif;\
+            letter-spacing: 0.2em;\
+            ")
+              | WELCOME TO WAV STUDIO
+            |             
+            hr.uk-divider-icon
+            |             
+            a(style='\
+            opacity: 0.8;\
+            font-size: 1.3em;\
+            cursor: pointer;\
+            letter-spacing: 0.2em;\
+            ', uk-scroll='', href='#target') Subscribe for new beats
+      |       
+      section.uk-section.uk-section-default.uk-section-small
+        .uk-container
+          .uk-grid-large.uk-grid-match(class='.uk-grid-column-medium .uk-grid-row-medium uk-child-width-1-4@m', uk-grid='')
+            div
+              iframe.uk-card.uk-display-block.uk-box-shadow-hover-large(width='100%', height='166', scrolling='no', frameborder='no', allow='autoplay', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+              |               
+              div(style='\
+              font-size: 10px;\
+              color: #cccccc;\
+              line-break: anywhere;\
+              word-break: normal;\
+              overflow: hidden;\
+              white-space: nowrap;\
+              text-overflow: ellipsis;\
+              font-family: Interstate, Lucida Grande, Lucida Sans Unicode,\
+              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;\
+              font-weight: 100;\
+              ')
+                a(href='https://soundcloud.com/mari-tha-creator', title='Ay0itsMari', target='_blank', style='color: #cccccc; text-decoration: none') Ay0itsMari
+                |                 &middot;
+                |                 
+                a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke', title='My room - Mari x Zeke', target='_blank', style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
+            |             
+            div
+              iframe.uk-card.uk-display-block.uk-box-shadow-hover-large(width='100%', height='166', scrolling='no', frameborder='no', allow='autoplay', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+              |               
+              div(style='\
+              font-size: 10px;\
+              color: #cccccc;\
+              line-break: anywhere;\
+              word-break: normal;\
+              overflow: hidden;\
+              white-space: nowrap;\
+              text-overflow: ellipsis;\
+              font-family: Interstate, Lucida Grande, Lucida Sans Unicode,\
+              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;\
+              font-weight: 100;\
+              ')
+                a(href='https://soundcloud.com/mari-tha-creator', title='Ay0itsMari', target='_blank', style='color: #cccccc; text-decoration: none') Ay0itsMari
+                |                 &middot;
+                |                 
+                a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke', title='My room - Mari x Zeke', target='_blank', style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
+            |             
+            div
+              iframe.uk-card.uk-display-block.uk-box-shadow-hover-large(width='100%', height='166', scrolling='no', frameborder='no', allow='autoplay', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+              |               
+              div(style='\
+              font-size: 10px;\
+              color: #cccccc;\
+              line-break: anywhere;\
+              word-break: normal;\
+              overflow: hidden;\
+              white-space: nowrap;\
+              text-overflow: ellipsis;\
+              font-family: Interstate, Lucida Grande, Lucida Sans Unicode,\
+              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;\
+              font-weight: 100;\
+              ')
+                a(href='https://soundcloud.com/mari-tha-creator', title='Ay0itsMari', target='_blank', style='color: #cccccc; text-decoration: none') Ay0itsMari
+                |                 &middot;
+                |                 
+                a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke', title='My room - Mari x Zeke', target='_blank', style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
+            |             
+            div
+              iframe.uk-card.uk-display-block.uk-box-shadow-hover-large(width='100%', height='166', scrolling='no', frameborder='no', allow='autoplay', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+              |               
+              div(style='\
+              font-size: 10px;\
+              color: #cccccc;\
+              line-break: anywhere;\
+              word-break: normal;\
+              overflow: hidden;\
+              white-space: nowrap;\
+              text-overflow: ellipsis;\
+              font-family: Interstate, Lucida Grande, Lucida Sans Unicode,\
+              Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;\
+              font-weight: 100;\
+              ')
+                a(href='https://soundcloud.com/mari-tha-creator', title='Ay0itsMari', target='_blank', style='color: #cccccc; text-decoration: none') Ay0itsMari
+                |                 &middot;
+                |                 
+                a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke', title='My room - Mari x Zeke', target='_blank', style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
+          |           
+          .uk-margin.uk-text-center
+            a.uk-link-muted.uk-text-uppercase.tm-link-to-all(href='music.html')
+              span Listen all music
+              span(uk-icon='icon: chevron-right; ratio: .75;')
+      |       
+      section.uk-section.uk-section-medium
+        .uk-container
+          h2.uk-text-center Trending Services
+          |           
+          .uk-card.uk-card-default.tm-ignore-container
+            .uk-grid-small(class='uk-child-width-1-4@m', uk-grid='')
+              div
+                .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
+                  .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
+                    h5 &Ecy;&kcy;&scy;
+                  |                   
+                  .uk-text-center.uk-padding-small
+                    h1.uk-text-bold
+                      | 100 
+                      span.uk-text-small usd
+                  |                   
+                  .uk-padding-small
+                    ul.uk-list.uk-list-divider.uk-margin-remove-bottom
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Acy;&rcy;&khcy;&icy;&tcy;&iecy;&kcy;&tcy;&ucy;&rcy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+                      |                       
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Kcy;&ocy;&ncy;&scy;&tcy;&rcy;&ucy;&kcy;&tcy;&icy;&vcy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+                      |                       
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Pcy;&lcy;&acy;&ncy; &rcy;&acy;&scy;&scy;&acy;&dcy;&kcy;&icy; &scy;&ocy;&tcy;&rcy;&ucy;&dcy;&ncy;&icy;&kcy;&ocy;&vcy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Scy;&acy;&ncy;&ucy;&zcy;&lcy;&ycy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Scy;&iecy;&rcy;&vcy;&iecy;&rcy;&ncy;&acy;&yacy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Fcy;&acy;&lcy;&softcy;&shcy;&pcy;&ocy;&lcy;&ycy;
+                  |                   
+                  .uk-padding.uk-text-center
+                    a.uk-button.uk-button-large.uk-button-primary.uk-first-column &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy;
+              |               
+              div
+                .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
+                  .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
+                    h5 &Ecy;&kcy;&scy;
+                  |                   
+                  .uk-text-center.uk-padding-small
+                    h1.uk-text-bold
+                      | 100 
+                      span.uk-text-small usd
+                  |                   
+                  .uk-padding-small
+                    ul.uk-list.uk-list-divider.uk-margin-remove-bottom
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Acy;&rcy;&khcy;&icy;&tcy;&iecy;&kcy;&tcy;&ucy;&rcy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+                      |                       
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Kcy;&ocy;&ncy;&scy;&tcy;&rcy;&ucy;&kcy;&tcy;&icy;&vcy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+                      |                       
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Pcy;&lcy;&acy;&ncy; &rcy;&acy;&scy;&scy;&acy;&dcy;&kcy;&icy; &scy;&ocy;&tcy;&rcy;&ucy;&dcy;&ncy;&icy;&kcy;&ocy;&vcy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Scy;&acy;&ncy;&ucy;&zcy;&lcy;&ycy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Scy;&iecy;&rcy;&vcy;&iecy;&rcy;&ncy;&acy;&yacy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Fcy;&acy;&lcy;&softcy;&shcy;&pcy;&ocy;&lcy;&ycy;
+                  |                   
+                  .uk-padding.uk-text-center
+                    a.uk-button.uk-button-large.uk-button-primary.uk-first-column &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy;
+              |               
+              div
+                .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
+                  .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
+                    h5 &Ecy;&kcy;&scy;
+                  |                   
+                  .uk-text-center.uk-padding-small
+                    h1.uk-text-bold
+                      | 100 
+                      span.uk-text-small usd
+                  |                   
+                  .uk-padding-small
+                    ul.uk-list.uk-list-divider.uk-margin-remove-bottom
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Acy;&rcy;&khcy;&icy;&tcy;&iecy;&kcy;&tcy;&ucy;&rcy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+                      |                       
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Kcy;&ocy;&ncy;&scy;&tcy;&rcy;&ucy;&kcy;&tcy;&icy;&vcy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+                      |                       
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Pcy;&lcy;&acy;&ncy; &rcy;&acy;&scy;&scy;&acy;&dcy;&kcy;&icy; &scy;&ocy;&tcy;&rcy;&ucy;&dcy;&ncy;&icy;&kcy;&ocy;&vcy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Scy;&acy;&ncy;&ucy;&zcy;&lcy;&ycy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Scy;&iecy;&rcy;&vcy;&iecy;&rcy;&ncy;&acy;&yacy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Fcy;&acy;&lcy;&softcy;&shcy;&pcy;&ocy;&lcy;&ycy;
+                  |                   
+                  .uk-padding.uk-text-center
+                    a.uk-button.uk-button-large.uk-button-primary.uk-first-column &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy;
+              |               
+              div
+                .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
+                  .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
+                    h5 &Ecy;&kcy;&scy;
+                  |                   
+                  .uk-text-center.uk-padding-small
+                    h1.uk-text-bold
+                      | 100 
+                      span.uk-text-small usd
+                  |                   
+                  .uk-padding-small
+                    ul.uk-list.uk-list-divider.uk-margin-remove-bottom
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Acy;&rcy;&khcy;&icy;&tcy;&iecy;&kcy;&tcy;&ucy;&rcy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+                      |                       
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Kcy;&ocy;&ncy;&scy;&tcy;&rcy;&ucy;&kcy;&tcy;&icy;&vcy;&ncy;&ycy;&iecy; &rcy;&iecy;&shcy;&iecy;&ncy;&icy;&yacy;
+                      |                       
+                      li.uk-text-success
+                        span.uk-margin-small-right(uk-icon='check')
+                        | &Pcy;&lcy;&acy;&ncy; &rcy;&acy;&scy;&scy;&acy;&dcy;&kcy;&icy; &scy;&ocy;&tcy;&rcy;&ucy;&dcy;&ncy;&icy;&kcy;&ocy;&vcy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Scy;&acy;&ncy;&ucy;&zcy;&lcy;&ycy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Scy;&iecy;&rcy;&vcy;&iecy;&rcy;&ncy;&acy;&yacy;
+                      |                       
+                      li.uk-text-muted
+                        span.uk-margin-small-right(uk-icon='close')
+                        | &Fcy;&acy;&lcy;&softcy;&shcy;&pcy;&ocy;&lcy;&ycy;
+                  |                   
+                  .uk-padding.uk-text-center
+                    a.uk-button.uk-button-large.uk-button-primary.uk-first-column &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy;
+      |       
+      section.uk-section.uk-section-small
+        .uk-container
+          h2.uk-text-center Blog
+          |           
+          .uk-grid-medium.uk-grid-match.uk-child-width-1-1.uk-grid(class='uk-child-width-1-2@s', uk-grid='')
+            .uk-first-column
+              a(href='article.html')
+                article.uk-card.uk-card-default.uk-card-small.uk-article.uk-overflow-hidden.uk-box-shadow-hover-large.uk-height-1-1.tm-ignore-container
+                  .tm-ratio.tm-ratio-16-9
+                    figure.tm-media-box.uk-cover-container.uk-margin-remove
+                      img.uk-cover(src='dest/images/photo_2021-02-07_22-21-10.jpg', alt='', uk-cover='uk-cover', style='height: auto; width: 590px')
+                  |                   
+                  .uk-card-body
+                    .uk-article-body
+                      .uk-article-meta.uk-margin-xsmall-bottom
+                        time May 21, 2018
+                      |                       
+                      div
+                        h3.uk-margin-remove
+                          | Everything You Need to Know About VITALII
+                      |                       
+                      .uk-margin-small-top
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing
+                          | elit. Proin sodales eget ipsum id aliquam. Nam
+                          | consectetur interdum nibh eget sodales. Cras volutpat
+                          | efficitur ornare.
+            |             
+            div
+              a(href='article.html')
+                article.uk-card.uk-card-default.uk-card-small.uk-article.uk-overflow-hidden.uk-box-shadow-hover-large.uk-height-1-1.tm-ignore-container
+                  .tm-ratio.tm-ratio-16-9
+                    figure.tm-media-box.uk-cover-container.uk-margin-remove
+                      img.uk-cover(src='dest/images/photo_2021-02-07_22-21-10.jpg', alt='', uk-cover='uk-cover', style='height: auto; width: 590px')
+                  |                   
+                  .uk-card-body
+                    .uk-article-body
+                      .uk-article-meta.uk-margin-xsmall-bottom
+                        time May 21, 2018
+                      |                       
+                      div
+                        h3.uk-margin-remove
+                          | Apple introduces VITALII
+                      |                       
+                      .uk-margin-small-top
+                        p
+                          | Praesent consequat justo eu massa malesuada posuere.
+                          | Donec ultricies tincidunt nisl, sed euismod nulla
+                          | venenatis maximus. Maecenas sit amet semper tellus.
+                          | Pellentesque imperdiet finibus sapien, a consectetur
+                          | eros auctor a.
+          |           
+          .uk-margin.uk-text-center
+            a.uk-link-muted.uk-text-uppercase.tm-link-to-all(href='blog.html')
+              span see all articles
+              span.uk-icon(uk-icon='icon: chevron-right; ratio: .75;')
+                svg(width='15', height='15', viewbox='0 0 20 20', xmlns='http://www.w3.org/2000/svg')
+      |       
+      section.uk-section.uk-section-default.uk-section-small
+        .uk-container
+          .uk-grid-medium.uk-child-width-1-1(class='uk-child-width-1-2@s', uk-grid='')
+            section
+              h2.uk-text-center(class='uk-text-left@s') About
+              |               
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at
+                | neque vulputate, vestibulum magna in, accumsan urna. Nulla
+                | feugiat ipsum ex, molestie porttitor nibh faucibus at. Lorem
+                | ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                | hendrerit lorem ut finibus semper. Donec ac vehicula erat, nec
+                | consequat massa.
+              |               
+              p
+                | Quisque rhoncus fermentum sapien id congue. Nam at rutrum
+                | turpis. Aliquam sagittis imperdiet tortor vel dignissim. Ut
+                | ipsum nunc, egestas et odio id, vestibulum posuere orci. Orci
+                | varius natoque penatibus et magnis dis parturient montes,
+                | nascetur ridiculus mus.
+              |               
+              .uk-text-center(class='uk-text-left@s')
+                a.uk-link-muted.uk-text-uppercase.tm-link-to-all(href='about.html')
+                  span read more
+                  span(uk-icon='icon: chevron-right; ratio: .75;')
+            |             
+            section
+              h2.uk-text-center(class='uk-text-left@s') Latest News
+              |               
+              ul.uk-list.uk-list-small.uk-list-divider
+                li
+                  article.uk-article
+                    .uk-article-body
+                      .uk-article-meta.uk-margin-xsmall-bottom
+                        time &Mcy;&acy;&rcy;&tcy; 23, 2021
+                      |                       
+                      h3.uk-h4.uk-margin-remove
+                        a.uk-link-heading(href='article.html') &Ocy;&bcy;&ncy;&ocy;&vcy;&icy;&lcy;&icy; &dcy;&icy;&zcy;&acy;&jcy;&ncy;
+                      |                       
+                      .uk-margin-xsmall-top.uk-text-small
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing
+                          | elit. Proin sodales eget ipsum id aliquam. Nam
+                          | consectetur interdum nibh eget sodales. Cras volutpat
+                          | efficitur ornare.
+                |                 
+                li
+                  article.uk-article
+                    .uk-article-body
+                      .uk-article-meta.uk-margin-xsmall-bottom
+                        time &Mcy;&acy;&rcy;&tcy; 23, 2021
+                      |                       
+                      h3.uk-h4.uk-margin-remove
+                        a.uk-link-heading(href='article.html') &Scy;&acy;&jcy;&tcy; &pcy;&icy;&shcy;&iecy;&mcy;
+                      |                       
+                      .uk-margin-xsmall-top.uk-text-small
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing
+                          | elit. Proin sodales eget ipsum id aliquam. Nam
+                          | consectetur interdum nibh eget sodales. Cras volutpat
+                          | efficitur ornare.
+                |                 
+                li
+                  article.uk-article
+                    .uk-article-body
+                      .uk-article-meta.uk-margin-xsmall-bottom
+                        time &Fcy;&iecy;&vcy;&rcy;&acy;&lcy;&softcy; 20, 2021
+                      |                       
+                      h3.uk-h4.uk-margin-remove
+                        a.uk-link-heading(href='article.html') &Rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&mcy;
+                      |                       
+                      .uk-margin-xsmall-top.uk-text-small
+                        p
+                          | Lorem ipsum dolor sit amet, consectetur adipiscing
+                          | elit. Proin sodales eget ipsum id aliquam. Nam
+                          | consectetur interdum nibh eget sodales. Cras volutpat
+                          | efficitur ornare.
+      |       
+      section#target.uk-section.uk-section-primary.uk-section-small.uk-light
+        .uk-container
+          .uk-text-center
+            .uk-h2.uk-margin-remove Subscribe for new beats
+            |             
+            div Be aware of new products and special offers.
+          |           
+          .uk-margin
+            form
+              .uk-grid-small.uk-flex-center.uk-grid(uk-grid='')
+                .uk-width-1-1.uk-first-column(class='uk-width-medium@s')
+                  .uk-inline.uk-width-1-1
+                    span.uk-form-icon.uk-icon(uk-icon='mail')
+                      svg(width='20', height='20', style='margin-left: -20px', viewbox='0 0 20 20', xmlns='http://www.w3.org/2000/svg')
+                    input.uk-input(type='email', placeholder='Your email', required='')
+                |                 
+                div
+                  button.uk-button.uk-button-primary subscribe
+      |       
+      section.uk-section.uk-section-default.uk-section-small
+        .uk-container
+          div(uk-slider='')
+            ul.uk-slider-items.uk-child-width-1-1.uk-grid(class='uk-child-width-1-2@s uk-child-width-1-5@m')
+              li
+                .uk-grid-small.uk-flex-center(class='uk-flex-left@s', uk-grid='')
+                  div
+                    span(uk-icon='icon: star; ratio: 2.5;')
+                  |                   
+                  .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                    div &Lcy;&yucy;&bcy;&ocy;
+                    |                     
+                    .uk-text-meta &Kcy;&rcy;&acy;&scy;&icy;&vcy;&ocy;
+              |               
+              li
+                .uk-grid-small.uk-flex-center(class='uk-flex-left@s', uk-grid='')
+                  div
+                    span(uk-icon='icon: tag; ratio: 2.5;')
+                  |                   
+                  .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                    div &Dcy;&ocy;&rcy;&ocy;&gcy;&ocy;
+                    |                     
+                    .uk-text-meta &Vcy; &dcy;&ocy;&lcy;&lcy;&acy;&rcy;&acy;&khcy;
+              |               
+              li
+                .uk-grid-small.uk-flex-center(class='uk-flex-left@s', uk-grid='')
+                  div
+                    span(uk-icon='icon: database; ratio: 2.5;')
+                  |                   
+                  .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                    div &Bcy;&ocy;&gcy;&acy;&tcy;&ocy;
+                    |                     
+                    .uk-text-meta &Dcy;&iecy;&ncy;&softcy;&gcy;&icy; &mcy;&ncy;&ocy;&gcy;&ocy;
+              |               
+              li
+                .uk-grid-small.uk-flex-center(class='uk-flex-left@s', uk-grid='')
+                  div
+                    span(uk-icon='icon: comments; ratio: 2.5;')
+                  |                   
+                  .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                    div &Pcy;&ocy;&chcy;&icy;&rcy;&icy;&kcy;&acy;&iecy;&mcy;
+                    |                     
+                    .uk-text-meta &Pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&kcy;&acy;
+              |               
+              li
+                .uk-grid-small.uk-flex-center(class='uk-flex-left@s', uk-grid='')
+                  div
+                    span(uk-icon='icon: happy; ratio: 2.5;')
+                  |                   
+                  .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                    div &Scy; &dcy;&ucy;&shcy;&ocy;&jcy;
+                    |                     
+                    .uk-text-meta &Vcy;&iecy;&zhcy;&lcy;&icy;&vcy;&ocy;
+            |             
+            ul.uk-slider-nav.uk-dotnav.uk-flex-center.uk-margin-medium-top
+    |     
+    footer
+      section.uk-section.uk-section-secondary.uk-section-small.uk-light
+        .uk-container
+          .uk-grid-medium.uk-child-width-1-1(class='uk-child-width-1-4@m', uk-grid='')
+            div
+              ul.uk-iconnav
+                li
+                  a(href='#', title='Facebook', uk-icon='facebook')
+                |                 
+                li
+                  a(href='#', title='Twitter', uk-icon='twitter')
+                |                 
+                li
+                  a(href='#', title='YouTube', uk-icon='youtube')
+                |                 
+                li
+                  a(href='#', title='Instagram', uk-icon='instagram')
+              |               
+              p.uk-text-small
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+                | mauris eros. Nulla quis ante sed tortor efficitur facilisis.
+            |             
+            div
+              nav.uk-grid-small.uk-child-width-1-2(uk-grid='')
+                div
+                  ul.uk-nav.uk-nav-default
+                    li
+                      a(href='music.html') Music
+                    |                     
+                    li
+                      a(href='services.html') Services
+                    |                     
+                    li
+                      a(href='about.html') About
+                |                 
+                div
+                  ul.uk-nav.uk-nav-default
+                    li
+                      a(href='contacts.html') Contacts
+                    |                     
+                    li
+                      a(href='blog.html') Blog
+            |             
+            div
+              ul.uk-list.uk-text-small
+            |             
+            div
+              form.uk-form-stacked
+                label
+                  .uk-inline.uk-width-1-1
+                    a.uk-form-icon.uk-form-icon-flip(href='#', uk-icon='mail')
+                    input.uk-input(type='email', placeholder='Your email', required='')
+                  |                   
+                  .uk-form-label.uk-padding-small.uk-text-muted
+                    | Subscribe for new beats
+    |     
+    #nav-offcanvas(uk-offcanvas='overlay: true')
+      aside.uk-offcanvas-bar.uk-padding-remove
+        .uk-card.uk-card-default.uk-card-small.tm-shadow-remove
+          nav.uk-card-small.uk-card-body
+            ul.uk-nav-default.uk-nav-parent-icon.uk-list-divider(uk-nav='')
+              li
+                a(href='blog.html') Blog
+              |               
+              li
+                a(href='music.html') Music
+              |               
+              li
+                a(href='services.html') Services
+              |               
+              li
+                a(href='about.html') About
+              |               
+              li
+                a(href='contacts.html') Contacts
+          |           
+          nav.uk-card-body
+            ul.uk-iconnav.uk-flex-center
+              li
+                a(href='#', title='Facebook', uk-icon='facebook')
+              |               
+              li
+                a(href='#', title='Twitter', uk-icon='twitter')
+              |               
+              li
+                a(href='#', title='YouTube', uk-icon='youtube')
+              |               
+              li
+                a(href='#', title='Instagram', uk-icon='instagram')
