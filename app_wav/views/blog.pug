@@ -1,0 +1,92 @@
+extends _base.pug
+block title 
+  title Blog
+block content   
+  main
+    section.uk-section.uk-section-small(style='padding-top: 80px')
+      .uk-container
+        .uk-grid-medium.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
+          .uk-text-center.uk-first-column
+            ul.uk-breadcrumb.uk-flex-center.uk-margin-remove
+              li
+                a(href='./') Home
+              |                 
+              li
+                span Blog
+            |               
+            h1.uk-margin-small-top.uk-margin-remove-bottom Blog
+          |             
+          .uk-grid-margin.uk-first-column
+            .uk-grid-medium.uk-grid(uk-grid='')
+              section.uk-width-1-1.uk-first-column(class='uk-width-expand@m')
+                .uk-grid-medium.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
+                  .uk-first-column
+                    a(href='./article')
+                      article.uk-card.uk-card-default.uk-card-small.uk-article.uk-overflow-hidden.uk-box-shadow-hover-large.uk-height-1-1.tm-ignore-container
+                        .tm-ratio.tm-ratio-16-9
+                          figure.tm-media-box.uk-cover-container.uk-margin-remove
+                            img.uk-cover(src='dest/images/photo_2021-02-07_22-21-10.jpg' alt='Everything You Need to Know About VITALII' uk-cover='uk-cover' style='height: auto; width: 894px')
+                        |                           
+                        .uk-card-body
+                          .uk-article-body
+                            .uk-article-meta.uk-margin-xsmall-bottom
+                              time May 21, 2018
+                            |                               
+                            div
+                              h3.uk-margin-remove
+                                | Everything You Need to Know About VITALII
+                            |                               
+                            .uk-margin-small-top
+                              p
+                                | Lorem ipsum dolor sit amet, consectetur
+                                | adipiscing elit. Proin sodales eget ipsum id
+                                | aliquam. Nam consectetur interdum nibh eget
+                                | sodales. Cras volutpat efficitur ornare.
+                  |                     
+                  .uk-grid-margin.uk-first-column
+                    a(href='./article')
+                      article.uk-card.uk-card-default.uk-card-small.uk-article.uk-overflow-hidden.uk-box-shadow-hover-large.uk-height-1-1.tm-ignore-container
+                        .tm-ratio.tm-ratio-16-9
+                          figure.tm-media-box.uk-cover-container.uk-margin-remove
+                            img.uk-cover(src='dest/images/photo_2021-02-07_22-21-10.jpg' alt='Apple introduces VITALII' uk-cover='uk-cover' style='width: 1034px; height: auto')
+                        |                           
+                        .uk-card-body
+                          .uk-article-body
+                            .uk-article-meta.uk-margin-xsmall-bottom
+                              time May 21, 2018
+                            |                               
+                            div
+                              h3.uk-margin-remove
+                                | Apple introduces VITALII
+                            |                               
+                            .uk-margin-small-top
+                              p
+                                | Praesent consequat justo eu massa malesuada
+                                | posuere. Donec ultricies tincidunt nisl, sed
+                                | euismod nulla venenatis maximus. Maecenas sit
+                                | amet semper tellus. Pellentesque imperdiet
+                                | finibus sapien, a consectetur eros auctor a.
+              |                 
+              aside.uk-width-1-4.tm-aside-column(class='uk-visible@m')
+                section.uk-card.uk-card-default.uk-card-small.uk-sticky.uk-active.uk-sticky-fixed.uk-sticky-below(uk-sticky='offset: 90; bottom: true;' style='top: 57.2px; width: 277px')
+                  nav
+                    ul.uk-nav.uk-nav-default.tm-nav
+                      li.uk-active
+                        a(href='./blog') Blog
+                      |                         
+                      li
+                        a(href='./music') Music
+                      |                         
+                      li
+                        a(href='./services') Services
+                      |                         
+                      li
+                        a(href='./about') About
+                      |                         
+                      li
+                        a(href='./contacts') Contacts
+                |                   
+                .uk-sticky-placeholder(style='height: 245px; margin: 0px')
+  include _subscribe
+
+  include _ourTerms

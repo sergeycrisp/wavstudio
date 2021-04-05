@@ -1,0 +1,61 @@
+header(style='position: fixed; width: 100%; z-index: 999')
+    .uk-navbar-container.tm-navbar-container(uk-sticky='cls-active: tm-navbar-container-fixed;')
+        .uk-container(uk-navbar='')
+            .uk-navbar-left
+                button.uk-navbar-toggle(class='uk-hidden@m' uk-toggle='target: #nav-offcanvas' uk-navbar-toggle-icon='')
+                a.uk-navbar-item.uk-logo(href='./')
+                    img(src='./dest/images/logo.png' width='90' height='32' alt='Logo' style='filter: opacity(75%)')
+                |             
+                nav(class='uk-visible@m')
+                    ul.uk-navbar-nav
+                        li
+                            a(href='./blog') Blog
+                        |                 
+                        li
+                            a(href='./music') Music
+                        |                 
+                        li
+                            a(href='./services') Services
+                        |                 
+                        li
+                            a(href='./about') About
+                        |                 
+                        li
+                            a(href='./contacts') Contacts
+            |           
+            .uk-navbar-right
+                a.uk-navbar-item.uk-link-muted.tm-navbar-button(href='./account' uk-icon='icon: user; ratio:2')
+
+#nav-offcanvas(uk-offcanvas='overlay: true')
+    aside.uk-offcanvas-bar.uk-padding-remove
+        .uk-card.uk-card-default.uk-card-small.tm-shadow-remove
+            nav.uk-card-small.uk-card-body
+                ul.uk-nav-default.uk-nav-parent-icon.uk-list-divider(uk-nav='')
+                    li
+                        a(href='blog.html') Blog
+                    |               
+                    li
+                        a(href='music.html') Music
+                    |               
+                    li
+                        a(href='services.html') Services
+                    |               
+                    li
+                        a(href='about.html') About
+                    |               
+                    li
+                        a(href='contacts.html') Contacts
+            |           
+            nav.uk-card-body
+                ul.uk-iconnav.uk-flex-center
+                    li
+                        a(href='#' title='Facebook' uk-icon='facebook')
+                    |               
+                    li
+                        a(href='#' title='Twitter' uk-icon='twitter')
+                    |               
+                    li
+                        a(href='#' title='YouTube' uk-icon='youtube')
+                    |               
+                    li
+                        a(href='#' title='Instagram' uk-icon='instagram')

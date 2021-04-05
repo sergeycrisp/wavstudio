@@ -1,0 +1,30 @@
+doctype html(lang='en')
+head
+    meta(charset='UTF-8')
+    |     
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    |     
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    |     
+    block title 
+    |     
+    link(rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto:400,500')
+    |     
+    link(rel='stylesheet' href='./dest/styles/style.css')
+    |     
+    script(src='./dest/scripts/uikit.js')
+    |     
+    script(src='./dest/scripts/uikit-icons.js')
+    |     
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    |     
+    link(href='https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap' rel='stylesheet')
+body
+    include _header
+
+    // CONTENT
+    block content
+        h1 This is a placeholder heading
+
+    // FOOTER
+    include _footer

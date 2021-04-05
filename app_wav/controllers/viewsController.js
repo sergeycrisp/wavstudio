@@ -25,11 +25,47 @@ const catchAsync = require('../utils/catchAsync');
 // });
 
 exports.getError = catchAsync(async (req, res, next) => {
-  // 1) Get tour data from collection
+  res.status(404).render('404', {});
+});
 
-  // 2) Build template
-  // 3) Render that template using tour data from 1)
-  res.status(404).render('index', {});
+exports.getHome = catchAsync(async (req, res, next) => {
+  res.status(200).render('index', {});
+});
+
+exports.getAbout = catchAsync(async (req, res, next) => {
+  res.status(200).render('about', {});
+});
+
+exports.getAccount = catchAsync(async (req, res, next) => {
+  res.status(200).render('account', {});
+});
+
+exports.getBlog = catchAsync(async (req, res, next) => {
+  res.status(200).render('blog', {});
+});
+
+exports.getArticle = catchAsync(async (req, res, next) => {
+  res.status(200).render('article', {});
+});
+
+exports.getContacts = catchAsync(async (req, res, next) => {
+  res.status(200).render('contacts', {});
+});
+
+exports.getMusic = catchAsync(async (req, res, next) => {
+  res.status(200).render('music', {});
+});
+
+exports.getServices = catchAsync(async (req, res, next) => {
+  res.status(200).render('services', {});
+});
+
+exports.getSettings = catchAsync(async (req, res, next) => {
+  res.status(200).render('settings', {});
+});
+
+exports.getSign = catchAsync(async (req, res, next) => {
+  res.status(200).render('sign', {});
 });
 
 // eslint-disable-next-line node/no-unsupported-features/es-syntax
@@ -56,17 +92,17 @@ exports.getError = catchAsync(async (req, res, next) => {
 //   });
 // });
 
-exports.getLoginForm = (req, res) => {
-  res.status(200).render('login', {
-    title: 'Log into your account',
-  });
-};
+// exports.getLoginForm = (req, res) => {
+//   res.status(200).render('login', {
+//     title: 'Log into your account',
+//   });
+// };
 
-exports.getAccount = (req, res) => {
-  res.status(200).render('account', {
-    title: 'Your account',
-  });
-};
+// exports.getAccount = (req, res) => {
+//   res.status(200).render('account', {
+//     title: 'Your account',
+//   });
+// };
 
 // exports.getMyTours = catchAsync(async (req, res) => {
 //   // 1) Find all bookings

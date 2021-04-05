@@ -1,0 +1,130 @@
+extends _base.pug
+block title 
+  title WAV contacts
+block content 
+  main
+    section.uk-section.uk-section-small(style='padding-top: 80px')
+      .uk-container
+        .uk-grid-medium.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
+          .uk-text-center.uk-first-column
+            ul.uk-breadcrumb.uk-flex-center.uk-margin-remove
+              li
+                a(href='index.html') Home
+              |                 
+              li
+                span Contacts
+            |               
+            h1.uk-margin-small-top.uk-margin-remove-bottom
+              | Contacts
+          |             
+          .uk-grid-margin.uk-first-column
+            .uk-grid-medium.uk-grid(uk-grid='')
+              section.uk-width-1-1.uk-first-column(class='uk-width-expand@m')
+                article.uk-card.uk-card-default.uk-card-small.uk-card-body.uk-article.tm-ignore-container
+                  .uk-section.uk-light.uk-background-cover.uk-section-xlarge(style='\
+                  background: url(dest/images/girl6.jpg) top center\
+                  no-repeat;\
+                  text-align: center;\
+                  background-size: cover;\
+                  border-radius: 1%;\
+                  ')
+                  |                     
+                  .uk-child-width-1-2.uk-margin-top.uk-grid(class='uk-child-width-1-2@s' uk-grid='')
+                    section
+                      h3 Store
+                      |                         
+                      ul.uk-list
+                        li
+                          a.uk-link-heading(href='#')
+                            span.uk-margin-small-right.uk-icon
+                              svg#Capa_1(xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 511.933 511.933' height='20' viewbox='0 0 511.933 511.933' width='20')
+                                g
+                                  path(d='m491.638 33.873-491.638 198.879v28.747l140.811 43.47 44.533 142.87 35.549-.006 57.315-58.642 120.991 88.869 23.55-8.96 89.185-418.193zm-93.388 406.267-159.347-117.041-17.76 24.178 32.646 23.979-46.372 46.58-36.387-116.734 210.759-125.839-15.379-25.758-213.86 127.69-103.462-31.939 427.614-172.979z')
+                            span.tm-pseudo @wavbeatstudio
+                        |                           
+                        li
+                          a.uk-link-heading(href='#')
+                            span.uk-margin-small-right.uk-icon(uk-icon='mail')
+                            span.tm-pseudo wavbeatstudio@gmail.com
+                        |                           
+                        li
+                          a.uk-link-heading(href='https://www.beatstars.com/wavbeatstudio/tracks')
+                            span.uk-margin-small-right.uk-icon(uk-icon='cart')
+                            span.tm-pseudo beatstars
+                        |                           
+                        li
+                          div
+                            span.uk-margin-small-right.uk-icon(uk-icon='location')
+                            span St.&nbsp;Kyiv, Center&nbsp;Goroda&nbsp;28
+                    |                       
+                    section
+                      h3 Feedback
+                      |                         
+                      dl.uk-description-list
+                        dt Cooperation
+                        |                           
+                        dd
+                          a.uk-link-muted(href='#') wavbeatstudio@gmail.com
+                    |                       
+                    section.uk-width-1-1.uk-grid-margin.uk-first-column
+                      h2.uk-text-center Contact Us
+                      |                         
+                      form
+                        .uk-grid-small.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
+                          .uk-first-column
+                            label
+                              .uk-form-label.uk-form-label-required
+                                | Name
+                              |                                 
+                              input.uk-input(type='text' required='')
+                          |                             
+                          .uk-grid-margin.uk-first-column
+                            label
+                              .uk-form-label.uk-form-label-required
+                                | Email
+                              |                                 
+                              input.uk-input(type='email' required='')
+                          |                             
+                          .uk-grid-margin.uk-first-column
+                            label
+                              .uk-form-label Topic
+                              |                                 
+                              select.uk-select
+                                option Customer service
+                                |                                   
+                                option Tech support
+                                |                                   
+                                option Other
+                          |                             
+                          .uk-grid-margin.uk-first-column
+                            label
+                              .uk-form-label Message
+                              |                                 
+                              textarea.uk-textarea(rows='5')
+                          |                             
+                          .uk-text-center.uk-grid-margin.uk-first-column
+                            button.uk-button.uk-button-primary
+                              | Send
+              |                 
+              aside.uk-width-1-4.tm-aside-column(class='uk-visible@m')
+                section.uk-card.uk-card-default.uk-card-small.uk-sticky.uk-active.uk-sticky-fixed.uk-sticky-below(uk-sticky='offset: 90; bottom: true;' style='position: fixed; top: 90px; width: 277px')
+                  nav
+                    ul.uk-nav.uk-nav-default.tm-nav
+                      li
+                        a(href='blog') Blog
+                      |                         
+                      li
+                        a(href='music') Music
+                      |                         
+                      li
+                        a(href='services') Services
+                      |                         
+                      li
+                        a(href='about') About
+                      |                         
+                      li.uk-active
+                        a(href='contacts') Contacts
+                |                   
+                .uk-sticky-placeholder(style='height: 245px; margin: 0px')
+  include _subscribe
+  include _ourTerms

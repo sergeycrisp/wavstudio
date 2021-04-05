@@ -1,0 +1,242 @@
+extends _base.pug
+block title 
+  title Settings
+block content     
+  main(style='padding-top: 80px')
+    section.uk-section.uk-section-small
+      .uk-container
+        .uk-grid-medium(uk-grid='')
+          .uk-width-1-1.tm-aside-column(class='uk-width-1-4@m')
+            .uk-card.uk-card-default.uk-card-small.tm-ignore-container(uk-sticky='offset: 90; bottom: true; media: @m;')
+              .uk-card-header
+                .uk-grid-small.uk-child-width-1-1(uk-grid='')
+                  section
+                    .uk-width-1-3.uk-margin-auto.uk-visible-toggle.uk-position-relative.uk-border-circle.uk-overflow-hidden.uk-light(class='uk-width-1-4@s uk-width-1-2@m')
+                      img.uk-width-1-1(src='./dest/images/avatar.jpg')
+                      a.uk-link-reset.uk-overlay-primary.uk-position-cover.uk-hidden-hover(href='#')
+                        .uk-position-center
+                          span(uk-icon='icon: camera; ratio: 1.25;')
+                  |                     
+                  .uk-text-center
+                    .uk-h4.uk-margin-remove Thomas Bruns
+                    |                       
+                    .uk-text-meta Joined June 6, 2018
+                  |                     
+                  div
+                    .uk-grid-small.uk-flex-center(uk-grid='')
+                      div
+                        a.uk-button.uk-button-default.uk-button-small(href='settings')
+                          span.uk-margin-xsmall-right(uk-icon='icon: cog; ratio: .75;')
+                          span Change Me
+                      |                         
+                      div
+                        button.uk-button.uk-button-default.uk-button-small(href='#' title='Log out')
+                          span(uk-icon='icon: sign-out; ratio: .75;')
+              |                 
+              div
+                nav
+                  ul.uk-nav.uk-nav-default.tm-nav
+                    li.uk-active
+                      a(href='account')
+                        | Orders 
+                        span (2)
+          |             
+          .uk-width-1-1(class='uk-width-expand@m')
+            .uk-card.uk-card-default.uk-card-small.tm-ignore-container
+              header.uk-card-header
+                h1.uk-h2 Settings
+              |                 
+              .uk-card-body
+                form.uk-form-stacked
+                  .uk-grid-medium.uk-child-width-1-1(uk-grid='')
+                    fieldset.uk-fieldset
+                      legend.uk-h4 Email
+                      |                         
+                      .uk-grid-small.uk-child-width-1-1(uk-grid='')
+                        div
+                          label
+                            .uk-form-label Current Email
+                            |                               
+                            input.uk-input.uk-form-width-large(type='email' value='example@example.com' disabled='')
+                        |                           
+                        div(style='padding-top: 12px')
+                          label
+                            .uk-form-label New Email
+                            |                               
+                            input.uk-input.uk-form-width-large(type='email')
+                        |                           
+                        div(style='padding: 20px')
+                          button.uk-button.uk-button-primary
+                            | update email
+                    |                       
+                    fieldset.uk-fieldset
+                      legend.uk-h4 Password
+                      |                         
+                      .uk-grid-small.uk-child-width-1-1(uk-grid='')
+                        div
+                          label
+                            .uk-form-label Current Password
+                            |                               
+                            input.uk-input.uk-form-width-large(type='password')
+                        |                           
+                        div(style='padding-top: 12px')
+                          label
+                            .uk-form-label New Password
+                            |                               
+                            input.uk-input.uk-form-width-large(type='password')
+                        |                           
+                        div(style='padding-top: 12px')
+                          label
+                            .uk-form-label Confirm Password
+                            |                               
+                            input.uk-input.uk-form-width-large(type='password')
+                        |                           
+                        div(style='padding: 20px')
+                          button.uk-button.uk-button-primary
+                            | update password
+    |       
+    section.uk-section.uk-section-default.uk-section-small
+      .uk-container
+        div(uk-slider='')
+          ul.uk-slider-items.uk-child-width-1-1.uk-grid(class='uk-child-width-1-2@s uk-child-width-1-5@m')
+            li
+              .uk-grid-small.uk-flex-center(class='uk-flex-left@s' uk-grid='')
+                div
+                  span(uk-icon='icon: star; ratio: 2.5;')
+                |                   
+                .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                  div &Lcy;&yucy;&bcy;&ocy;
+                  |                     
+                  .uk-text-meta &Kcy;&rcy;&acy;&scy;&icy;&vcy;&ocy;
+            |               
+            li
+              .uk-grid-small.uk-flex-center(class='uk-flex-left@s' uk-grid='')
+                div
+                  span(uk-icon='icon: tag; ratio: 2.5;')
+                |                   
+                .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                  div &Dcy;&ocy;&rcy;&ocy;&gcy;&ocy;
+                  |                     
+                  .uk-text-meta &Vcy; &dcy;&ocy;&lcy;&lcy;&acy;&rcy;&acy;&khcy;
+            |               
+            li
+              .uk-grid-small.uk-flex-center(class='uk-flex-left@s' uk-grid='')
+                div
+                  span(uk-icon='icon: database; ratio: 2.5;')
+                |                   
+                .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                  div &Bcy;&ocy;&gcy;&acy;&tcy;&ocy;
+                  |                     
+                  .uk-text-meta &Dcy;&iecy;&ncy;&softcy;&gcy;&icy; &mcy;&ncy;&ocy;&gcy;&ocy;
+            |               
+            li
+              .uk-grid-small.uk-flex-center(class='uk-flex-left@s' uk-grid='')
+                div
+                  span(uk-icon='icon: comments; ratio: 2.5;')
+                |                   
+                .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                  div &Pcy;&ocy;&chcy;&icy;&rcy;&icy;&kcy;&acy;&iecy;&mcy;
+                  |                     
+                  .uk-text-meta &Pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&kcy;&acy;
+            |               
+            li
+              .uk-grid-small.uk-flex-center(class='uk-flex-left@s' uk-grid='')
+                div
+                  span(uk-icon='icon: happy; ratio: 2.5;')
+                |                   
+                .uk-text-center(class='uk-text-left@s uk-width-expand@s')
+                  div &Scy; &dcy;&ucy;&shcy;&ocy;&jcy;
+                  |                     
+                  .uk-text-meta &Vcy;&iecy;&zhcy;&lcy;&icy;&vcy;&ocy;
+          |             
+          ul.uk-slider-nav.uk-dotnav.uk-flex-center.uk-margin-medium-top
+  |     
+  footer
+    section.uk-section.uk-section-secondary.uk-section-small.uk-light
+      .uk-container
+        .uk-grid-medium.uk-child-width-1-1(class='uk-child-width-1-4@m' uk-grid='')
+          div
+            ul.uk-iconnav
+              li
+                a(href='#' title='Facebook' uk-icon='facebook')
+              |                 
+              li
+                a(href='#' title='Twitter' uk-icon='twitter')
+              |                 
+              li
+                a(href='#' title='YouTube' uk-icon='youtube')
+              |                 
+              li
+                a(href='#' title='Instagram' uk-icon='instagram')
+            |               
+            p.uk-text-small
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+              | mauris eros. Nulla quis ante sed tortor efficitur facilisis.
+          |             
+          div
+            nav.uk-grid-small.uk-child-width-1-2(uk-grid='')
+              div
+                ul.uk-nav.uk-nav-default
+                  li
+                    a(href='music') Music
+                  |                     
+                  li
+                    a(href='services') Services
+                  |                     
+                  li
+                    a(href='about') About
+              |                 
+              div
+                ul.uk-nav.uk-nav-default
+                  li
+                    a(href='contacts') Contacts
+                  |                     
+                  li
+                    a(href='blog') Blog
+          |             
+          div
+            ul.uk-list.uk-text-small
+          |             
+          div
+            form.uk-form-stacked
+              label
+                .uk-inline.uk-width-1-1
+                  a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='mail')
+                  input.uk-input(type='email' placeholder='Your email' required='')
+                |                   
+                .uk-form-label.uk-padding-small.uk-text-muted
+                  | Subscribe for new beats
+  |     
+  #nav-offcanvas(uk-offcanvas='overlay: true')
+    aside.uk-offcanvas-bar.uk-padding-remove
+      .uk-card.uk-card-default.uk-card-small.tm-shadow-remove
+        nav.uk-card-small.uk-card-body
+          ul.uk-nav-default.uk-nav-parent-icon.uk-list-divider(uk-nav='')
+            li
+              a(href='blog') Blog
+            |               
+            li
+              a(href='music') Music
+            |               
+            li
+              a(href='services') Services
+            |               
+            li
+              a(href='about') About
+            |               
+            li
+              a(href='contacts') Contacts
+        |           
+        nav.uk-card-body
+          ul.uk-iconnav.uk-flex-center
+            li
+              a(href='#' title='Facebook' uk-icon='facebook')
+            |               
+            li
+              a(href='#' title='Twitter' uk-icon='twitter')
+            |               
+            li
+              a(href='#' title='YouTube' uk-icon='youtube')
+            |               
+            li
+              a(href='#' title='Instagram' uk-icon='instagram')

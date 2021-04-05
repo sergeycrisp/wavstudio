@@ -1,0 +1,168 @@
+extends _base.pug
+block title 
+  title WAV Studio
+block content
+  main
+    section.uk-section.uk-section-small(style='padding-top: 80px')
+      .uk-container
+        .uk-grid-medium.uk-child-width-1-1(uk-grid='')
+          section.uk-text-center(style='margin-bottom: 30px')
+            ul.uk-breadcrumb.uk-flex-center.uk-margin-remove
+              li
+                a(href='index.html') Home
+              |                 
+              li
+                span About
+          |             
+          section
+            div
+              article.uk-card.uk-card-default.uk-card-body.uk-article.tm-ignore-container
+                header.uk-text-center
+                  h1.uk-article-title About
+                |                   
+                .uk-article-body
+                  p.uk-text-lead.uk-text-center
+                    | Urabitur justo diam, auctor vitae ornare sit amet,
+                    | accumsan sed neque. Curabitur efficitur lacinia euismod.
+                    | Nunc dictum sagittis lacus. Etiam ultrices nulla orci, in
+                    | ultrices risus.
+                  |                     
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    | Maecenas ac tortor sit amet nisi malesuada commodo.
+                    | Phasellus et tempus justo. Sed iaculis dignissim lacinia.
+                    | Nulla id felis vel ligula tempus sodales vel a ante. Lorem
+                    | ipsum dolor sit amet, consectetur adipiscing elit.
+                    | Maecenas quis neque ac elit lacinia laoreet. Sed dolor
+                    | sem, rutrum ac egestas non, tempor nec eros. Etiam
+                    | lobortis porta viverra. Etiam ut suscipit sem, a volutpat
+                    | mi. Maecenas euismod a lectus ut dapibus. Nulla mattis
+                    | diam et leo lacinia dignissim.
+                  |                     
+                  h2.uk-text-center Our principles
+                  |                     
+                  ul.uk-list.uk-list-bullet
+                    li
+                      | Vestibulum ut mollis est. Fusce iaculis mauris ut tortor
+                      | convallis sollicitudin. Suspendisse porta nulla nibh, id
+                      | lacinia lacus tempus ut. Morbi non arcu aliquam,
+                      | placerat sapien a, luctus diam. Etiam mattis cursus sem,
+                      | eu maximus nisi bibendum nec. Vivamus ut turpis augue.
+                      | Phasellus vehicula risus sit amet mi luctus malesuada.
+                    |                       
+                    li
+                      | Curabitur justo diam, auctor vitae ornare sit amet,
+                      | accumsan sed neque. Curabitur efficitur lacinia euismod.
+                      | Nunc dictum sagittis lacus. Etiam ultrices nulla orci,
+                      | in ultrices risus tincidunt ac. Cras et maximus mauris.
+                      | Morbi aliquam efficitur maximus. Aenean orci diam,
+                      | auctor a mattis eu, consectetur id urna.
+                    |                       
+                    li
+                      | Morbi faucibus mattis ante. Donec varius neque sem, nec
+                      | convallis mi dictum ut. Duis sit amet massa ac eros
+                      | luctus egestas. Proin hendrerit aliquam metus, ac
+                      | tincidunt risus viverra at. In viverra, ligula in
+                      | facilisis interdum, dui arcu varius purus, eu blandit mi
+                      | mi ut diam. Phasellus finibus metus sit amet lobortis
+                      | dapibus. Nunc fringilla ac erat vitae elementum. Donec
+                      | sagittis odio non mi vestibulum accumsan.
+                  |                     
+                  h2.uk-text-center Our team
+                  |                     
+                  .uk-child-width-1-1.uk-grid(class='uk-child-width-1-2@s uk-child-width-1-3@m' uk-grid='')
+                    .uk-first-column
+                      .uk-grid-small.uk-flex-middle.uk-grid(uk-grid='')
+                        .uk-first-column
+                          img(src='dest/images/about/thomas.svg' alt='Thomas Bruns' width='80' height='80')
+                        |                           
+                        .uk-width-expand
+                          div Thomas Bruns
+                          |                             
+                          .uk-text-meta Co-founder &amp; CEO
+                    |                       
+                    div
+                      .uk-grid-small.uk-flex-middle.uk-grid(uk-grid='')
+                        .uk-first-column
+                          img(src='dest/images/about/george.svg' alt='George Clanton' width='80' height='80')
+                        |                           
+                        .uk-width-expand
+                          div George Clanton
+                          |                             
+                          .uk-text-meta
+                            | Co-founder &amp; President
+                    |                       
+                    div
+                      .uk-grid-small.uk-flex-middle.uk-grid(uk-grid='')
+                        .uk-first-column
+                          img(src='dest/images/about/martin.svg' alt='Martin Cade' width='80' height='80')
+                        |                           
+                        .uk-width-expand
+                          div Martin Cade
+                          |                             
+                          .uk-text-meta Co-founder &amp; CTO
+                    |                       
+                    .uk-grid-margin.uk-first-column
+                      .uk-grid-small.uk-flex-middle.uk-grid(uk-grid='')
+                        .uk-first-column
+                          img(src='dest/images/about/carol.svg' alt='Carol Issa' width='80' height='80')
+                        |                           
+                        .uk-width-expand
+                          div Carol Issa
+                          |                             
+                          .uk-text-meta
+                            | Former Commercial Director
+                    |                       
+                    .uk-grid-margin
+                      .uk-grid-small.uk-flex-middle.uk-grid(uk-grid='')
+                        .uk-first-column
+                          img(src='dest/images/about/patricia.svg' alt='Patricia Kirk' width='80' height='80')
+                        |                           
+                        .uk-width-expand
+                          div Patricia Kirk
+                          |                             
+                          .uk-text-meta
+                            | Former Director of Strategy
+                    |                       
+                    .uk-grid-margin
+                      .uk-grid-small.uk-flex-middle.uk-grid(uk-grid='')
+                        .uk-first-column
+                          img(src='dest/images/about/nicole.svg' alt='Nicole Yokoyama' width='80' height='80')
+                        |                           
+                        .uk-width-expand
+                          div Nicole Yokoyama
+                          |                             
+                          .uk-text-meta
+                            | Product Marketing Manager
+                  |                     
+                  h2.uk-text-center Some stats
+                  |                     
+                  .uk-child-width-1-1.uk-text-center(class='uk-child-width-1-3@s' uk-grid='' style='margin-bottom: 30px')
+                    div
+                      .uk-heading-primary.uk-text-warning 5+
+                      |                         
+                      .uk-margin-small-top
+                        | years on the market
+                    |                       
+                    div
+                      .uk-heading-primary.uk-text-warning
+                        | 150+
+                      |                         
+                      .uk-margin-small-top orders per day
+                    |                       
+                    div
+                      .uk-heading-primary.uk-text-warning
+                        | 75000+
+                      |                         
+                      .uk-margin-small-top clients
+                  |                     
+                  .uk-section.uk-light.uk-background-cover.uk-section-xlarge(style='\
+                  background: url(dest/images/girl5.jpg) top center\
+                  no-repeat;\
+                  text-align: center;\
+                  background-size: cover;\
+                  border-radius: 1%;\
+                  ')    
+  include _subscribe
+  //Terms
+  include _ourTerms

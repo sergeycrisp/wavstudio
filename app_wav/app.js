@@ -45,7 +45,7 @@ app.options('*', cors());
 // app.options('/api/v1/tours/:id', cors());
 
 // Set security HTTP headers
-app.use(helmet());
+// app.use(helmet());
 
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
