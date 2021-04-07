@@ -77,19 +77,10 @@
 
       <nav class="cd-nav">
         <ul class="cd-top-nav">
-          <li><a href="#events/calendar">Orders</a></li>
-          <li><a href="#articles/comments">Contact me!</a></li>
-          <li class="has-children account">
-            <a href="#">
-              <img src="img/cd-avatar.png" alt="avatar" />
-              Account
-            </a>
-
-            <ul>
-              <li><a href="#">My Account</a></li>
-              <li><a href="#">Edit Account</a></li>
-              <li><a href="#">Logout</a></li>
-            </ul>
+          <li><a href="/orders">Orders</a></li>
+          <li><a href="/contactme">Contact me!</a></li>
+          <li class="account">
+            <a href="#"> Account</a>
           </li>
         </ul>
       </nav>
@@ -112,9 +103,9 @@
             <a href="#">Musics</a>
 
             <ul>
-              <li><a href="#images/upload">Upload new music</a></li>
-              <li><a href="#images/gallery">Manage music</a></li>
-              <li><a href="#images/albums">Manage tracks</a></li>
+              <li><a href="#music/upload">Upload new music</a></li>
+              <li><a href="#music/gallery">Manage music</a></li>
+              <li><a href="#music/albums">Manage tracks</a></li>
             </ul>
           </li>
 
@@ -122,8 +113,8 @@
             <a href="#">Services</a>
 
             <ul>
-              <li><a href="#widgets/tabs">View all services</a></li>
-              <li><a href="#widgets/carousel">Manage services</a></li>
+              <li><a href="#services/all">View all services</a></li>
+              <li><a href="#services/manage">Manage services</a></li>
             </ul>
           </li>
         </ul>
@@ -133,7 +124,126 @@
         <br />
         <br />
         <div id="page-content-wrapper uk-margin-top">
-          <div class="uk-container uk-container-medium" id="content"></div>
+          <div class="uk-container uk-container-medium" id="content">
+            <h2 class="uk-h3 uk-margin-remove-bottom">Welcome admin</h2>
+            <p class="uk-margin-large-bottom uk-margin-small-top">
+              What would you like to do today?
+            </p>
+
+            <div class="uk-child-width-expand@s" uk-grid>
+              <div>
+                <article class="uk-comment uk-margin-medium-bottom">
+                  <header
+                    class="uk-comment-hea7der uk-grid-medium uk-flex-top"
+                    uk-grid
+                  >
+                    <span uk-icon="file"></span>
+                    <div class="uk-width-expand">
+                      <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active">
+                          <a href="#articles">Articles</a>
+                        </li>
+                        <li><a href="#articles/new">Write a new article</a></li>
+                        <li><a href="#articles/manage">Manage Articles</a></li>
+                        <li>
+                          <a href="#articles/comments">Manage Comments</a>
+                        </li>
+                        <li>
+                          <a href="#articles/categories">Manage Categories</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </header>
+                </article>
+
+                <article class="uk-comment uk-margin-medium-bottom">
+                  <header
+                    class="uk-comment-hea7der uk-grid-medium uk-flex-top"
+                    uk-grid
+                  >
+                    <span uk-icon="bolt"></span>
+                    <div class="uk-width-expand">
+                      <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><a href="#">Musics</a></li>
+                        <li><a href="#images/upload">Upload new music</a></li>
+                        <li><a href="#images/gallery">Manage music</a></li>
+                        <li><a href="#images/albums">Manage tracks</a></li>
+                      </ul>
+                    </div>
+                  </header>
+                </article>
+                <article class="uk-comment uk-margin-medium-bottom">
+                  <header
+                    class="uk-comment-hea7der uk-grid-medium uk-flex-top"
+                    uk-grid
+                  >
+                    <span uk-icon="cart"></span>
+                    <div class="uk-width-expand">
+                      <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><a href="#">Orders</a></li>
+                        <li><a href="#images/upload">View all orders</a></li>
+                        <li><a href="#images/gallery">Manage orders</a></li>
+                      </ul>
+                    </div>
+                  </header>
+                </article>
+              </div>
+              <div>
+                <article class="uk-comment uk-margin-medium-bottom">
+                  <header
+                    class="uk-comment-hea7der uk-grid-medium uk-flex-top"
+                    uk-grid
+                  >
+                    <span uk-icon="user"></span>
+                    <div class="uk-width-expand">
+                      <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><a href="#">Accounts</a></li>
+                        <li><a href="#images/upload">View all accounts</a></li>
+                        <li><a href="#images/gallery">Manage accounts</a></li>
+                        <li>
+                          <a href="#images/gallery">See contact messages</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </header>
+                </article>
+                <article class="uk-comment uk-margin-medium-bottom">
+                  <header
+                    class="uk-comment-hea7der uk-grid-medium uk-flex-top"
+                    uk-grid
+                  >
+                    <span uk-icon="file-edit"></span>
+                    <div class="uk-width-expand">
+                      <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><a href="#">Services</a></li>
+                        <li><a href="#images/upload">View all services</a></li>
+                        <li><a href="#images/gallery">Manage services</a></li>
+                      </ul>
+                    </div>
+                  </header>
+                </article>
+                <article class="uk-comment uk-margin-medium-bottom">
+                  <header
+                    class="uk-comment-hea7der uk-grid-medium uk-flex-top"
+                    uk-grid
+                  >
+                    <span uk-icon="settings"></span>
+                    <div class="uk-width-expand">
+                      <ul class="uk-nav uk-nav-default">
+                        <li class="uk-active"><a href="#">Elements</a></li>
+                        <li><a href="#elements/buttons">Buttons</a></li>
+                        <li><a href="#elements/badges">Labels & Badges</a></li>
+                        <li><a href="#elements/cards">Cards and panels</a></li>
+                        <li><a href="#elements/icons">Icons</a></li>
+                        <li><a href="#elements/navs">Navigation menus</a></li>
+                        <li><a href="#elements/alerts">Alerts</a></li>
+                      </ul>
+                    </div>
+                  </header>
+                </article>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -141,55 +251,5 @@
     <script src="js/jquery.menu-aim.js"></script>
     <script src="js/main.js"></script>
     <!-- Resource jQuery -->
-
-    <script>
-      function get_content(tpl, div) {
-        $.get(
-          tpl,
-          function (result) {
-            $result = $(result);
-
-            $(div).html(result);
-            $result.find("script").appendTo(div);
-          },
-          "html"
-        );
-      }
-      crossroads.addRoute(
-        "/{section}/{subsection}",
-        function (section, subsection) {
-          get_content(
-            "templates/" + section + "/" + subsection + ".html",
-            "#content"
-          );
-        }
-      );
-      crossroads.addRoute("/", function (id) {
-        get_content("templates/home.html", "#content");
-      });
-
-      //setup hasher
-      function parseHash(newHash, oldHash) {
-        crossroads.parse(newHash);
-      }
-      hasher.initialized.add(parseHash); //parse initial hash
-      hasher.changed.add(parseHash); //parse hash changes
-      hasher.init(); //start listening for history change
-
-      (function ($) {
-        var $window = $(window),
-          $html = $("#wrapper");
-
-        function resize() {
-          if ($window.width() < 768) {
-            return $html.removeClass("toggled");
-          }
-
-          $html.addClass("toggled");
-        }
-
-        $window.resize(resize).trigger("resize");
-      })(jQuery);
-    </script>
   </body>
 </html>

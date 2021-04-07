@@ -1,0 +1,58 @@
+<a href="#" class="uk-button uk-button-link uk-icon tm-back"><span uk-icon="icon: chevron-left; "></span>Back</a>
+
+<h2 class="uk-h3 uk-margin-small-top">Labels and Badges</h2>
+<ul class="uk-breadcrumb uk-margin-remove-top uk-margin-medium-bottom">
+    <li><a href="#elements">Elements</a></li>
+    <li class="uk-disabled"><a href="#">Labels and Badges</a></li>
+</ul>
+
+<p uk-margin>
+
+    <a id="modal-dialog" class="uk-button uk-button-default" href="#">Dialog</a>
+
+    <a id="modal-alert" class="uk-button uk-button-default" href="#">Alert</a>
+
+    <a id="modal-confirm" class="uk-button uk-button-default" href="#">Confirm</a>
+
+    <a id="modal-prompt" class="uk-button uk-button-default" href="#">Prompt</a>
+
+    <script>
+        (function ($) {
+
+            $('#modal-dialog').on('click', function (e) {
+                e.preventDefault();
+                $(this).blur();
+                UIkit.modal.dialog('<p class="uk-modal-body">UIkit dialog!</p>');
+            });
+
+            $('#modal-alert').on('click', function (e) {
+                e.preventDefault();
+                $(this).blur();
+                UIkit.modal.alert('UIkit alert!').then(function() {
+                    console.log('Alert closed.')
+                });
+            });
+
+            $('#modal-confirm').on('click', function (e) {
+                e.preventDefault();
+                $(this).blur();
+                UIkit.modal.confirm('UIkit confirm!').then(function() {
+                    console.log('Confirmed.')
+                }, function () {
+                    console.log('Rejected.')
+                });
+            });
+
+            $('#modal-prompt').on('click', function (e) {
+                e.preventDefault();
+                $(this).blur();
+                UIkit.modal.prompt('Name:', 'Your name').then(function(name) {
+                    console.log('Prompted:', name)
+                });
+            });
+
+        })(jQuery);
+
+    </script>
+
+</p>
