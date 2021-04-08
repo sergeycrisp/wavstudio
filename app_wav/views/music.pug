@@ -4,7 +4,7 @@ mixin music(track)
   .uk-padding-small
     .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
       .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-        h3(style='margin: auto 0') Free
+        h3(style='margin: auto 0') FREE
       |                   
       .uk-padding-small
         iframe(width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
@@ -26,12 +26,15 @@ mixin music(track)
           |                       &middot;
           |                       
           a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke' title='My room - Mari x Zeke' target='_blank' style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
-      |                   
+      |             
+      .uk-text-center
+        a(style="color:black;")
+          span( uk-icon='icon: cart; ratio: 2;')     
       .uk-text-center
         a.uk-link-muted(href='./tag')
         |                     
         p.tags
-          b(style="color:black") 
+          b 
             a #Drill |  
             a #Trap |  
             a #RnB | 

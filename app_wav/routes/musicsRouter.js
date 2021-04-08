@@ -16,14 +16,11 @@ router
 //404 user can't see tag without tag property!
 router.route('/tag').get(musicController.aliasTag);
 
-router
-  .route('/')
-  .get(musicController.getAllMusics)
-  .post(
-    authController.protect,
-    authController.restrictTo('admin'),
-    musicController.createMusic
-  );
+router.route('/').get(musicController.getAllMusics).post(
+  // authController.protect,
+  // authController.restrictTo('admin'),
+  musicController.createMusic
+);
 
 router.route('/:id/like').patch(musicController.likeMusic);
 router

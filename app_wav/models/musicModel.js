@@ -10,16 +10,13 @@ const musicSchema = new mongoose.Schema(
     tags: [String],
     license: {
       type: String,
-      enum: ['free', 'sale', 'sale-nExc', 'our prod'],
-      default: 'sale',
-    },
-    author: String,
-    likes: {
-      type: Number,
-      default: 0,
+      enum: ['Free', 'Sale', 'sale (only unlimited)', 'Our prod'],
     },
     visible: { type: Boolean, default: true },
-    linkPurchase: String,
+    linkPurchase: {
+      type: String,
+      require: true,
+    },
   },
   {
     toJSON: { virtuals: true },
@@ -28,14 +25,14 @@ const musicSchema = new mongoose.Schema(
 );
 
 // DOCUMENT MIDDLEWARE: runs before .save() and .create()
-musicSchema.pre(/^find/, function(next) {
+musicSchema.pre(/^find/, function (next) {
   this.find({ visible: { $ne: false } });
 
   this.start = Date.now();
   next();
 });
 
-musicSchema.post(/^find/, function(docs, next) {
+musicSchema.post(/^find/, function (docs, next) {
   //Logs
   // eslint-disable-next-line no-console
   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
