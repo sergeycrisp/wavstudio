@@ -1,4 +1,132 @@
 extends _base.pug
+mixin service(serviceHeader,serviceText,priceUSD,exclusive,video,trackOut,prod,royalty,support)
+  div
+    .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
+      .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
+        h4(style="padding-top:5px") #{serviceHeader}
+      |                   
+      .uk-text-center.uk-padding-small
+        h1.uk-text-bold
+          | #{priceUSD} 
+          span.uk-text-small usd
+      |                   
+      .uk-padding-small
+        ul.uk-list.uk-list-divider.uk-margin-remove-bottom
+          if exclusive
+            li.uk-text-success
+              span.uk-margin-small-right.uk-icon( uk-icon='check')
+              | Exclusive rights
+          else 
+            li.uk-text-muted
+            span.uk-margin-small-right.uk-icon( uk-icon='close')
+            | Exclusive rights
+
+          if video
+            li.uk-text-success
+              span.uk-margin-small-right.uk-icon( uk-icon='check')
+              | Video rights
+          else 
+            li.uk-text-muted
+            span.uk-margin-small-right.uk-icon( uk-icon='close')
+            | Video rights
+
+          if trackOut
+            li.uk-text-success
+              span.uk-margin-small-right.uk-icon( uk-icon='check')
+              | TrackOut
+          else 
+            li.uk-text-muted
+            span.uk-margin-small-right.uk-icon( uk-icon='close')
+            | TrackOut
+
+          if prod
+            li.uk-text-success
+              span.uk-margin-small-right.uk-icon( uk-icon='check')
+              | Prod tag 
+          else 
+            li.uk-text-muted
+            span.uk-margin-small-right.uk-icon( uk-icon='close')
+            | Prod tag
+
+          if royalty
+            li.uk-text-success
+              span.uk-margin-small-right.uk-icon( uk-icon='check')
+              | Royalty %
+          else 
+            li.uk-text-muted
+            span.uk-margin-small-right.uk-icon( uk-icon='close')
+            | Royalty % 
+
+          if support
+            li.uk-text-success
+              span.uk-margin-small-right.uk-icon( uk-icon='check')
+              | Support
+          else 
+            li.uk-text-muted
+            span.uk-margin-small-right.uk-icon( uk-icon='close')
+            | Support
+
+      |                   
+      .uk-padding.uk-text-center 
+        a.uk-button.uk-button-large.uk-button-primary.uk-first-column(style='margin-left: 10px' href='#modal' + serviceHeader.split(' ')[0]+"order" uk-toggle='') Order
+        |                     
+        .uk-flex-top(uk-modal='' id='modal' + serviceHeader.split(' ')[0]+"order")
+          .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
+            button.uk-modal-close-default(type='button' uk-close='')
+            |                         
+            form(action='\
+            ')
+              h1.uk-text-lead.uk-text-primary
+                | Order our service
+              |                           
+              p
+                | Yo, pay me more
+                | elit. Distinctio numquam non qui sed nobis quaerat
+                | consequuntur necessitatibus laboriosam temporibus
+                | dicta! Vero corrupti voluptas perferendis ipsa
+                | asperiores facilis nobis a quo!
+              |                           
+              ul.uk-subnav.uk-subnav-pill(uk-switcher='')  
+                each service in servicesDB                     
+                  li(class={"uk-active":service.serviceHeader===serviceHeader})
+                    a(href='#', ) #{service.serviceHeader}
+                  |                                                        
+              .uk-margin
+                .uk-inline(style='width: 78%')
+                  span.uk-form-icon(uk-icon='icon: user')
+                  |                               
+                  input.uk-input(type='text' placeholder='First and last name')
+              |                           
+              .uk-margin
+                .uk-inline(style='width: 78%')
+                  span.uk-form-icon(uk-icon='icon: pencil')
+                  |                               
+                  input.uk-input(type='text' placeholder='Some words about order')
+              |                           
+              .uk-margin
+                .uk-inline(style='width: 78%')
+                  span.uk-form-icon(uk-icon='icon: mail')
+                  |                               
+                  input.uk-input(type='email' placeholder='Email adress')
+              |                           
+              .uk-margin
+                .uk-inline(style='width: 78%')
+                  span.uk-form-icon(uk-icon='icon: receiver')
+                  |                               
+                  input.uk-input(type='tel' placeholder='Your number')
+              |                           
+              button.uk-button.uk-button-secondary(style='width: 100%')
+                | Send
+        |                     
+        a(uk-icon='info' href='#modal' + serviceHeader.split(' ')[0], uk-toggle='')
+        |                     
+        uk-flex-top(uk-modal='', id= "modal"+serviceHeader.split(' ')[0])
+          .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
+            button.uk-modal-close-default(type='button' uk-close='')
+            |                         
+            p #{serviceText}
+            |  
+
 block title 
   title WAV music
 block content   
@@ -9,259 +137,11 @@ block content
         |           
         .uk-card.uk-card-default.tm-ignore-container
           .uk-grid-small.uk-grid(class='uk-child-width-1-4@m' uk-grid='')
-            div
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h5 &Ecy;&kcy;&scy;
-                |                   
-                .uk-text-center.uk-padding-small
-                  h1.uk-text-bold
-                    | 100 
-                    span.uk-text-small usd
-                |                   
-                .uk-padding-small
-                  ul.uk-list.uk-list-divider.uk-margin-remove-bottom
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Exclusive rights
-                    |                       
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Video content
-                    |                       
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Track out
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Prod tag
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Royalty
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Support
-                |                   
-                .uk-padding.uk-text-center
-                  a.uk-button.uk-button-large.uk-button-primary.uk-first-column(style='margin-left: 10px' href='#modal-center-order' uk-toggle='') &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy;
-                  |                     
-                  #modal-center-order.uk-flex-top(uk-modal='')
-                    .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
-                      button.uk-modal-close-default(type='button' uk-close='')
-                      |                         
-                      form(action='\
-                      ')
-                        h1.uk-text-lead.uk-text-primary
-                          | Order our service
-                        |                           
-                        p
-                          | Lorem ipsum dolor sit, amet consectetur adipisicing
-                          | elit. Distinctio numquam non qui sed nobis quaerat
-                          | consequuntur necessitatibus laboriosam temporibus
-                          | dicta! Vero corrupti voluptas perferendis ipsa
-                          | asperiores facilis nobis a quo!
-                        |                           
-                        ul.uk-subnav.uk-subnav-pill(uk-switcher='')
-                          li
-                            a(href='#') &Vcy; &ocy;&bcy;&shchcy;&iecy;&mcy;
-                          |                             
-                          li
-                            a(href='#') Services 
-                          |                             
-                          li
-                            a(href='#') Here
-                          |                             
-                          li
-                            a(href='#') Exclusive
-                          |                             
-                          li
-                            a(href='#') Design
-                          |                             
-                          li
-                            a(href='#') Custom
-                          |                             
-                          li
-                            a(href='#') Type
-                          |                             
-                          li
-                            a(href='#') Beatpack
-                        |                           
-                        .uk-margin
-                          .uk-inline(style='width: 78%')
-                            span.uk-form-icon(uk-icon='icon: user')
-                            |                               
-                            input.uk-input(type='text' placeholder='First and last name')
-                        |                           
-                        .uk-margin
-                          .uk-inline(style='width: 78%')
-                            span.uk-form-icon(uk-icon='icon: pencil')
-                            |                               
-                            input.uk-input(type='text' placeholder='Some words about order')
-                        |                           
-                        .uk-margin
-                          .uk-inline(style='width: 78%')
-                            span.uk-form-icon(uk-icon='icon: mail')
-                            |                               
-                            input.uk-input(type='email' placeholder='Email adress')
-                        |                           
-                        .uk-margin
-                          .uk-inline(style='width: 78%')
-                            span.uk-form-icon(uk-icon='icon: receiver')
-                            |                               
-                            input.uk-input(type='tel' placeholder='Your number')
-                        |                           
-                        button.uk-button.uk-button-secondary(style='width: 100%')
-                          | Send
-                  |                     
-                  a(uk-icon='info' href='#modal-center' uk-toggle='')
-                  |                     
-                  #modal-center.uk-flex-top(uk-modal='')
-                    .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
-                      button.uk-modal-close-default(type='button' uk-close='')
-                      |                         
-                      p &Dcy;&acy;, &ecy;&tcy;&ocy; &ocy;&pcy;&icy;&scy;&acy;&ncy;&icy;&iecy;
-            |               
-            div
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h5 &Ecy;&kcy;&scy;
-                |                   
-                .uk-text-center.uk-padding-small
-                  h1.uk-text-bold
-                    | 100 
-                    span.uk-text-small usd
-                |                   
-                .uk-padding-small
-                  ul.uk-list.uk-list-divider.uk-margin-remove-bottom
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Exclusive rights
-                    |                       
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Video content
-                    |                       
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Track out
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Prod tag
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Royalty
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Support
-                |                   
-                .uk-padding.uk-text-center
-                  a.uk-button.uk-button-large.uk-button-primary.uk-first-column(style='margin-left: 10px') &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy;
-                  |                     
-                  a(uk-icon='info' href='#modal-center' uk-toggle='')
-                  |                     
-                  #modal-center.uk-flex-top(uk-modal='')
-                    .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
-                      button.uk-modal-close-default(type='button' uk-close='')
-                      |                         
-                      p &IEcy;&shchcy;&iecy; &ocy;&dcy;&ncy;&ocy; &ocy;&pcy;&icy;&scy;&acy;&ncy;&icy;&iecy;
-            |               
-            div
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h5 &Ecy;&kcy;&scy;
-                |                   
-                .uk-text-center.uk-padding-small
-                  h1.uk-text-bold
-                    | 100 
-                    span.uk-text-small usd
-                |                   
-                .uk-padding-small
-                  ul.uk-list.uk-list-divider.uk-margin-remove-bottom
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Exclusive rights
-                    |                       
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Video content
-                    |                       
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Track out
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Prod tag
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Royalty
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Support
-                |                   
-                .uk-padding.uk-text-center
-                  a.uk-button.uk-button-large.uk-button-primary.uk-first-column(style='margin-left: 10px') Order
-                  |                     
-                  a(uk-icon='info' href='#modal-center' uk-toggle='')
-                  |                     
-                  #modal-center.uk-flex-top(uk-modal='')
-                    .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
-                      button.uk-modal-close-default(type='button' uk-close='')
-                      |                         
-                      p &Rcy;&acy;&bcy;&ocy;&tcy;&acy;&iecy;&tcy;
-            |               
-            div
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h5 &Ecy;&kcy;&scy;
-                |                   
-                .uk-text-center.uk-padding-small
-                  h1.uk-text-bold
-                    | 100 
-                    span.uk-text-small usd
-                |                   
-                .uk-padding-small
-                  ul.uk-list.uk-list-divider.uk-margin-remove-bottom
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Exclusive rights
-                    |                       
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Video content
-                    |                       
-                    li.uk-text-success
-                      span.uk-margin-small-right.uk-icon(uk-icon='check')
-                      | Track out
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Prod tag
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Royalty
-                    |                       
-                    li.uk-text-muted
-                      span.uk-margin-small-right.uk-icon(uk-icon='close')
-                      | Support
-                |                   
-                .uk-padding.uk-text-center
-                  a.uk-button.uk-button-large.uk-button-primary.uk-first-column(style='margin-left: 10px') &Zcy;&acy;&kcy;&acy;&zcy;&acy;&tcy;&softcy;
-                  |                     
-                  a(uk-icon='info' href='#modal-center' uk-toggle='')
-                  |                     
-                  #modal-center.uk-flex-top(uk-modal='')
-                    .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
-                      button.uk-modal-close-default(type='button' uk-close='')
-                      |                         
-                      p &Dcy;&ocy;&rcy;&ocy;&gcy;&ocy;&jcy; &dcy;&ncy;&iecy;&vcy;&ncy;&icy;&kcy;...
+            each license in servicesDB
+              +service(license.serviceHeader,license.serviceText,
+              license.priceUSD,license.rights.Exclusive,license.rights.Video,Exclusive,
+              license.rights.TrackOut,Exclusive,license.rights.Prod,Exclusive,license.rights.Video,
+              Royalty,license.rights.Support)
+
+
   include _ourTerms

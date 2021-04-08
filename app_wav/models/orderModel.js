@@ -40,7 +40,7 @@ const orderSchema = new mongoose.Schema({
   },
 });
 
-orderSchema.pre(/^find/, function(next) {
+orderSchema.pre(/^find/, function (next) {
   this.populate({
     path: 'customer',
     select: '-__v -passwordChangedAt',

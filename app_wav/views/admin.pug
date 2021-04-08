@@ -1,0 +1,226 @@
+doctype html.no-js(lang='en')
+head
+    meta(charset='UTF-8')
+    |     
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    |     
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css')
+    |     
+    link(rel='stylesheet' href='.assets/admin/css/theme.css')
+    // Resource style
+    link(rel='stylesheet' href='.assets/admin/css/nav.css')
+    // CSS reset
+    link(rel='stylesheet' href='.assets/admin/css/style.css')
+    // Resource style
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    |     
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.18/js/uikit.min.js')
+    |     
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.18/js/uikit-icons.min.js')
+    |     
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js')
+    |     
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js')
+    |     
+    link(rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css')
+    |     
+    link(href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet')
+    |     
+    link(href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet')
+    |     
+    title UIKit dark admin
+|   
+body
+    // TODO ADD ARTICLE, MUSIC, ORDERS, USER, CONTACT US MANAGEMENT
+    header.cd-main-header
+        a.cd-logo(href='#')  Admin Panel 
+        |       
+        a.cd-nav-trigger(href='#')
+            span
+        |       
+        nav.cd-nav
+            ul.cd-top-nav
+                li
+                    a(href='/orders') Orders
+                |           
+                li
+                    a(href='/contactme') Contact me!
+                |           
+                li.account
+                    a(href='#')  Account
+    |     
+    main.cd-main-content
+        nav.cd-side-nav
+            ul.uk-nav.uk-nav-default
+                li.cd-label Main
+                |           
+                li.has-children.overview
+                    a(href='#') Articles
+                    |             
+                    ul
+                        li
+                            a(href='#articles/new') Write a new article
+                        |               
+                        li
+                            a(href='#articles/manage') Manage Articles
+                        |               
+                        li
+                            a(href='#articles/comments') Manage Comments
+                        |               
+                        li
+                            a(href='#articles/categories') Manage Categories
+                |           
+                li.has-children
+                    a(href='#') Musics
+                    |             
+                    ul
+                        li
+                            a(href='#music/upload') Upload new music
+                        |               
+                        li
+                            a(href='#music/gallery') Manage music
+                        |               
+                        li
+                            a(href='#music/albums') Manage tracks
+                |           
+                li.has-children.musics
+                    a(href='#') Services
+                    |             
+                    ul
+                        li
+                            a(href='#services/all') View all services
+                        |               
+                        li
+                            a(href='#services/manage') Manage services
+        |       
+        .content-wrapper
+            br
+            |         
+            br
+            |         
+            div(id='page-content-wrapper uk-margin-top')
+                #content.uk-container.uk-container-medium
+                    h2.uk-h3.uk-margin-remove-bottom Welcome admin
+                    |             
+                    p.uk-margin-large-bottom.uk-margin-small-top
+                        | What would you like to do today?             
+                        div(class='uk-child-width-expand@s' uk-grid='')
+                            article.uk-comment.uk-margin-medium-bottom
+                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
+                                    span(uk-icon='file')
+                                    |                     
+                                    .uk-width-expand
+                                        ul.uk-nav.uk-nav-default
+                                            li.uk-active
+                                                a(href='#articles') Articles
+                                            |                         
+                                            li
+                                                a(href='#articles/new') Write a new article
+                                            |                         
+                                            li
+                                                a(href='#articles/manage') Manage Articles
+                                            |                         
+                                            li
+                                                a(href='#articles/comments') Manage Comments
+                                            |                         
+                                            li
+                                                a(href='#articles/categories') Manage Categories
+                            |                 
+                            article.uk-comment.uk-margin-medium-bottom
+                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
+                                    span(uk-icon='bolt')
+                                    |                     
+                                    .uk-width-expand
+                                        ul.uk-nav.uk-nav-default
+                                            li.uk-active
+                                                a(href='#') Musics
+                                            |                         
+                                            li
+                                                a(href='#images/upload') Upload new music
+                                            |                         
+                                            li
+                                                a(href='#images/gallery') Manage music
+                                            |                         
+                                            li
+                                                a(href='#images/albums') Manage tracks
+                            |                 
+                            article.uk-comment.uk-margin-medium-bottom
+                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
+                                    span(uk-icon='cart')
+                                    |                     
+                                    .uk-width-expand
+                                        ul.uk-nav.uk-nav-default
+                                            li.uk-active
+                                                a(href='#') Orders
+                                            |                         
+                                            li
+                                                a(href='#images/upload') View all orders
+                                            |                         
+                                            li
+                                                a(href='#images/gallery') Manage orders
+                        |               
+                        div
+                            article.uk-comment.uk-margin-medium-bottom
+                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
+                                    span(uk-icon='user')
+                                    |                     
+                                    .uk-width-expand
+                                        ul.uk-nav.uk-nav-default
+                                            li.uk-active
+                                                a(href='#') Accounts
+                                            |                         
+                                            li
+                                                a(href='#images/upload') View all accounts
+                                            |                         
+                                            li
+                                                a(href='#images/gallery') Manage accounts
+                                            |                         
+                                            li
+                                                a(href='#images/gallery') See contact messages
+                            |                 
+                            article.uk-comment.uk-margin-medium-bottom
+                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
+                                    span(uk-icon='file-edit')
+                                    |                     
+                                    .uk-width-expand
+                                        ul.uk-nav.uk-nav-default
+                                            li.uk-active
+                                                a(href='#') Services
+                                            |                         
+                                            li
+                                                a(href='#images/upload') View all services
+                                            |                         
+                                            li
+                                                a(href='#images/gallery') Manage services
+                            |                 
+                            article.uk-comment.uk-margin-medium-bottom
+                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
+                                    span(uk-icon='settings')
+                                    |                     
+                                    .uk-width-expand
+                                        ul.uk-nav.uk-nav-default
+                                            li.uk-active
+                                                a(href='#') Elements
+                                            |                         
+                                            li
+                                                a(href='#elements/buttons') Buttons
+                                            |                         
+                                            li
+                                                a(href='#elements/badges') Labels &amp; Badges
+                                            |                         
+                                            li
+                                                a(href='#elements/cards') Cards and panels
+                                            |                         
+                                            li
+                                                a(href='#elements/icons') Icons
+                                            |                         
+                                            li
+                                                a(href='#elements/navs') Navigation menus
+                                            |                         
+                                            li
+                                                a(href='#elements/alerts') Alerts
+    |     
+    script(src='js/jquery.menu-aim.js')
+    |     
+    script(src='js/main.js')
+    // Resource jQuery

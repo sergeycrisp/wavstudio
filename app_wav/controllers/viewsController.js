@@ -1,6 +1,7 @@
 // const Music = require('../models/musicModel');
 // const User = require('../models/userModel');
 // const Order = require('../models/orderModel');
+const Service = require('../models/serviceModel');
 const catchAsync = require('../utils/catchAsync');
 // const AppError = require('../utils/appError');
 
@@ -57,7 +58,8 @@ exports.getMusic = catchAsync(async (req, res, next) => {
 });
 
 exports.getServices = catchAsync(async (req, res, next) => {
-  res.status(200).render('services', {});
+  const servicesDB = await Service.find();
+  res.status(200).render('services', { servicesDB });
 });
 
 exports.getSettings = catchAsync(async (req, res, next) => {

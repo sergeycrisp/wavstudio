@@ -1,4 +1,44 @@
 extends _base.pug
+
+mixin music(track)
+  .uk-padding-small
+    .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
+      .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
+        h3(style='margin: auto 0') Free
+      |                   
+      .uk-padding-small
+        iframe(width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
+        |                     
+        div(style='\
+        font-size: 10px;\
+        color: #cccccc;\
+        line-break: anywhere;\
+        word-break: normal;\
+        overflow: hidden;\
+        white-space: nowrap;\
+        text-overflow: ellipsis;\
+        font-family: Interstate, Lucida Grande,\
+        Lucida Sans Unicode, Lucida Sans, Garuda, Verdana,\
+        Tahoma, sans-serif;\
+        font-weight: 100;\
+        ')
+          a(href='https://soundcloud.com/mari-tha-creator' title='Ay0itsMari' target='_blank' style='color: #cccccc; text-decoration: none') Ay0itsMari
+          |                       &middot;
+          |                       
+          a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke' title='My room - Mari x Zeke' target='_blank' style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
+      |                   
+      .uk-text-center
+        a.uk-link-muted(href='./tag')
+        |                     
+        p.tags
+          b(style="color:black") 
+            a #Drill |  
+            a #Trap |  
+            a #RnB | 
+            a #150Bpm | 
+            a #RnB | 
+            a #150Bpm
+
 block title 
   title WAV music
 block content  
@@ -33,189 +73,9 @@ block content
         |           
         .uk-card.uk-card-default.tm-ignore-container
           .uk-padding-small.uk-grid-small(style='margin: 0' class='uk-child-width-1-4@m' uk-grid='')
-            .uk-padding-small
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-primary.uk-light.uk-padding-small
-                  h3(style='margin: auto 0') Sale
-                |                   
-                .uk-padding-small
-                  iframe(width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
-                  |                     
-                  div(style='\
-                  font-size: 10px;\
-                  color: #cccccc;\
-                  line-break: anywhere;\
-                  word-break: normal;\
-                  overflow: hidden;\
-                  white-space: nowrap;\
-                  text-overflow: ellipsis;\
-                  font-family: Interstate, Lucida Grande,\
-                  Lucida Sans Unicode, Lucida Sans, Garuda, Verdana,\
-                  Tahoma, sans-serif;\
-                  font-weight: 100;\
-                  ')
-                    a(href='https://soundcloud.com/mari-tha-creator' title='Ay0itsMari' target='_blank' style='color: #cccccc; text-decoration: none') Ay0itsMari
-                    |                       
-                    a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke' title='My room - Mari x Zeke' target='_blank' style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
-                |                   
-                .uk-text-center
-                  a.uk-link-muted(href='like.com' uk-icon='icon: heart; ratio:2')
-                  |                     
-                  p.like-count 120
-            |               
-            .uk-padding-small
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h3(style='margin: auto 0') Free
-                |                   
-                .uk-padding-small
-                  iframe(width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
-                  |                     
-                  div(style='\
-                  font-size: 10px;\
-                  color: #cccccc;\
-                  line-break: anywhere;\
-                  word-break: normal;\
-                  overflow: hidden;\
-                  white-space: nowrap;\
-                  text-overflow: ellipsis;\
-                  font-family: Interstate, Lucida Grande,\
-                  Lucida Sans Unicode, Lucida Sans, Garuda, Verdana,\
-                  Tahoma, sans-serif;\
-                  font-weight: 100;\
-                  ')
-                    a(href='https://soundcloud.com/mari-tha-creator' title='Ay0itsMari' target='_blank' style='color: #cccccc; text-decoration: none') Ay0itsMari
-                    |                       &middot;
-                    |                       
-                    a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke' title='My room - Mari x Zeke' target='_blank' style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
-                |                   
-                .uk-text-center
-                  a.uk-link-muted(href='like.com' uk-icon='icon: heart; ratio:2')
-                  |                     
-                  p.like-count 120
-            |               
-            .uk-padding-small
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h3(style='margin: auto 0') Free
-                |                   
-                .uk-padding-small
-                  iframe(width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
-                  |                     
-                  div(style='\
-                  font-size: 10px;\
-                  color: #cccccc;\
-                  line-break: anywhere;\
-                  word-break: normal;\
-                  overflow: hidden;\
-                  white-space: nowrap;\
-                  text-overflow: ellipsis;\
-                  font-family: Interstate, Lucida Grande,\
-                  Lucida Sans Unicode, Lucida Sans, Garuda, Verdana,\
-                  Tahoma, sans-serif;\
-                  font-weight: 100;\
-                  ')
-                    a(href='https://soundcloud.com/mari-tha-creator' title='Ay0itsMari' target='_blank' style='color: #cccccc; text-decoration: none') Ay0itsMari
-                    |                       &middot;
-                    |                       
-                    a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke' title='My room - Mari x Zeke' target='_blank' style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
-                |                   
-                .uk-text-center
-                  a.uk-link-muted(href='like.com' uk-icon='icon: heart; ratio:2')
-                  |                     
-                  p.like-count 120
-            |               
-            .uk-padding-small
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h3(style='margin: auto 0') Free
-                |                   
-                .uk-padding-small
-                  iframe(width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
-                  |                     
-                  div(style='\
-                  font-size: 10px;\
-                  color: #cccccc;\
-                  line-break: anywhere;\
-                  word-break: normal;\
-                  overflow: hidden;\
-                  white-space: nowrap;\
-                  text-overflow: ellipsis;\
-                  font-family: Interstate, Lucida Grande,\
-                  Lucida Sans Unicode, Lucida Sans, Garuda, Verdana,\
-                  Tahoma, sans-serif;\
-                  font-weight: 100;\
-                  ')
-                    a(href='https://soundcloud.com/mari-tha-creator' title='Ay0itsMari' target='_blank' style='color: #cccccc; text-decoration: none') Ay0itsMari
-                    |                       &middot;
-                    |                       
-                    a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke' title='My room - Mari x Zeke' target='_blank' style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
-                |                   
-                .uk-text-center
-                  a.uk-link-muted(href='like.com' uk-icon='icon: heart; ratio:2')
-                  |                     
-                  p.like-count 120
-            |               
-            .uk-padding-small
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h3(style='margin: auto 0') Free
-                |                   
-                .uk-padding-small
-                  iframe(width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
-                  |                     
-                  div(style='\
-                  font-size: 10px;\
-                  color: #cccccc;\
-                  line-break: anywhere;\
-                  word-break: normal;\
-                  overflow: hidden;\
-                  white-space: nowrap;\
-                  text-overflow: ellipsis;\
-                  font-family: Interstate, Lucida Grande,\
-                  Lucida Sans Unicode, Lucida Sans, Garuda, Verdana,\
-                  Tahoma, sans-serif;\
-                  font-weight: 100;\
-                  ')
-                    a(href='https://soundcloud.com/mari-tha-creator' title='Ay0itsMari' target='_blank' style='color: #cccccc; text-decoration: none') Ay0itsMari
-                    |                       &middot;
-                    |                       
-                    a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke' title='My room - Mari x Zeke' target='_blank' style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
-                |                   
-                .uk-text-center
-                  a.uk-link-muted(href='like.com' uk-icon='icon: heart; ratio:2')
-                  |                     
-                  p.like-count 120
-            |               
-            .uk-padding-small
-              .uk-box-shadow-hover-large.uk-card.uk-card-default.uk-card-body.uk-padding-remove
-                .uk-text-center.uk-background-secondary.uk-light.uk-padding-small
-                  h3(style='margin: auto 0') Free
-                |                   
-                .uk-padding-small
-                  iframe(width='100%' height='166' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1000206076&color=%23ff0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true')
-                  |                     
-                  div(style='\
-                  font-size: 10px;\
-                  color: #cccccc;\
-                  line-break: anywhere;\
-                  word-break: normal;\
-                  overflow: hidden;\
-                  white-space: nowrap;\
-                  text-overflow: ellipsis;\
-                  font-family: Interstate, Lucida Grande,\
-                  Lucida Sans Unicode, Lucida Sans, Garuda, Verdana,\
-                  Tahoma, sans-serif;\
-                  font-weight: 100;\
-                  ')
-                    a(href='https://soundcloud.com/mari-tha-creator' title='Ay0itsMari' target='_blank' style='color: #cccccc; text-decoration: none') Ay0itsMari
-                    |                       &middot;
-                    |                       
-                    a(href='https://soundcloud.com/mari-tha-creator/my-room-mari-x-zeke' title='My room - Mari x Zeke' target='_blank' style='color: #cccccc; text-decoration: none') My room - Mari x Zeke
-                |                   
-                .uk-text-center
-                  a.uk-link-muted(href='like.com' uk-icon='icon: heart; ratio:2')
-                  |                     
-                  p.like-count 120
+            +music('c')             
+            +music('a')         
+            +music('b')              
+            +music('as')
   include _subscribe
   include _ourTerms                

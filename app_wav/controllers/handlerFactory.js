@@ -3,7 +3,7 @@ const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
 const User = require('../models/userModel');
 
-exports.deleteOne = Model =>
+exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndDelete(req.params.id);
 
@@ -19,7 +19,7 @@ exports.deleteOne = Model =>
     });
   });
 
-exports.likeOne = Model =>
+exports.likeOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndUpdate(req.params.id, {
       $inc: { likes: 1 },
@@ -36,7 +36,7 @@ exports.likeOne = Model =>
     });
   });
 
-exports.updateOne = Model =>
+exports.updateOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.findByIdAndUpdate(
       req.params.id,
@@ -61,7 +61,7 @@ exports.updateOne = Model =>
     });
   });
 
-exports.createOne = Model =>
+exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     //Only for order params
     req.body.customer = req.user._id;
@@ -100,7 +100,7 @@ exports.getOne = (Model, popOptions) =>
     });
   });
 
-exports.getAll = Model =>
+exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
     // To allow for nested GET reviews on tour (hack)
     let filter = {};
