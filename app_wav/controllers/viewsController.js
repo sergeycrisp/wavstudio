@@ -1,4 +1,4 @@
-// const Music = require('../models/musicModel');
+const Music = require('../models/musicModel');
 // const User = require('../models/userModel');
 // const Order = require('../models/orderModel');
 const Service = require('../models/serviceModel');
@@ -54,7 +54,15 @@ exports.getContacts = catchAsync(async (req, res, next) => {
 });
 
 exports.getMusic = catchAsync(async (req, res, next) => {
-  res.status(200).render('music', {});
+  const musicsDB = await Music.find();
+  musicsDB.forEach((track) => {
+    track.link = track.link
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>');
+    return track;
+  });
+
+  res.status(200).render('music', { musicsDB });
 });
 
 exports.getServices = catchAsync(async (req, res, next) => {
