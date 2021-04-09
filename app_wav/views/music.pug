@@ -17,7 +17,7 @@ mixin music(track)
         p.tags
           b 
             each tag in track.tags 
-              a ##{tag} 
+              a(href='?tags='+tag) ##{tag} 
 
 block title 
   title WAV music

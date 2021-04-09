@@ -4,7 +4,7 @@ const Music = require('../models/musicModel');
 const Service = require('../models/serviceModel');
 const catchAsync = require('../utils/catchAsync');
 // const AppError = require('../utils/appError');
-
+const APIFeatures = require('../utils/apiFeatures');
 // exports.alerts = (req, res, next) => {
 //   const { alert } = req.query;
 //   if (alert === 'booking')
@@ -54,7 +54,15 @@ exports.getContacts = catchAsync(async (req, res, next) => {
 });
 
 exports.getMusic = catchAsync(async (req, res, next) => {
-  const musicsDB = await Music.find();
+  const filter = {};
+
+  const features = new APIFeatures(
+    Music.find(filter),
+    req.query
+  ).filter();
+  // .paginate();
+
+  const musicsDB = await features.query;
   musicsDB.forEach((track) => {
     track.link = track.link
       .replace(/&lt;/g, '<')
