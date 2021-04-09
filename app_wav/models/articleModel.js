@@ -48,19 +48,19 @@ const articleSchema = new mongoose.Schema(
 // articleSchema.index({ slug: 1 });
 
 // DOCUMENT MIDDLEWARE: runs before .save() and .create()
-articleSchema.pre('save', function(next) {
+articleSchema.pre('save', function (next) {
   this.slug = slugify(this.name, { lower: true });
   next();
 });
 
 // QUERY MIDDLEWARE
-articleSchema.pre(/^find/, function(next) {
+articleSchema.pre(/^find/, function (next) {
   this.find({ visible: { $ne: false } });
   this.start = Date.now();
   next();
 });
 
-articleSchema.post(/^find/, function(docs, next) {
+articleSchema.post(/^find/, function (docs, next) {
   //Logs
   // eslint-disable-next-line no-console
   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
