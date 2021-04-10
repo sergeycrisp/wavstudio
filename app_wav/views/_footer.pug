@@ -48,8 +48,45 @@ footer
                     form.uk-form-stacked
                         label
                             .uk-inline.uk-width-1-1
-                                a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='mail')
-                                input.uk-input(type='email' placeholder='Your email' required='')
+                                a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='mail' onclick="sendEmailJSON()")
+                                input.uk-input(id="footerEmail" type='email' placeholder='Your email' required='')
                             |                   
                             .uk-form-label.uk-padding-small.uk-text-muted
                                 | Subscribe for new beats
+script. 
+    function sendEmailJSON(){
+        //Same as sendJSON but only for footer
+        let email = document.querySelector('#footerEmail');
+
+
+        // Creating a XHR object
+        let xhr = new XMLHttpRequest();
+        let url = "./api/v1/users/subscribe/emails";
+
+        // open a connection
+        xhr.open("POST", url, true);
+
+        // Set the request header i.e. which type of content you are sending
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        // Converting JSON data to string
+        var data = JSON.stringify({ "email": email.value });
+
+            // Create a state change callback
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 201) {
+
+                // Print received data from server
+                if (JSON.parse(this.responseText).status=="success"){
+                    UIkit.notification("<span uk-icon='icon: check'></span> Thank you!", {status:'success'});
+                    email.value=''
+                }
+
+                }
+            };
+
+
+        // Sending data with the request
+        xhr.send(data);
+
+        }
