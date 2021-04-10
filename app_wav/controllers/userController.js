@@ -3,6 +3,7 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const factory = require('./handlerFactory');
 const Order = require('../models/orderModel');
+const Email = require('../models/emailModel');
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
@@ -16,7 +17,6 @@ exports.getMe = (req, res, next) => {
   req.params.id = req.user.id;
   next();
 };
-
 exports.updateMe = catchAsync(async (req, res, next) => {
   // 1) Create error if user POSTs password data
   if (req.body.password || req.body.passwordConfirm) {
@@ -76,8 +76,10 @@ exports.createUser = (req, res) => {
 
 exports.getUser = factory.getOne(User);
 exports.getAllUsers = factory.getAll(User);
-
+exports.getAllEmails = factory.getAll(Email);
+exports.postEmail = factory.createOne(Email);
 // Do NOT update passwords with this!
+
 exports.updateUser = factory.updateOne(User);
 exports.deleteUser = factory.deleteOne(User);
 

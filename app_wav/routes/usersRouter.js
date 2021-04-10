@@ -4,6 +4,15 @@ const authController = require('./../controllers/authController');
 
 const router = express.Router();
 
+router
+  .route('/subscribe/emails')
+  .post(userController.postEmail)
+  .get(
+    authController.protect,
+    authController.restrictTo('admin'),
+    userController.getAllEmails
+  );
+
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 router.post('/forgotPassword', authController.forgotPassword);

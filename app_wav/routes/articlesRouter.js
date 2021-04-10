@@ -4,13 +4,6 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-router
-  .route('/top-5-liked')
-  .get(
-    articleController.aliasTopArticles,
-    articleController.getAllArticles
-  );
-
 //Find by tag
 router
   .route('/tag/:tag')
@@ -27,8 +20,6 @@ router
     authController.restrictTo('admin'),
     articleController.createArticle
   );
-
-router.route('/:id/like').patch(articleController.likeArticle);
 
 router
   .route('/:id')
