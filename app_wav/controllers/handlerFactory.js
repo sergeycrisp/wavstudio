@@ -64,10 +64,11 @@ exports.updateOne = (Model) =>
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     //Only for order params
-    if (req.baseUrl === '/api/v1/order') {
+    if (req.baseUrl === '/api/v1/orders') {
       req.body.customer = req.user._id;
-      req.body.service = req.params.id;
     }
+
+    console.log(req.body);
     const doc = await Model.create(req.body);
     if (req.body.service)
       await User.findByIdAndUpdate(req.body.customer, {

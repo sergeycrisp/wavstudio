@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.use(authController.protect);
 
-router.route('/service/:id').post(orderController.createOrder);
+router.route('/createOrder').post(orderController.createOrder);
 
 router.use(authController.restrictTo('admin'));
 router

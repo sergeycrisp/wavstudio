@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const orderSchema = new mongoose.Schema({
   service: {
     required: true,
-    type: mongoose.Schema.ObjectId,
-    ref: 'Service',
+    type: String,
   },
   customer: {
     type: mongoose.Schema.ObjectId,
@@ -20,7 +19,6 @@ const orderSchema = new mongoose.Schema({
     enum: [
       'canceled',
       "wait for manager's approve",
-
       'ready',
       'in work',
     ],
@@ -44,9 +42,6 @@ orderSchema.pre(/^find/, function (next) {
   this.populate({
     path: 'customer',
     select: '-__v -passwordChangedAt',
-  }).populate({
-    path: 'service',
-    select: '-__v -created -slug -visible',
   });
   next();
 });
