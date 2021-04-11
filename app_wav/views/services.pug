@@ -165,6 +165,8 @@ block content
       "price":awaitPrice.value,
       "text":words.value});
       xhr.onreadystatechange = function () {
+        UIkit.notification('asa');
+
         if (xhr.readyState === 4 && xhr.status === 201) {
 
           // Print received data from server
