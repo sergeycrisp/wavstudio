@@ -36,7 +36,7 @@ block content
                     li.uk-active
                       a(href='account')
                         | Orders 
-                        span (2)
+                        span (#{user.orders.length})
           |             
           .uk-width-1-1(class='uk-width-expand@m')
             .uk-card.uk-card-default.uk-card-small.tm-ignore-container
@@ -74,13 +74,13 @@ block content
                           label
                             .uk-form-label Current Password
                             |                               
-                            input.uk-input.uk-form-width-large(type='password' id="currentPwd")
+                            input.uk-input.uk-form-width-large(type='password' id="currentPwd" required)
                         |                           
                         div(style='padding-top: 12px')
                           label
                             .uk-form-label New Password
                             |                               
-                            input.uk-input.uk-form-width-large(type='password' id="newPwd")
+                            input.uk-input.uk-form-width-large(type='password' id="newPwd" required)
                         |                                                
                         div(style='padding: 20px')
                           p.uk-button.uk-button-primary(onclick="updatePassword()" id="updatePassword")

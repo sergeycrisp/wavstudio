@@ -187,6 +187,9 @@ const updatePassword = async () => {
     UIkit.notification("That's not fine. Check passwords", {
       status: 'fail',
     });
+    window.setTimeout(() => {
+      location.assign('/sign');
+    }, 100);
   }
 
   // window.setTimeout(() => {

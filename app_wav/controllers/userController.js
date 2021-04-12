@@ -97,32 +97,32 @@ exports.updateMyOrder = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.cancelMyOrder = catchAsync(async (req, res, next) => {
-  await Order.findByIdAndUpdate(req.params.orderId, {
-    status: 'canceled',
-  });
-  res.status(200).json({
-    status: 'success',
-    data: {
-      text: 'order canceled',
-    },
-  });
-});
+// exports.cancelMyOrder = catchAsync(async (req, res, next) => {
+//   await Order.findByIdAndUpdate(req.params.orderId, {
+//     status: 'canceled',
+//   });
+//   res.status(200).json({
+//     status: 'success',
+//     data: {
+//       text: 'order canceled',
+//     },
+//   });
+// });
 
-exports.restrictToOwner = catchAsync(async (req, res, next) => {
-  try {
-    const order = await Order.findById(req.params.orderId);
+// exports.restrictToOwner = catchAsync(async (req, res, next) => {
+//   try {
+//     const order = await Order.findById(req.params.orderId);
 
-    console.log(req.user);
-    const userId = req.user._id;
-    const orderCustomerId = order.customer._id;
+//     console.log(req.user);
+//     const userId = req.user._id;
+//     const orderCustomerId = order.customer._id;
 
-    if (JSON.stringify(orderCustomerId) === JSON.stringify(userId)) {
-      next();
-    } else {
-      next(new AppError('Oh, this is not your order', 403));
-    }
-  } catch (e) {
-    next(new AppError('Something went wrong', 500));
-  }
-});
+//     if (JSON.stringify(orderCustomerId) === JSON.stringify(userId)) {
+//       next();
+//     } else {
+//       next(new AppError('Oh, this is not your order', 403));
+//     }
+//   } catch (e) {
+//     next(new AppError('Something went wrong', 500));
+//   }
+// });
