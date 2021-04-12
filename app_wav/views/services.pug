@@ -68,50 +68,8 @@ mixin service(serviceHeader,serviceText,priceUSD,exclusive,video,trackOut,prod,r
 
       |                   
       .uk-padding.uk-text-center 
-        a.uk-button.uk-button-large.uk-button-primary.uk-first-column(style='margin-left: 10px' href='#modal' + serviceHeader.split(' ')[0]+"order" uk-toggle='') Order
-        |                     
-        .uk-flex-top(uk-modal='' id='modal' + serviceHeader.split(' ')[0]+"order")
-          .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
-            button.uk-modal-close-default(type='button' uk-close='')
-            |                         
-            form(action='\
-            ')
-              h1.uk-text-lead.uk-text-primary
-                | Order our service
-              |                           
-              p
-                | Yo, pay me more
-                | elit. Distinctio numquam non qui sed nobis quaerat
-                | consequuntur necessitatibus laboriosam temporibus
-                | dicta! Vero corrupti voluptas perferendis ipsa
-                | asperiores facilis nobis a quo!
-              |                           
-              ul.uk-subnav.uk-subnav-pill(uk-switcher='')  
-                each service in servicesDB                     
-                  li(class={"uk-active":service.serviceHeader===serviceHeader} aria-expanded={"true":service.serviceHeader===serviceHeader})
-                    a(href='#', ) #{service.serviceHeader}
-                  |                                                        
+        a.uk-button.uk-button-large.uk-button-primary.uk-first-column(style='margin-left: 10px' href='#modalOrder' uk-toggle='' id="orderButton") Order
 
-              .uk-margin
-                .uk-inline(style='width: 78%')
-                  span.uk-form-icon(uk-icon='icon: pencil')
-                  |                               
-                  input.uk-input(type='text' placeholder='Some words about order' id="words")
-              |                           
-              .uk-margin
-                .uk-inline(style='width: 78%')
-                  span.uk-form-icon(uk-icon='icon: mail')
-                  |                               
-                  input.uk-input(type='email' placeholder='Contacts' id="contacts")
-              |                           
-              .uk-margin
-                .uk-inline(style='width: 78%')
-                  span.uk-form-icon(uk-icon='icon: credit-card')
-                  |                               
-                  input.uk-input(type='' placeholder='Awaiting price' id="awaitPrice")
-              |                           
-              button.uk-button.uk-button-secondary(style='width: 100%' onclick='sendServiceJSON()')
-                | Send
         |                     
         a(uk-icon='info' href='#modal' + serviceHeader.split(' ')[0], uk-toggle='')
         |                     
@@ -137,50 +95,46 @@ block content
               license.priceUSD,license.rights.Exclusive,license.rights.Video,Exclusive,
               license.rights.TrackOut,Exclusive,license.rights.Prod,Exclusive,license.rights.Video,
               Royalty,license.rights.Support)
+  .uk-flex-top(uk-modal='' id='modalOrder')
+    .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
+      button.uk-modal-close-default(type='button' uk-close='')
+      |                         
+      form(action='\
+      ')
+        h1.uk-text-lead.uk-text-primary
+          | Order our service
+        |                           
+        p
+          | Yo, pay me more
+          | elit. Distinctio numquam non qui sed nobis quaerat
+          | consequuntur necessitatibus laboriosam temporibus
+          | dicta! Vero corrupti voluptas perferendis ipsa
+          | asperiores facilis nobis a quo!
+        |                           
+        ul.uk-subnav.uk-subnav-pill(uk-switcher='')  
+          each service in servicesDB                     
+            li(class={"uk-active":service.serviceHeader===serviceHeader} aria-expanded={"true":service.serviceHeader===serviceHeader})
+              a(href='#', ) #{service.serviceHeader}
+            |                                                        
 
-
+        .uk-margin
+          .uk-inline(style='width: 78%')
+            span.uk-form-icon(uk-icon='icon: pencil')
+            |                               
+            input.uk-input(type='text' placeholder='Some words about order' id="words")
+        |                           
+        .uk-margin
+          .uk-inline(style='width: 78%')
+            span.uk-form-icon(uk-icon='icon: mail')
+            |                               
+            input.uk-input(type='email' placeholder='Contacts' id="contacts")
+        |                           
+        .uk-margin
+          .uk-inline(style='width: 78%')
+            span.uk-form-icon(uk-icon='icon: credit-card')
+            |                               
+            input.uk-input(type='' placeholder='Awaiting price' id="awaitPrice")
+        |                           
+        p.uk-button.uk-button-secondary(style='width: 100%' onclick='sendServiceJSON()')
+          | Send
   include _ourTerms
-
-  script. 
-    function sendServiceJSON(){
-
-      let words = document.querySelector('#words');
-      let contacts = document.querySelector('#contacts');
-      let awaitPrice = document.querySelector('#awaitPrice');
-      let service = document.querySelectorAll('[aria-expanded].uk-active')[0].children[0].innerText;
-      // Creating a XHR object
-      let xhr = new XMLHttpRequest();
-      let url = "./api/v1/orders/createOrder";
-
-      // open a connection
-      xhr.open("POST", url, true);
-
-      // Set the request header i.e. which type of content you are sending
-      xhr.setRequestHeader("Content-Type", "application/json");
-
-      // Converting JSON data to string
-      var data = JSON.stringify({   
-      "service":service ,
-      "contacts":contacts.value,
-      "price":awaitPrice.value,
-      "text":words.value});
-      xhr.onreadystatechange = function () {
-        UIkit.notification('asa');
-
-        if (xhr.readyState === 4 && xhr.status === 201) {
-
-          // Print received data from server
-          if (JSON.parse(this.responseText).status=="success"){
-            UIkit.notification("<span uk-icon='icon: check'></span> Thank you!", {status:'success'});
-            contacts.value='';
-            awaitPrice.value='';
-            words.value='';
-            service='';
-          }
-
-          }
-        };
-
-        // Sending data with the request
-        xhr.send(data);
-      }

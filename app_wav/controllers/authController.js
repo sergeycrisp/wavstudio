@@ -133,7 +133,6 @@ exports.protect = catchAsync(async (req, res, next) => {
       )
     );
   }
-
   // GRANT ACCESS TO PROTECTED ROUTE
   req.user = currentUser;
   res.locals.user = currentUser;
@@ -255,21 +254,21 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   // 1) Get user from collection
-  const user = await User.findById(req.user.id).select('+password');
-
+  const decoded = await promisify(jwt.verify)(
+    req.cookies.jwt,
+    process.env.JWT_SECRET
+  );
+  const user = await User.findById(decoded.id).select('+password');
   // 2) Check if POSTed current password is correct
   if (
-    !(await user.correctPassword(
-      req.body.passwordCurrent,
-      user.password
-    ))
+    !(await user.correctPassword(req.body.oldPassword, user.password))
   ) {
     return next(new AppError('Your current password is wrong.', 401));
   }
 
   // 3) If so, update password
   user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
+  user.passwordConfirm = user.password;
   await user.save();
   // User.findByIdAndUpdate will NOT work as intended!
 

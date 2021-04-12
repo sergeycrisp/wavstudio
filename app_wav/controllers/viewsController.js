@@ -1,5 +1,8 @@
+const { promisify } = require('util');
+const jwt = require('jsonwebtoken');
+
 const Music = require('../models/musicModel');
-// const User = require('../models/userModel');
+const User = require('../models/userModel');
 // const Order = require('../models/orderModel');
 const Service = require('../models/serviceModel');
 const catchAsync = require('../utils/catchAsync');
@@ -38,7 +41,24 @@ exports.getAbout = catchAsync(async (req, res, next) => {
 });
 
 exports.getAccount = catchAsync(async (req, res, next) => {
-  res.status(200).render('account', {});
+  // Find all orders
+  const decoded = await promisify(jwt.verify)(
+    req.cookies.jwt,
+    process.env.JWT_SECRET
+  );
+
+  const user = await User.findById(decoded.id);
+  res.status(200).render('account', { user: user });
+});
+
+exports.getSettings = catchAsync(async (req, res, next) => {
+  const decoded = await promisify(jwt.verify)(
+    req.cookies.jwt,
+    process.env.JWT_SECRET
+  );
+
+  const user = await User.findById(decoded.id);
+  res.status(200).render('settings', { user: user });
 });
 
 exports.getBlog = catchAsync(async (req, res, next) => {
@@ -78,10 +98,6 @@ exports.getServices = catchAsync(async (req, res, next) => {
   res.status(200).render('services', { servicesDB });
 });
 
-exports.getSettings = catchAsync(async (req, res, next) => {
-  res.status(200).render('settings', {});
-});
-
 exports.getSign = catchAsync(async (req, res, next) => {
   res.status(200).render('sign', {});
 });
@@ -109,18 +125,6 @@ exports.getSign = catchAsync(async (req, res, next) => {
 //     tour,
 //   });
 // });
-
-// exports.getLoginForm = (req, res) => {
-//   res.status(200).render('login', {
-//     title: 'Log into your account',
-//   });
-// };
-
-// exports.getAccount = (req, res) => {
-//   res.status(200).render('account', {
-//     title: 'Your account',
-//   });
-// };
 
 // exports.getMyTours = catchAsync(async (req, res) => {
 //   // 1) Find all bookings

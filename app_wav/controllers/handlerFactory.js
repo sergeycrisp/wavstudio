@@ -1,3 +1,6 @@
+const { promisify } = require('util');
+const jwt = require('jsonwebtoken');
+
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const APIFeatures = require('../utils/apiFeatures');
@@ -64,11 +67,18 @@ exports.updateOne = (Model) =>
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     //Only for order params
+
+    req.body = JSON.parse(req.body.data);
+
     if (req.baseUrl === '/api/v1/orders') {
-      req.body.customer = req.user._id;
+      // 2) Verification token
+      const decoded = await promisify(jwt.verify)(
+        req.body.token,
+        process.env.JWT_SECRET
+      );
+      req.body.customer = decoded.id;
     }
 
-    console.log(req.body);
     const doc = await Model.create(req.body);
     if (req.body.service)
       await User.findByIdAndUpdate(req.body.customer, {

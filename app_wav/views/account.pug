@@ -1,38 +1,37 @@
 extends _base.pug
-mixin order()
+mixin order(a)
   section.uk-card-body
     h3
       a.uk-link-heading(href='#')
-        | #36637649
-        span.uk-text-muted.uk-text-small from June 17, 2018
+        span.uk-text-muted.from #{a.createdAt}
     |                   
     table.uk-table.uk-table-small.uk-table-justify.uk-table-responsive.uk-table-divider.uk-margin-small-top.uk-margin-remove-bottom
       tbody
         tr
           th.uk-width-medium Service
           |                         
-          td Exclusive
+          td #{a.service}
         |                       
         tr
           th.uk-width-medium Contacts
           |                         
-          td inst - @grisha
+          td #{a.contacts}
         |                       
         tr
           th.uk-width-medium Text
           |                         
-          td Please source
+          td #{a.text}
         |                       
         tr
           th.uk-width-medium Total
           |                         
-          td $4896.00
+          td #{a.price}
         |                       
         tr
           th.uk-width-medium Status
           |                         
           td
-            span.uk-label.uk-label-danger Canceled
+            span.uk-label.uk-label-warning #{a.status}
 
 block title 
   title My account
@@ -53,9 +52,8 @@ block content
                           span(uk-icon='icon: camera; ratio: 1.25;')
                   |                     
                   .uk-text-center
-                    .uk-h4.uk-margin-remove Thomas Bruns
-                    |                       
-                    .uk-text-meta Joined June 6, 2018
+                    .uk-h4.uk-margin-remove #{user.name}
+
                   |                     
                   div
                     .uk-grid-small.uk-flex-center(uk-grid='')
@@ -73,11 +71,11 @@ block content
                     li.uk-active
                       a(href='account')
                         | Orders 
-                        span (2)
+                        span (#{user.orders.length})
           |             
           .uk-width-1-1(class='uk-width-expand@m')
             .uk-card.uk-card-default.uk-card-small.tm-ignore-container
               header.uk-card-header
                 h1.uk-h2 Orders
-              +order()
-              +order()               
+              each userOrder in user.orders
+                +order(userOrder) 

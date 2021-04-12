@@ -25,7 +25,7 @@ const orderSchema = new mongoose.Schema({
     default: "wait for manager's approve",
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
   text: {
