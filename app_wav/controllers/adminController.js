@@ -31,3 +31,7 @@ exports.deleteContact = catchAsync(async (req, res, next) => {
 exports.deleteEmail = catchAsync(async (req, res, next) => {
   res.status(200).render('deleteEmail', {});
 });
+
+exports.deleteArticle = catchAsync(async (req, res, next) => {
+  res.status(200).render('deleteArticle', {});
+});

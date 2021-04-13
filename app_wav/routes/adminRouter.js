@@ -29,5 +29,6 @@ router.get('/emails/delete', adminController.deleteEmail);
 router.get('/contact/delete', adminController.deleteContact);
 router.get('/orders/delete', adminController.deleteOrder);
 router.get('/users/delete', adminController.deleteUser);
+router.get('/articles/delete', adminController.deleteArticle);
 
 module.exports = router;
