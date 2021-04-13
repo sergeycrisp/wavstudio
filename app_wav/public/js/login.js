@@ -213,21 +213,10 @@ const updateEmail = async () => {
         { status: 'success' }
       );
       localStorage.setItem('jwt', res.data.token);
-
-      // window.setTimeout(() => {
-      //   location.assign('/account');
-      // }, 1);
     }
   } catch (e) {
     UIkit.notification('something went wrong', {
       status: 'fail',
     });
-    // window.setTimeout(() => {
-    //   location.assign('/sign');
-    // }, 1000);
   }
-
-  // window.setTimeout(() => {
-  //   location.assign('/');
-  // }, 0);
 };
