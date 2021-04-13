@@ -13,6 +13,15 @@ router
     userController.getAllEmails
   );
 
+router
+  .route('/subscribe/contactUs')
+  .post(userController.postContactForm)
+  .get(
+    authController.protect,
+    authController.restrictTo('admin'),
+    userController.getAllContactForms
+  );
+
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 router.post('/forgotPassword', authController.forgotPassword);

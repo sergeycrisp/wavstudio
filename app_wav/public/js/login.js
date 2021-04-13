@@ -138,14 +138,13 @@ const sendServiceJSON = async () => {
     // Creating req
     let url = './api/v1/orders/createOrder';
 
-    let data = JSON.stringify({
+    const res = await axios.post(url, {
       service: service,
       contacts: contacts.value,
       price: awaitPrice.value,
       text: words.value,
       token: localStorage.getItem('jwt'),
     });
-    const res = await axios.post(url, { data: data });
     if (res.data.status === 'success') {
       UIkit.notification(
         "<span uk-icon='icon: check'></span> Thank you!!",
@@ -160,8 +159,8 @@ const sendServiceJSON = async () => {
 
 const updatePassword = async () => {
   try {
-    oldPassword = document.getElementById('currentPwd').value;
-    password = document.getElementById('newPwd').value;
+    const oldPassword = document.getElementById('currentPwd').value;
+    const password = document.getElementById('newPwd').value;
     localStorage.setItem('jwt', '');
     console.log(oldPassword, password);
     const res = await axios({
@@ -199,7 +198,7 @@ const updatePassword = async () => {
 
 const updateEmail = async () => {
   try {
-    newEmail = document.getElementById('newMail').value;
+    const newEmail = document.getElementById('newMail').value;
     const res = await axios({
       method: 'PATCH',
       url: '/api/v1/users/updateMe',
@@ -214,6 +213,39 @@ const updateEmail = async () => {
       );
       localStorage.setItem('jwt', res.data.token);
     }
+  } catch (e) {
+    UIkit.notification('something went wrong', {
+      status: 'fail',
+    });
+  }
+};
+
+const sendContactForm = async () => {
+  try {
+    const name = document.getElementById('nameContact').value;
+    const email = document.getElementById('emailContact').value;
+    const topic = document.getElementById('topicContact').value;
+    const text = document.getElementById('textContact').value;
+    const res = await axios({
+      method: 'POST',
+      url: '/api/v1/users/subscribe/contactUs',
+      data: {
+        name: name,
+        email: email,
+        topic: topic,
+        text: text,
+      },
+    });
+    if (res.data.status === 'success') {
+      UIkit.notification(
+        "<span uk-icon='icon: check'></span> Success!",
+        { status: 'success' }
+      );
+      window.setTimeout(() => {
+        location.assign('/');
+      }, 200);
+    }
+    console.log(res.data);
   } catch (e) {
     UIkit.notification('something went wrong', {
       status: 'fail',

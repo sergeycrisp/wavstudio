@@ -4,6 +4,7 @@ const AppError = require('../utils/appError');
 const factory = require('./handlerFactory');
 const Order = require('../models/orderModel');
 const Email = require('../models/emailModel');
+const Contact = require('../models/contactModel');
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
@@ -77,7 +78,9 @@ exports.createUser = (req, res) => {
 exports.getUser = factory.getOne(User);
 exports.getAllUsers = factory.getAll(User);
 exports.getAllEmails = factory.getAll(Email);
+exports.getAllContactForms = factory.getAll(Contact);
 exports.postEmail = factory.createOne(Email);
+exports.postContactForm = factory.createOne(Contact);
 // Do NOT update passwords with this!
 
 exports.updateUser = factory.updateOne(User);
