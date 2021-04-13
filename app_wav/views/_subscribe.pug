@@ -16,24 +16,3 @@ section#target.uk-section.uk-section-primary.uk-section-small.uk-light
                     |                 
                     div
                         button.uk-button.uk-button-primary(onclick="sendJSON()") subscribe
-script. 
-    function sendJSON(){
-
-        let email = document.querySelector('#email');
-
-        // Creating a XHR object
-        let xhr = new XMLHttpRequest();
-        let url = "./api/v1/users/subscribe/emails";
-
-        // open a connection
-        xhr.open("POST", url, true);
-
-        // Set the request header i.e. which type of content you are sending
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        // Converting JSON data to string
-        var data = JSON.stringify({ "email": email.value });
-
-        // Sending data with the request
-        xhr.send(data);
-        }

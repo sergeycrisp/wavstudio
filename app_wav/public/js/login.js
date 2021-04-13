@@ -4,6 +4,9 @@ const login = async (email, password) => {
   try {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
+    if (!document.getElementById('loginEmail').checkValidity()) {
+      return;
+    }
 
     const res = await axios({
       method: 'POST',
@@ -38,7 +41,9 @@ const signUp = async (email, password) => {
     const passwordConfirm = document.getElementById(
       'signUPConfirmPassword'
     ).value;
-
+    if (!document.getElementById('signUPEmail').checkValidity()) {
+      return;
+    }
     const res = await axios({
       method: 'POST',
       url: '/api/v1/users/signup',
@@ -70,7 +75,11 @@ const forgotPassword = async () => {
   try {
     const email = document.getElementById('forgotPasswordEmail')
       .value;
-
+    if (
+      !document.getElementById('forgotPasswordEmail').checkValidity()
+    ) {
+      return;
+    }
     const res = await axios({
       method: 'POST',
       url: '/api/v1/users/forgotPassword',
@@ -199,6 +208,9 @@ const updatePassword = async () => {
 const updateEmail = async () => {
   try {
     const newEmail = document.getElementById('newMail').value;
+    if (!document.getElementById('newMail').checkValidity()) {
+      return;
+    }
     const res = await axios({
       method: 'PATCH',
       url: '/api/v1/users/updateMe',
@@ -226,6 +238,9 @@ const sendContactForm = async () => {
     const email = document.getElementById('emailContact').value;
     const topic = document.getElementById('topicContact').value;
     const text = document.getElementById('textContact').value;
+    if (!document.getElementById('emailContact').checkValidity()) {
+      return;
+    }
     const res = await axios({
       method: 'POST',
       url: '/api/v1/users/subscribe/contactUs',

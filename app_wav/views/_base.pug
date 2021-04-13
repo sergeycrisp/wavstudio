@@ -34,7 +34,7 @@ script.
     function sendJSON(){
 
         let email = document.querySelector('#email');
-
+        if (!email.checkValidity() ) {return; }
         // Creating a XHR object
         let xhr = new XMLHttpRequest();
         let url = "./api/v1/users/subscribe/emails";
