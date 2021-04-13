@@ -5,44 +5,6 @@ const Article = require('../models/articleModel');
 const factory = require('./handlerFactory');
 const AppError = require('../utils/appError');
 
-// const multerStorage = multer.memoryStorage();
-
-// const multerFilter = (req, file, cb) => {
-//   if (file.mimetype.startsWith('image')) {
-//     cb(null, true);
-//   } else {
-//     cb(
-//       new AppError('Not an image! Please upload only images.', 400),
-//       false
-//     );
-//   }
-// };
-
-// const upload = multer({
-//   storage: multerStorage,
-//   fileFilter: multerFilter,
-// });
-
-// exports.uploadArticleImages = upload.fields([
-//   { name: 'imageCover', maxCount: 1 },
-// ]);
-
-// exports.resizeArticleImages = catchAsync(async (req, res, next) => {
-//   console.log(req.files.imageCover);
-//   if (!req.files.imageCover) return next();
-//   // 1) Cover image
-//   req.body.imageCover = `articles-${
-//     req.params.id
-//   }-${Date.now()}-cover.jpg`;
-//   await sharp(req.files.imageCover[0].buffer)
-//     .resize(2000, 1333)
-//     .toFormat('jpg')
-//     .jpeg({ quality: 90 })
-//     .toFile(`public/img/articles/${req.body.imageCover}`);
-
-//   next();
-// });
-
 exports.aliasTopArticles = (req, res, next) => {
   req.query.limit = '5';
   req.query.sort = 'likes';
