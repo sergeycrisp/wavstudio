@@ -6,19 +6,17 @@ head
     |     
     link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css')
     |     
-    link(rel='stylesheet' href='.assets/admin/css/theme.css')
+    link(rel='stylesheet' href='./assets/admin/css/theme.css')
     // Resource style
-    link(rel='stylesheet' href='.assets/admin/css/nav.css')
+    link(rel='stylesheet' href='./assets/admin/css/nav.css')
     // CSS reset
-    link(rel='stylesheet' href='.assets/admin/css/style.css')
+    link(rel='stylesheet' href='./assets/admin/css/style.css')
     // Resource style
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     |     
     script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.18/js/uikit.min.js')
     |     
     script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.18/js/uikit-icons.min.js')
-    |     
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js')
     |     
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js')
     |     
@@ -41,58 +39,15 @@ body
         nav.cd-nav
             ul.cd-top-nav
                 li
-                    a(href='/orders') Orders
+                    a(href='./admin/orders') Orders
                 |           
                 li
-                    a(href='/contactme') Contact me!
+                    a(href='./admin/contactme') Contact me!
                 |           
                 li.account
-                    a(href='#')  Account
+                    a(href='/account')  Account
     |     
     main.cd-main-content
-        nav.cd-side-nav
-            ul.uk-nav.uk-nav-default
-                li.cd-label Main
-                |           
-                li.has-children.overview
-                    a(href='#') Articles
-                    |             
-                    ul
-                        li
-                            a(href='#articles/new') Write a new article
-                        |               
-                        li
-                            a(href='#articles/manage') Manage Articles
-                        |               
-                        li
-                            a(href='#articles/comments') Manage Comments
-                        |               
-                        li
-                            a(href='#articles/categories') Manage Categories
-                |           
-                li.has-children
-                    a(href='#') Musics
-                    |             
-                    ul
-                        li
-                            a(href='#music/upload') Upload new music
-                        |               
-                        li
-                            a(href='#music/gallery') Manage music
-                        |               
-                        li
-                            a(href='#music/albums') Manage tracks
-                |           
-                li.has-children.musics
-                    a(href='#') Services
-                    |             
-                    ul
-                        li
-                            a(href='#services/all') View all services
-                        |               
-                        li
-                            a(href='#services/manage') Manage services
-        |       
         .content-wrapper
             br
             |         
@@ -112,19 +67,14 @@ body
                                     .uk-width-expand
                                         ul.uk-nav.uk-nav-default
                                             li.uk-active
-                                                a(href='#articles') Articles
+                                                a(href='#') Articles
                                             |                         
                                             li
-                                                a(href='#articles/new') Write a new article
+                                                a(href='./admin/articles/create') Create a new article
                                             |                         
                                             li
-                                                a(href='#articles/manage') Manage Articles
-                                            |                         
-                                            li
-                                                a(href='#articles/comments') Manage Comments
-                                            |                         
-                                            li
-                                                a(href='#articles/categories') Manage Categories
+                                                a(href='./admin/articles/delete') Delete Article
+
                             |                 
                             article.uk-comment.uk-margin-medium-bottom
                                 header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
@@ -136,13 +86,13 @@ body
                                                 a(href='#') Musics
                                             |                         
                                             li
-                                                a(href='#images/upload') Upload new music
+                                                a(href='./admin/music/create') Upload new music
                                             |                         
                                             li
-                                                a(href='#images/gallery') Manage music
+                                                a(href='./admin/music/manage') Manage music
                                             |                         
                                             li
-                                                a(href='#images/albums') Manage tracks
+                                                a(href='./admin/music/delete') Delete music
                             |                 
                             article.uk-comment.uk-margin-medium-bottom
                                 header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
@@ -154,11 +104,41 @@ body
                                                 a(href='#') Orders
                                             |                         
                                             li
-                                                a(href='#images/upload') View all orders
+                                                a(href='./admin/orders/getAll') View all orders
                                             |                         
                                             li
-                                                a(href='#images/gallery') Manage orders
-                        |               
+                                                a(href='./admin/orders/manage') Manage orders
+                                            li
+                                                a(href='./admin/orders/delete') Delete orders
+                            article.uk-comment.uk-margin-medium-bottom
+                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
+                                    span(uk-icon='pencil')
+                                    |                     
+                                    .uk-width-expand
+                                        ul.uk-nav.uk-nav-default
+                                            li.uk-active
+                                                a(href='#') Contact me
+                                            |                         
+                                            li
+                                                a(href='./admin/contact/getAll') View all contact me
+                                            |
+                                            li
+                                                a(href='./admin/contact/delete') Delete contact me
+
+                            article.uk-comment.uk-margin-medium-bottom
+                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
+                                    span(uk-icon='mail')
+                                    |                     
+                                    .uk-width-expand
+                                        ul.uk-nav.uk-nav-default
+                                            li.uk-active
+                                                a(href='#') Emails
+                                            |                         
+                                            li
+                                                a(href='./admin/emails/getAll') View all emails
+                                            li
+                                                a(href='./admin/emails/delete') Delete orders
+
                         div
                             article.uk-comment.uk-margin-medium-bottom
                                 header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
@@ -170,13 +150,10 @@ body
                                                 a(href='#') Accounts
                                             |                         
                                             li
-                                                a(href='#images/upload') View all accounts
+                                                a(href='./admin/users/getAll') View all accounts
                                             |                         
                                             li
-                                                a(href='#images/gallery') Manage accounts
-                                            |                         
-                                            li
-                                                a(href='#images/gallery') See contact messages
+                                                a(href='./admin/users/delete') Delete accounts
                             |                 
                             article.uk-comment.uk-margin-medium-bottom
                                 header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
@@ -188,39 +165,7 @@ body
                                                 a(href='#') Services
                                             |                         
                                             li
-                                                a(href='#images/upload') View all services
+                                                a(href='./admin/services/getAll') View all services
                                             |                         
                                             li
-                                                a(href='#images/gallery') Manage services
-                            |                 
-                            article.uk-comment.uk-margin-medium-bottom
-                                header.uk-comment-hea7der.uk-grid-medium.uk-flex-top(uk-grid='')
-                                    span(uk-icon='settings')
-                                    |                     
-                                    .uk-width-expand
-                                        ul.uk-nav.uk-nav-default
-                                            li.uk-active
-                                                a(href='#') Elements
-                                            |                         
-                                            li
-                                                a(href='#elements/buttons') Buttons
-                                            |                         
-                                            li
-                                                a(href='#elements/badges') Labels &amp; Badges
-                                            |                         
-                                            li
-                                                a(href='#elements/cards') Cards and panels
-                                            |                         
-                                            li
-                                                a(href='#elements/icons') Icons
-                                            |                         
-                                            li
-                                                a(href='#elements/navs') Navigation menus
-                                            |                         
-                                            li
-                                                a(href='#elements/alerts') Alerts
-    |     
-    script(src='js/jquery.menu-aim.js')
-    |     
-    script(src='js/main.js')
-    // Resource jQuery
+                                                a(href='./admin/services/manageService') Manage services
