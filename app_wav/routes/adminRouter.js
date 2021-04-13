@@ -23,9 +23,9 @@ router.get('/services/getAll', serviceController.getAllServices);
 
 //Delete page
 router.get('/music/delete', adminController.deleteMusic);
-// router.get('/emails/delete', userController.getAllEmails);
-// router.get('/contact/delete', userController.getAllContactForms);
-// router.get('/orders/delete', orderController.getAllOrders);
+router.get('/emails/delete', adminController.deleteEmail);
+router.get('/contact/delete', adminController.deleteContact);
+router.get('/orders/delete', adminController.deleteOrder);
 router.get('/users/delete', adminController.deleteUser);
 
 module.exports = router;

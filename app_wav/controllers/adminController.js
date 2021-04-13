@@ -19,3 +19,15 @@ exports.deleteMusic = catchAsync(async (req, res, next) => {
 exports.deleteUser = catchAsync(async (req, res, next) => {
   res.status(200).render('deleteUser', {});
 });
+
+exports.deleteOrder = catchAsync(async (req, res, next) => {
+  res.status(200).render('deleteOrder', {});
+});
+
+exports.deleteContact = catchAsync(async (req, res, next) => {
+  res.status(200).render('deleteContact', {});
+});
+
+exports.deleteEmail = catchAsync(async (req, res, next) => {
+  res.status(200).render('deleteEmail', {});
+});

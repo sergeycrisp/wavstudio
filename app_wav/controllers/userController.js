@@ -85,6 +85,8 @@ exports.postContactForm = factory.createOne(Contact);
 
 exports.updateUser = factory.updateOne(User);
 exports.deleteUser = factory.deleteOne(User);
+exports.deleteEmail = factory.deleteOne(Email);
+exports.deleteContact = factory.deleteOne(Contact);
 
 exports.updateMyOrder = catchAsync(async (req, res, next) => {
   const filteredBody = filterObj(req.body, 'status', 'text');

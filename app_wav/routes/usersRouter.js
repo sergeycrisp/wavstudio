@@ -47,4 +47,19 @@ router
   .patch(userController.updateUser)
   .delete(userController.deleteUser);
 
+router
+  .route('/subscribe/emails/:id')
+  .delete(
+    authController.protect,
+    authController.restrictTo('admin'),
+    userController.deleteEmail
+  );
+
+router
+  .route('/subscribe/contactUs/:id')
+  .delete(
+    authController.protect,
+    authController.restrictTo('admin'),
+    userController.deleteContact
+  );
 module.exports = router;

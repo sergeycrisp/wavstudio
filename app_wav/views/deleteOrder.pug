@@ -1,0 +1,36 @@
+extends _adminChanges.pug
+block title 
+    title Delete order
+block page 
+    main 
+        section.uk-width-1-1.uk-grid-margin.uk-first-column
+            h2.uk-text-center Delete order by ID
+            |                         
+            form
+                .uk-grid-small.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
+                    .uk-first-column
+                        label
+                            .uk-form-label.uk-form-label-required
+                                | id
+                            |                                 
+                            input.uk-input(type='text' required='' id="deleteId")
+                    .uk-text
+                        button(onclick="sendDelete()")
+                            | Send
+    script.
+        const sendDelete = async () => {
+        try {
+            const id = document.getElementById('deleteId').value;
+
+            const res = await axios({
+                method: 'DELETE',
+                url: '/api/v1/orders/'+id,
+                data: {
+
+                },
+            }).then(result=>alert(result)).catch(e=>alert(e))
+
+        } catch (err) {
+            alert(err)
+        }
+        };
