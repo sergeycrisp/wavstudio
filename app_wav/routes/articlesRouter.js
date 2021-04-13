@@ -27,8 +27,6 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin'),
-    // articleController.uploadArticleImages,
-    // articleController.resizeArticleImages,
     articleController.updateArticle
   )
   .delete(

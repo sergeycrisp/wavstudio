@@ -22,6 +22,7 @@ const usersRouter = require('./routes/usersRouter');
 const musicsRouter = require('./routes/musicsRouter');
 const servicesRouter = require('./routes/servicesRouter');
 const viewRouter = require('./routes/viewRouter');
+const adminRouter = require('./routes/adminRouter');
 
 //creating server
 const app = express();
@@ -94,11 +95,11 @@ app.use((req, res, next) => {
 //ROUTES
 
 app.use('/', viewRouter);
+app.use('/admin', adminRouter);
 
 app.use('/api/v1/articles', articlesRouter);
 app.use('/api/v1/musics', musicsRouter);
 app.use('/api/v1/services', servicesRouter);
-
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/orders', ordersRouter);
 app.use('/api/v1/services', servicesRouter);

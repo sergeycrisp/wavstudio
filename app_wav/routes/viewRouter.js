@@ -1,6 +1,6 @@
 const express = require('express');
 const viewsController = require('../controllers/viewsController');
-// const authController = require('../controllers/authController');
+const authController = require('../controllers/authController');
 
 const router = express.Router();
 
@@ -17,7 +17,12 @@ router.get('/music', viewsController.getMusic);
 router.get('/services', viewsController.getServices);
 router.get('/settings', viewsController.getSettings);
 router.get('/sign', viewsController.getSign);
-router.get('/admin', viewsController.getAdmin);
+router.get(
+  '/admin',
+  authController.protect,
+  authController.restrictTo('admin'),
+  viewsController.getAdmin
+);
 
 // router.get(
 //   '/tour/:slug',
