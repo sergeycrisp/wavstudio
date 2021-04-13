@@ -30,6 +30,9 @@ block content
                       |                         
                       div
                         span.uk-button.uk-button-default.uk-button-small(uk-icon='sign-out' onclick="logout()")
+                      if  (user.role=="admin")
+                        div
+                          a.uk-button.uk-button-default.uk-button-small(href='/admin') admin page
               div
                 nav
                   ul.uk-nav.uk-nav-default.tm-nav

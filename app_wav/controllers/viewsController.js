@@ -40,6 +40,10 @@ exports.getAbout = catchAsync(async (req, res, next) => {
   res.status(200).render('about', {});
 });
 
+exports.getAdmin = catchAsync(async (req, res, next) => {
+  res.status(200).render('admin', {});
+});
+
 exports.getAccount = catchAsync(async (req, res, next) => {
   // Find all orders
   const decoded = await promisify(jwt.verify)(

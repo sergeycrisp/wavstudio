@@ -17,6 +17,7 @@ router.get('/music', viewsController.getMusic);
 router.get('/services', viewsController.getServices);
 router.get('/settings', viewsController.getSettings);
 router.get('/sign', viewsController.getSign);
+router.get('/admin', viewsController.getAdmin);
 
 // router.get(
 //   '/tour/:slug',
