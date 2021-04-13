@@ -15,3 +15,7 @@ const catchAsync = require('../utils/catchAsync');
 exports.deleteMusic = catchAsync(async (req, res, next) => {
   res.status(200).render('deleteM', {});
 });
+
+exports.deleteUser = catchAsync(async (req, res, next) => {
+  res.status(200).render('deleteUser', {});
+});
