@@ -16,7 +16,6 @@ const AppError = require('./utils/appError');
 
 const globalErrorHandler = require('./controllers/errorController');
 
-const articlesRouter = require('./routes/articlesRouter');
 const ordersRouter = require('./routes/ordersRouter');
 const usersRouter = require('./routes/usersRouter');
 const musicsRouter = require('./routes/musicsRouter');
@@ -97,7 +96,6 @@ app.use((req, res, next) => {
 app.use('/', viewRouter);
 app.use('/admin', adminRouter);
 
-app.use('/api/v1/articles', articlesRouter);
 app.use('/api/v1/musics', musicsRouter);
 app.use('/api/v1/services', servicesRouter);
 app.use('/api/v1/users', usersRouter);
