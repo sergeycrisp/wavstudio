@@ -33,7 +33,24 @@ exports.getError = catchAsync(async (req, res, next) => {
 });
 
 exports.getHome = catchAsync(async (req, res, next) => {
-  res.status(200).render('index', {});
+  const servicesDB = await Service.find();
+
+  const features = new APIFeatures(Music.find(), {
+    limit: 4,
+    page: 1,
+  })
+    .paginate()
+    .sort();
+
+  const musicsDB = await features.query;
+  musicsDB.forEach((track) => {
+    track.link = track.link
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>');
+    return track;
+  });
+
+  res.status(200).render('index', { servicesDB, musicsDB });
 });
 
 exports.getAbout = catchAsync(async (req, res, next) => {
