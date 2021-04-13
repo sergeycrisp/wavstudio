@@ -31,4 +31,6 @@ router.get('/orders/delete', adminController.deleteOrder);
 router.get('/users/delete', adminController.deleteUser);
 router.get('/articles/delete', adminController.deleteArticle);
 
+//Create
+router.get('/music/create', adminController.uploadMusic);
 module.exports = router;

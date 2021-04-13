@@ -67,7 +67,6 @@ exports.updateOne = (Model) =>
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     //Only for order params
-
     if (req.baseUrl === '/api/v1/orders') {
       // 2) Verification token
       const decoded = await promisify(jwt.verify)(

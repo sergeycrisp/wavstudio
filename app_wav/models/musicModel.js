@@ -7,10 +7,11 @@ const musicSchema = new mongoose.Schema(
       default: Date.now,
     },
     link: { type: String, required: true },
-    tags: [String],
+    tags: { type: [String], required: true },
     license: {
       type: String,
       enum: ['Free', 'Sale', 'sale (only unlimited)', 'Our prod'],
+      required: true,
     },
     visible: { type: Boolean, default: true },
     linkPurchase: {

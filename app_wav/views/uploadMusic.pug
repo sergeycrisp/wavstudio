@@ -1,0 +1,63 @@
+extends _adminChanges.pug
+block title 
+    title WAV Studio
+block page 
+    main 
+        section.uk-width-1-1.uk-grid-margin.uk-first-column
+            h2.uk-text-center Upload music
+            |                         
+            form
+                .uk-grid-small.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
+                    .uk-first-column
+                        label
+                            .uk-form-label.uk-form-label-required
+                                | Link to sound cloud
+                            |                                 
+                            input.uk-input(type='text' required='' id="link")
+                        label
+                            .uk-form-label.uk-form-label-required
+                                |Tags through ","
+                            |                                 
+                            input.uk-input(type='text' required='' id="tags")
+                        label
+                            .uk-form-label License | Type
+                            |                
+                            select.uk-select(id="license")
+                                option Free
+                                |                                   
+                                option Sale
+                                |                                   
+                                option sale (only unlimited)
+                                |
+                                option Our prod
+                        label
+                            .uk-form-label.uk-form-label-required
+                                | link to purchase
+                            |                                 
+                            input.uk-input(type='text' required='' id="purchaseLink")
+                    .uk-text
+                        button(onclick="sendMusic()")
+                            | Send
+    script.
+        const sendMusic = async () => {
+        try {
+            const link = document.getElementById('link').value;
+            const license = document.getElementById('license').value;
+            const purchaseLink = document.getElementById('purchaseLink').value;
+            const tags = document.getElementById('tags').value.split(',');
+            if((!link)||(!tags)||(!purchaseLink)||(!tags)){return}
+            const res = await axios({
+                method: 'POST',
+                url: '/api/v1/musics/',
+                data: {
+                    link:link,
+                    license:license,
+                    purchaseLink:purchaseLink,
+                    tags:tags,
+                },
+            }).then(result=>{console.log(result); alert("success")}).catch(e=>alert(e))
+
+        } catch (err) {
+            alert(err)
+        }
+        };
