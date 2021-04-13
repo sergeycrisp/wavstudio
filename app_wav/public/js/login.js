@@ -153,7 +153,7 @@ const sendServiceJSON = async () => {
       );
       window.setTimeout(() => {
         location.assign('/account');
-      }, 1500);
+      }, 0);
     }
   } catch (e) {}
 };
@@ -190,6 +190,41 @@ const updatePassword = async () => {
     window.setTimeout(() => {
       location.assign('/sign');
     }, 100);
+  }
+
+  // window.setTimeout(() => {
+  //   location.assign('/');
+  // }, 0);
+};
+
+const updateEmail = async () => {
+  try {
+    newEmail = document.getElementById('newMail').value;
+    const res = await axios({
+      method: 'PATCH',
+      url: '/api/v1/users/updateMe',
+      data: {
+        email: newEmail,
+      },
+    });
+    if (res.data.status === 'success') {
+      UIkit.notification(
+        "<span uk-icon='icon: check'></span> Success!",
+        { status: 'success' }
+      );
+      localStorage.setItem('jwt', res.data.token);
+
+      // window.setTimeout(() => {
+      //   location.assign('/account');
+      // }, 1);
+    }
+  } catch (e) {
+    UIkit.notification('something went wrong', {
+      status: 'fail',
+    });
+    // window.setTimeout(() => {
+    //   location.assign('/sign');
+    // }, 1000);
   }
 
   // window.setTimeout(() => {

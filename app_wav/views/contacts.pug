@@ -76,20 +76,20 @@ block content
                               .uk-form-label.uk-form-label-required
                                 | Name
                               |                                 
-                              input.uk-input(type='text' required='')
+                              input.uk-input(type='text' required='' id="nameContact")
                           |                             
                           .uk-grid-margin.uk-first-column
                             label
                               .uk-form-label.uk-form-label-required
                                 | Email
                               |                                 
-                              input.uk-input(type='email' required='')
+                              input.uk-input(type='email' required='' id="emailContact")
                           |                             
                           .uk-grid-margin.uk-first-column
                             label
                               .uk-form-label Topic
                               |                                 
-                              select.uk-select
+                              select.uk-select(id="topicContact")
                                 option Customer service
                                 |                                   
                                 option Tech support
@@ -100,10 +100,10 @@ block content
                             label
                               .uk-form-label Message
                               |                                 
-                              textarea.uk-textarea(rows='5')
+                              textarea.uk-textarea(rows='5' id="textContact")
                           |                             
                           .uk-text-center.uk-grid-margin.uk-first-column
-                            button.uk-button.uk-button-primary
+                            p.uk-button.uk-button-primary()
                               | Send
               |                 
               aside.uk-width-1-4.tm-aside-column(class='uk-visible@m')
