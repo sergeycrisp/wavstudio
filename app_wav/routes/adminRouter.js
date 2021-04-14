@@ -30,4 +30,7 @@ router.get('/users/delete', adminController.deleteUser);
 
 //Create
 router.get('/music/create', adminController.uploadMusic);
+
+//Update
+router.get('/music/manage', adminController.musicUpdate);
 module.exports = router;

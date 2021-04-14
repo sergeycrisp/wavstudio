@@ -1,0 +1,129 @@
+extends _adminChanges.pug
+block title 
+    title Sirota
+block page 
+    main 
+        section.uk-width-1-1.uk-grid-margin.uk-first-column
+            h2.uk-text-center Find music by id 
+            |                         
+            form
+                .uk-grid-small.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
+                    .uk-first-column
+                        label
+                            .uk-form-label.uk-form-label-required
+                                | id
+                            |                                 
+                            input.uk-input(type='text' required='' id="findId")
+                    .uk-text
+                        button(type="button" onclick="return getMusic()")
+                            | Find
+            br
+            br
+            h2 found music is 
+
+            form
+                label
+                    .uk-form-label.uk-form-label-required
+                        |Tags through ","
+                    |                                 
+                    input.uk-input(type='text' required='' id="tags" )
+                br
+                br
+                label
+                    .uk-form-label License | Type
+                    |                
+                    select.uk-select(id="license")
+                        option Free
+                        |                                   
+                        option Sale
+                        |                                   
+                        option sale (only unlimited)
+                        |
+                        option Our prod
+                br
+                br
+                label
+                    .uk-form-label Visible
+                    |                
+                    select.uk-select(id="visible")
+                        option false
+                        |                                   
+                        option true
+                br
+                br
+                br
+                label Embedded sound cloud player link
+                    br
+                    textarea(id="link" rows="4" cols="70")
+                br
+                br
+                br
+                label Link to purchase(if exist)
+                    br
+                    textarea(id="linkPurchase" rows="4" cols="70")
+                br
+                br
+                button(type="button" onclick="return updateMusic()")
+                    | UPDATE!
+
+
+    script.
+        let globalId='';
+        const getMusic = async () => {
+            try {
+                const id = document.getElementById('findId').value;
+
+                const res = await axios({
+                    method: 'GET',
+                    url: '/api/v1/musics/'+id,
+                    data: {
+
+                    },
+                })
+
+
+                console.log(res.data.data);
+                const data = res.data.data.data;
+                globalId=data._id
+                document.getElementById("tags").value=data.tags;
+                document.getElementById("license").value=data.license;
+                document.getElementById("visible").value=data.visible;
+                document.getElementById("link").value=data.link;
+                document.getElementById("linkPurchase").value=data.linkPurchase;
+                return false
+            }catch (err) {
+                alert(err)
+                return false
+            }
+        };
+
+        const updateMusic= async () => {
+            try {
+                let tags = document.getElementById("tags").value.split(',');
+                tags = tags.map(e=>e.trim())
+                const license = document.getElementById("license").value;
+                const visible = true ? document.getElementById("visible").value=='true' : false;
+                const link = document.getElementById("link").value;
+                const linkPurchase = document.getElementById("linkPurchase").value;
+                if((!link)||(!tags)||(!linkPurchase)||(!tags)){return false}
+                const res = await axios({
+                    method: 'PATCH',
+                    url: '/api/v1/musics/'+globalId,
+                    data: {
+                        link:link,
+                        license:license,
+                        linkPurchase:linkPurchase,
+                        tags:tags,
+                        visible: visible
+                },
+                })
+
+                console.log(res);
+                alert('thats good')
+
+                return false
+            }catch (err) {
+                alert(err)
+                return false
+            }
+        };

@@ -39,3 +39,7 @@ exports.deleteArticle = catchAsync(async (req, res, next) => {
 exports.uploadMusic = catchAsync(async (req, res, next) => {
   res.status(200).render('uploadMusic', {});
 });
+
+exports.musicUpdate = catchAsync(async (req, res, next) => {
+  res.status(200).render('musicUpdate', {});
+});
