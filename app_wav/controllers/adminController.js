@@ -46,3 +46,7 @@ exports.musicUpdate = catchAsync(async (req, res, next) => {
 exports.serviceUpdate = catchAsync(async (req, res, next) => {
   res.status(200).render('serviceUpdate', {});
 });
+
+exports.orderUpdate = catchAsync(async (req, res, next) => {
+  res.status(200).render('orderUpdate', {});
+});

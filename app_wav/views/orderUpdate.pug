@@ -1,0 +1,87 @@
+extends _adminChanges.pug
+block title 
+    title Sirota
+block page 
+    main 
+        section.uk-width-1-1.uk-grid-margin.uk-first-column
+            h2.uk-text-center Find order by id 
+            |                         
+            form
+                .uk-grid-small.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
+                    .uk-first-column
+                        label
+                            .uk-form-label.uk-form-label-required
+                                | id
+                            |                                 
+                            input.uk-input(type='text' required='' id="findId")
+                    .uk-text
+                        button(type="button" onclick="return getOrder()")
+                            | Find
+            br
+            br
+            h2 Found service is 
+
+            form
+                label
+                    .uk-form-label.uk-form-label-required
+                        |Order status
+                    |                                 
+                    select.uk-select(id="status")
+                        option canceled
+                        option wait for manager's approve
+                        option ready
+                        option in work
+                br
+                br
+
+                button(type="button" onclick="return updateOrder()")
+                    | UPDATE!
+
+
+    script.
+        let globalId='';
+        const getOrder = async () => {
+            try {
+                const id = document.getElementById('findId').value;
+
+                const res = await axios({
+                    method: 'GET',
+                    url: '/api/v1/orders/'+id,
+                    data: {
+
+                    },
+                })
+
+                const data = res.data.data.data;
+                console.log(data)
+                globalId=data._id
+                document.getElementById("status").value=data.status;
+                return false
+            }catch (err) {
+                alert(err)
+                return false
+            }
+        };
+
+        const updateOrder= async () => {
+            try {
+                const status = document.getElementById("status").value;
+
+                if(!status){alert("no empty fields");return false}
+                const res = await axios({
+                    method: 'PATCH',
+                    url: '/api/v1/orders/'+globalId,
+                    data: {
+                        status:status
+                },
+                })
+
+                console.log(res);
+                alert('thats good')
+
+                return false
+            }catch (err) {
+                alert(err)
+                return false
+            }
+        };

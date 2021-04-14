@@ -34,4 +34,5 @@ router.get('/music/create', adminController.uploadMusic);
 //Update
 router.get('/music/manage', adminController.musicUpdate);
 router.get('/services/manage', adminController.serviceUpdate);
+router.get('/orders/manage', adminController.orderUpdate);
 module.exports = router;
