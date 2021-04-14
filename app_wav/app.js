@@ -3,7 +3,6 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
-// const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
@@ -35,17 +34,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 1) GLOBAL MIDDLEWARES
 // Implement CORS
 app.use(cors());
-// Access-Control-Allow-Origin *
-
-// app.use(cors({
-//   origin: 'https://www.natours.com'
-// }))
 
 app.options('*', cors());
 // app.options('/api/v1/tours/:id', cors());
-
-// Set security HTTP headers
-// app.use(helmet());
 
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
