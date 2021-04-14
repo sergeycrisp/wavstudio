@@ -105,7 +105,7 @@ block page
                 const visible = true ? document.getElementById("visible").value=='true' : false;
                 const link = document.getElementById("link").value;
                 const linkPurchase = document.getElementById("linkPurchase").value;
-                if((!link)||(tags=="")||(!linkPurchase)||(!tags)){alert("some field is empty");return false}
+                if((!link)||(!tags)||(!linkPurchase)||(!tags)){return false}
                 const res = await axios({
                     method: 'PATCH',
                     url: '/api/v1/musics/'+globalId,

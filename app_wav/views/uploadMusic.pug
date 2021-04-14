@@ -45,7 +45,7 @@ block page
             const license = document.getElementById('license').value;
             const purchaseLink = document.getElementById('purchaseLink').value;
             const tags = document.getElementById('tags').value.split(',');
-            if((!link)||(!tags)||(!purchaseLink)||(!tags)){return false}
+            if((!link)||(tags=="")||(!purchaseLink)||(!tags)){alert("some field is empty");return false}
             const res = await axios({
                 method: 'POST',
                 url: '/api/v1/musics/',

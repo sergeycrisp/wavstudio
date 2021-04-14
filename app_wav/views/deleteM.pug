@@ -15,7 +15,7 @@ block page
                             |                                 
                             input.uk-input(type='text' required='' id="deleteId")
                     .uk-text
-                        button(onclick="sendDelete()")
+                        button(type="button" onclick="sendDelete()")
                             | Send
     script.
         const sendDelete = async () => {
@@ -29,8 +29,9 @@ block page
 
                 },
             }).then(result=>alert(result)).catch(e=>alert(e))
-
+        return false
         } catch (err) {
             alert(err)
+            return false
         }
         };
