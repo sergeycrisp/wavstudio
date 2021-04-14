@@ -92,9 +92,7 @@ block content
           .uk-grid-small.uk-grid(class='uk-child-width-1-4@m' uk-grid='')
             each license in servicesDB
               +service(license.serviceHeader,license.serviceText,
-              license.priceUSD,license.rights.Exclusive,license.rights.Video,Exclusive,
-              license.rights.TrackOut,Exclusive,license.rights.Prod,Exclusive,license.rights.Video,
-              Royalty,license.rights.Support)
+              license.priceUSD,license.rights.Exclusive,license.rights.Video,license.rights.TrackOut, license.rights.prod,license.rights.Royalty,license.rights.Support)
   .uk-flex-top(uk-modal='' id='modalOrder')
     .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
       button.uk-modal-close-default(type='button' uk-close='')

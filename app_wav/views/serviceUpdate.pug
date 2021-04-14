@@ -108,7 +108,7 @@ block page
                     textarea(id="serviceText" rows="4" cols="70")
                 br
                 br
-                button(type="button" onclick="return updateMusic()")
+                button(type="button" onclick="return updateService()")
                     | UPDATE!
 
 
@@ -146,24 +146,29 @@ block page
             }
         };
 
-        const updateMusic= async () => {
+        const updateService= async () => {
             try {
-                let tags = document.getElementById("tags").value.split(',');
-                tags = tags.map(e=>e.trim())
-                const license = document.getElementById("license").value;
-                const visible = true ? document.getElementById("visible").value=='true' : false;
-                const link = document.getElementById("link").value;
-                const linkPurchase = document.getElementById("linkPurchase").value;
-                if((!link)||(!tags)||(!linkPurchase)||(!tags)){return false}
+                const serviceHeader = document.getElementById("header").value;
+                const priceUSD = document.getElementById("priceUSD").value;
+                const visible = true ? document.getElementById("visible").value : false;
+                const serviceText=document.getElementById("serviceText").value;
+                let rights={};
+                rights.Exclusive = true ? document.getElementById("Exclusive").value : false;
+                rights.Video = true ? document.getElementById("Video").value : false;
+                rights.TrackOut = true ? document.getElementById("TrackOut").value : false;
+                rights.Prod = true ? document.getElementById("Prod").value : false;
+                rights.Royalty = true ? document.getElementById("Royalty").value : false;
+                rights.Support = true ? document.getElementById("Support").value : false;
+                if((!serviceHeader)||(!priceUSD)||(!serviceText)){alert("no empty fields");return false}
                 const res = await axios({
                     method: 'PATCH',
-                    url: '/api/v1/musics/'+globalId,
+                    url: '/api/v1/services/'+globalId,
                     data: {
-                        link:link,
-                        license:license,
-                        linkPurchase:linkPurchase,
-                        tags:tags,
-                        visible: visible
+                        serviceText:serviceText,
+                        serviceHeader:serviceHeader,
+                        visible:visible,
+                        priceUSD:priceUSD   ,
+                        rights: rights
                 },
                 })
 
