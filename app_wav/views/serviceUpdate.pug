@@ -4,7 +4,7 @@ block title
 block page 
     main 
         section.uk-width-1-1.uk-grid-margin.uk-first-column
-            h2.uk-text-center Find music by id 
+            h2.uk-text-center Find service by id 
             |                         
             form
                 .uk-grid-small.uk-child-width-1-1.uk-grid.uk-grid-stack(uk-grid='')
@@ -15,31 +15,24 @@ block page
                             |                                 
                             input.uk-input(type='text' required='' id="findId")
                     .uk-text
-                        button(type="button" onclick="return getMusic()")
+                        button(type="button" onclick="return getService()")
                             | Find
             br
             br
-            h2 found music is 
+            h2 Found service is 
 
             form
                 label
                     .uk-form-label.uk-form-label-required
-                        |Tags through ","
+                        |Service header
                     |                                 
-                    input.uk-input(type='text' required='' id="tags" )
+                    input.uk-input(type='text' required='' id="header" )
                 br
                 br
                 label
-                    .uk-form-label License | Type
+                    .uk-form-label Price USD
                     |                
-                    select.uk-select(id="license")
-                        option Free
-                        |                                   
-                        option Sale
-                        |                                   
-                        option sale (only unlimited)
-                        |
-                        option Our prod
+                    input.uk-input(type='text' required='' id="priceUSD" )
                 br
                 br
                 label
@@ -52,15 +45,67 @@ block page
                 br
                 br
                 br
-                label Embedded sound cloud player link
-                    br
-                    textarea(id="link" rows="4" cols="70")
+                label
+                    h1 Rights 
+                label
+                    .uk-form-label Exclusive
+                    |                
+                    select.uk-select(id="Exclusive")
+                        option false
+                        |                                   
+                        option true
+                br
+                br
+                label
+                    .uk-form-label Video
+                    |                
+                    select.uk-select(id="Video")
+                        option false
+                        |                                   
+                        option true
+                br
+                br
+                label
+                    .uk-form-label TrackOut
+                    |                
+                    select.uk-select(id="TrackOut")
+                        option false
+                        |                                   
+                        option true 
+                br
+                br
+                label
+                    .uk-form-label Prod
+                    |                
+                    select.uk-select(id="Prod")
+                        option false
+                        |                                   
+                        option true
+                br
+                br
+                label
+                    .uk-form-label Royalty
+                    |                
+                    select.uk-select(id="Royalty")
+                        option false
+                        |                                   
+                        option true
+                br
+                br
+                label
+                    .uk-form-label Support
+                    |                
+                    select.uk-select(id="Support")
+                        option false
+                        |                                   
+                        option true
+
                 br
                 br
                 br
-                label Link to purchase(if exist)
-                    br
-                    textarea(id="linkPurchase" rows="4" cols="70")
+                label 
+                    h1 Service Text
+                    textarea(id="serviceText" rows="4" cols="70")
                 br
                 br
                 button(type="button" onclick="return updateMusic()")
@@ -69,27 +114,31 @@ block page
 
     script.
         let globalId='';
-        const getMusic = async () => {
+        const getService = async () => {
             try {
                 const id = document.getElementById('findId').value;
 
                 const res = await axios({
                     method: 'GET',
-                    url: '/api/v1/musics/'+id,
+                    url: '/api/v1/services/'+id,
                     data: {
 
                     },
                 })
 
-
-                console.log(res.data.data);
                 const data = res.data.data.data;
+                console.log(data)
                 globalId=data._id
-                document.getElementById("tags").value=data.tags;
-                document.getElementById("license").value=data.license;
+                document.getElementById("header").value=data.serviceHeader;
+                document.getElementById("priceUSD").value=data.priceUSD;
                 document.getElementById("visible").value=data.visible;
-                document.getElementById("link").value=data.link;
-                document.getElementById("linkPurchase").value=data.linkPurchase;
+                document.getElementById("serviceText").value=data.serviceText;
+                document.getElementById("Exclusive").value=data.rights.Exclusive;
+                document.getElementById("Video").value=data.rights.Video;
+                document.getElementById("TrackOut").value=data.rights.TrackOut;
+                document.getElementById("Prod").value=data.rights.Prod;
+                document.getElementById("Royalty").value=data.rights.Royalty;
+                document.getElementById("Support").value=data.rights.Support;
                 return false
             }catch (err) {
                 alert(err)

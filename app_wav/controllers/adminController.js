@@ -43,3 +43,6 @@ exports.uploadMusic = catchAsync(async (req, res, next) => {
 exports.musicUpdate = catchAsync(async (req, res, next) => {
   res.status(200).render('musicUpdate', {});
 });
+exports.serviceUpdate = catchAsync(async (req, res, next) => {
+  res.status(200).render('serviceUpdate', {});
+});
