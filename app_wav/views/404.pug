@@ -1,18 +1,18 @@
 extends _base.pug
 block title
-  title 404 page
+  title Error page
 
 block content
   main
     section.uk-section.uk-section-small(style='padding-top: 80px; padding-bottom: 160px;')
       .uk-container
         .uk-text-center
-          h1.uk-heading-hero 404
+          h1.uk-heading-hero #{status}
           |             
-          .uk-text-lead Page not found
+          .uk-text-lead #{error}
           |             
           .uk-margin-top
-            | Looks like the page you&apos;re trying to visit doesn&apos;t exist.
+            | #{message}
             br
             a(href='./') Go back to Homepage
 

@@ -102,6 +102,7 @@ const forgotPassword = async () => {
 const logout = async () => {
   try {
     localStorage.setItem('jwt', '');
+
     account.href = './sign';
     orderButton.href = './sign';
   } catch (e) {}
