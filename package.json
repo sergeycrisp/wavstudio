@@ -1,16 +1,14 @@
 {
   "version": "1.0.1",
-  "description": "First lab on SItaTP",
+  "description": "Express boilerplate",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
-    "debug": "ndb server.js",
-    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "debug": "nodemon server.js"
   },
-  "author": "Sergey Sirota",
+  "author": "sergeycrisp",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",

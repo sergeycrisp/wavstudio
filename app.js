@@ -36,7 +36,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.options('*', cors());
-// app.options('/api/v1/tours/:id', cors());
 
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -84,15 +83,18 @@ app.use((req, res, next) => {
 
 //ROUTES
 
+//view
 app.use('/', viewRouter);
 app.use('/admin', adminRouter);
 
+//api
 app.use('/api/v1/musics', musicsRouter);
 app.use('/api/v1/services', servicesRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/orders', ordersRouter);
 app.use('/api/v1/services', servicesRouter);
 
+//404 handler
 app.all('*', (req, res, next) => {
   next(
     new AppError(`Can't find ${req.originalUrl} on this server!`, 404)
