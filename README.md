@@ -8,7 +8,10 @@ Boilerplate/Generator/Starter Project for building RESTful APIs and microservice
 https://blooming-woodland-82528.herokuapp.com/
 
 ## Features
-
+ - Admin page
+ - Order system
+ - Auth system
+ - Role user system
  - No transpilers, just vanilla javascript
  - ES2017 latest features like Async/Await
  - CORS enabled
