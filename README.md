@@ -24,7 +24,7 @@ https://blooming-woodland-82528.herokuapp.com/
 
 ## Requirements
 
- - [Node v8+](https://nodejs.org/en/download/current/) or [Docker](https://www.docker.com/)
+ - [Node v8+](https://nodejs.org/en/download/current/)
  - [npm](https://www.npmjs.com)
 
 ## Getting Started
@@ -32,8 +32,8 @@ https://blooming-woodland-82528.herokuapp.com/
 #### Clone the repo and make it yours:
 
 ```bash
-git clone https://github.com/sergeycrisp/wavstudio
-cd wav-studio
+git clone https://github.com/sergeycrisp/express-rest-boilerplate
+cd express-rest-boilerplate
 rm -rf .git
 ```
 
